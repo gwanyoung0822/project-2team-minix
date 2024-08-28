@@ -1,1 +1,17 @@
 @charset "utf-8";
+
+.visual{
+    width: 100%;
+    position: relative;
+}
+.visual video{
+    width: 100%;
+}
+/*  */
+.next-sec-btn{
+    position: absolute;
+    bottom: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
