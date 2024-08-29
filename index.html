@@ -42,7 +42,6 @@
     <script src="js/introduction.js"></script>
     <script src="js/review.js"></script>
     <script src="js/footer.js"></script>
-
     <title>Document</title>
   </head>
   <body>
@@ -57,22 +56,20 @@
       </div>
       <!-- main video -->
       <div class="visual">
-
         <div class="swiper sw-visual">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <video class="visual-video">
-                <source src="video/main-video1.mp4" type="video/mp4">
+                <source src="video/main-video1.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="swiper-slide">
               <video class="visual-video">
-                <source src="video/main-video2.mp4" type="video/mp4">
+                <source src="video/main-video2.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
         </div>
-
         <div class="next-sec-btn">
           <img src="images/next_sec_btn.png" alt="다음 영역" />
         </div>
@@ -87,46 +84,79 @@
               정말 해를 볼 날이 없게 되는 <span class="highlight">장마철</span> <br />
               빨래할 때마다 <span class="highlight">고민</span> 되시나요?
             </h2>
-            <div class="bubles">
+            <div class="bubbles">
               <div class="bubble_left">
-                <p class="bubble sp_bb1">장마철이라 빨래가 마르는데 너무 오래걸려요</p>
-                <p class="bubble sp_bb3">대형 건조기를 놓을데가 없어요</p>
-                <p class="bubble sp_bb5">시끄러워서 건조기를 못돌려 놓겠어요</p>
+                <p class="bubble sp_bb1" data-aos="fade-up" data-aos-delay="1000">장마철이라 빨래가 마르는데 너무 오래걸려요</p>
+                <p class="bubble sp_bb3" data-aos="fade-up" data-aos-delay="2000">대형 건조기를 놓을데가 없어요</p>
+                <p class="bubble sp_bb5" data-aos="fade-up" data-aos-delay="3000">시끄러워서 건조기를 못돌려 놓겠어요</p>
               </div>
               <div class="bubble_right">
-                <p class="bubble sp_bb2">매번 건조대에 널기 너무 귀찮아요</p>
-                <p class="bubble sp_bb4">빨래가 마르지 않아서 냄새가 나요</p>
+                <p class="bubble sp_bb2" data-aos="fade-up" data-aos-delay="1500">매번 건조대에 널기 너무 귀찮아요</p>
+                <p class="bubble sp_bb4" data-aos="fade-up" data-aos-delay="2500">빨래가 마르지 않아서 냄새가 나요</p>
               </div>
             </div>
           </div>
         </div>
         <!-- product copy -->
-        <div class="sec1_copy">
-          <h2>
+        <div class="sec1_copy_wrap">
+          <h2 class="sec1_copy">
             마침내, <br />
-            미닉스 PRO+가 정답을 찾아내다.
+            미닉스 <span class="highlight">PRO+</span>가 정답을 찾아내다.
           </h2>
         </div>
         <!-- section2 -->
         <div class="sec2_wrap">
-          <div class="sec2_inner"></div>
+          <div class="sec2_inner">
+            <div class="sec2_bg"></div>
+            <div class="sec2_content">
+              <div class="sec2_row" data-aos="fade-right" data-aos-delay="1100">
+                <div class="sec2_img sec2_img1">
+                  <a href="#"><img src="images/sec_2_img1.png" alt="제품 이미지 1" /></a>
+                </div>
+                <div class="sec2_txt sec2_txt1">
+                  "작아도 강하다! <br />
+                  <div class="sec2_low_txt">미니멀한 공간 속 강력한 성능!"</div>
+                </div>
+              </div>
+              <div class="sec2_row" data-aos="fade-left" data-aos-delay="1200">
+                <div class="sec2_txt sec2_txt2">
+                  "짧아진 시간, 길어진 휴식" <br />
+                  <div class="sec2_low_txt">"소중한 시간을 아끼는 현명한 선택"</div>
+                </div>
+                <div class="sec2_img sec2_img2">
+                  <a href="#"><img src="images/sec_2_img2.png" alt="제품 이미지 2" /></a>
+                </div>
+              </div>
+              <div class="sec2_row" data-aos="fade-right" data-aos-delay="1300">
+                <div class="sec2_img sec2_img3">
+                  <a href="#"><img src="images/sec_2_img3.png" alt="제품 이미지 3" /></a>
+                </div>
+                <div class="sec2_txt sec2_txt3">
+                  "소음은 줄이고 편안함은 높이고" <br />
+                  <div class="sec2_low_txt">"조용함 속에서 즐기는 스마트 라이프"</div>
+                </div>
+              </div>
+              <a href="#" class="sec2_btn" data-aos="fade-up" data-aos-delay="1400">제품 상세 보기</a>
+            </div>
+          </div>
         </div>
       </div>
+
       <!-- review -->
       <!-- footer -->
-       <footer class="footer">
+      <footer class="footer">
         <div class="inner">
           <!-- 푸터 상단 -->
           <div class="footer_top">
             <!-- 푸터 로고 -->
             <div class="ft_logo">
-          <a href="#"><img src="images/ft_logo.png" alt="푸터로고"></a>
-        </div>
-        <!-- 푸터 sns -->
-        <div class="ft_sns">
-          <a href="#"><img src="images/sns_1.png" alt="인스타"></a>
-          <a href="#"><img src="images/sns_2.png" alt="유튜브"></a>
-        </div>
+              <a href="#"><img src="images/ft_logo.png" alt="푸터로고" /></a>
+            </div>
+            <!-- 푸터 sns -->
+            <div class="ft_sns">
+              <a href="#"><img src="images/sns_1.png" alt="인스타" /></a>
+              <a href="#"><img src="images/sns_2.png" alt="유튜브" /></a>
+            </div>
           </div>
           <!-- 푸터 하단 -->
           <div class="footer_bot">
@@ -149,26 +179,18 @@
               </ul>
             </div>
             <!-- 푸터 하단 우측 -->
-             <div class="ft_right">
+            <div class="ft_right">
               <div class="ft_right_txt">
-              <p class="ft_right_txt1">
-                상호. 주식회사앳홈 / CEO. 양정호 / 사업자등록번호. 136-81-34676 [사업자정보확인]
-통신판매업신고번호. 제2020-서울성동-01979호 / 개인정보관리책임자. 양정호 / 이메일. minix@athomecorp.com
-주소. 04778 10층, 서울 성동구 뚝섬로1길 63 영창디지털타워 / Hosting by Cafe24
-              </p>
-              <p class="ft_right_txt2">
-                고객센터. 1800-6307 / 평일 (토,일,공휴일 휴무) 오전 9시~12시, 오후 1시~6시
-              </p>
-              <p class="ft_right_copyright">
-                COPYRIGHT ©2022 미닉스 공식몰. ALL RIGHTS RESERVED.
-              </p>
+                <p class="ft_right_txt1">
+                  상호. 주식회사앳홈 / CEO. 양정호 / 사업자등록번호. 136-81-34676 [사업자정보확인] 통신판매업신고번호. 제2020-서울성동-01979호 / 개인정보관리책임자. 양정호 / 이메일. minix@athomecorp.com 주소. 04778 10층, 서울 성동구 뚝섬로1길 63 영창디지털타워 / Hosting by Cafe24
+                </p>
+                <p class="ft_right_txt2">고객센터. 1800-6307 / 평일 (토,일,공휴일 휴무) 오전 9시~12시, 오후 1시~6시</p>
+                <p class="ft_right_copyright">COPYRIGHT ©2022 미닉스 공식몰. ALL RIGHTS RESERVED.</p>
+              </div>
             </div>
-             </div>
           </div>
         </div>
-       </footer>
-
-
+      </footer>
     </div>
   </body>
 </html>
