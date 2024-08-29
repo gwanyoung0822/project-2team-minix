@@ -14,4 +14,18 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 99;
+    cursor: pointer;
+}
+.buy-img{
+width: 220px;
+position: absolute;
+right: 10%;
+top: 45%;
+transform: translateY(-50%);
+z-index: 99;
+border-bottom: 4px solid #fff;
+padding-bottom: 5px;
+}
+.buy-img img{
+    width: 100%;
 }
