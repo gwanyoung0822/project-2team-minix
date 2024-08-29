@@ -10,7 +10,7 @@
     max-width: 1300px;
     display: block;
     position: relative;
-    margin: 0 auto;
+    margin: 80px auto;
 }
 .footer_top{
     position: relative;
@@ -48,7 +48,16 @@ left: 150px;
 top: 80px;
 font-size: 14px;
 line-height: 30px;
-
+}
+.ft_lefttxt1 li a{
+    text-decoration: none;
+}
+.ft_lefttxt2 li a{
+    text-decoration: none;
+}
+.ft_lefttxt1 li:nth-child(4){
+    text-decoration: underline;
+    color: #A5A5A5;
 }
 /* 푸터 하단 우측 */
 .ft_right{
@@ -59,10 +68,18 @@ line-height: 30px;
 font-size: 14px;
 color: #A5A5A5;
 text-align: right;
+line-height: 36px;
 }
-.ft_right_txt1{
+.ft_right_txt a{
+    color: #A5A5A5;
+    text-decoration: none;
+}
+.ft_right_txt .check{
+    text-decoration: underline;
+    color: #A5A5A5;
+}
 
-}
+
 /* ft_right_txt2 */
 
 
