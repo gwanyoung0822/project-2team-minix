@@ -1,21 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const bubbles = document.querySelectorAll(".bubble");
-
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.1, // 10%가 보일 때 트리거
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  }, observerOptions);
-
-  bubbles.forEach((bubble) => {
-    observer.observe(bubble);
+  AOS.init({
+    duration: 1000,  // 애니메이션 지속 시간 (밀리초)
+    offset: 100,    // 애니메이션이 시작되는 오프셋
+    once: true,     // 스크롤 시 애니메이션이 한 번만 발생하도록 설정
   });
 });
