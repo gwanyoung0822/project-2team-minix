@@ -6,6 +6,10 @@
 }
 .visual video{
     width: 100%;
+    display: block;
+}
+.sw-visual > .swiper-slide{
+    height: 100%;
 }
 /*  */
 .next-sec-btn{

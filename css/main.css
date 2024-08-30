@@ -18,6 +18,9 @@
 body{
     font-family: "Inter", sans-serif;
 }
+img{
+    display: block;
+}
 /* 탑버튼 */
 .cs-btn{
     position: fixed;
