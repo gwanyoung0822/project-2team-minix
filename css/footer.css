@@ -10,7 +10,7 @@
     max-width: 1300px;
     display: block;
     position: relative;
-    margin: 80px auto;
+    margin: 0 auto;
 }
 .footer_top{
     position: relative;
@@ -21,6 +21,9 @@
 }
 .ft_sns a{
 padding-right: 15px;
+}
+.ft_sns{
+    display: flex;
 }
 /* 푸터 하단 좌측 */
 .ft_left{

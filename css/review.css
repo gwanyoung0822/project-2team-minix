@@ -1,106 +1,120 @@
 @charset "utf-8";
-.review{
-    background-color: #EDE6DB;
+.review {
+  background-color: #ede6db;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
 }
-.review .inner{
-    width: 100%;
-    max-width: 1300px;
-    display: block;
-    position: relative;
-    margin: 0 auto;
-    padding-top: 50px;
-}
-.review_top{
-    display: flex;
-    justify-content: space-between;
-}
-.review_top_title{
-    line-height: 45px;
-}
-.review_top_title h1{
-    font-size: 40px;
-}
-.review_top_title .best{
-    font-size: 40px;
+.review a{
+    text-decoration: none;
     color: black;
-    font-weight: bold;
 }
-.review_top_title p{
-    font-size: 20px;
-    font-weight: 500;
+.review .inner {
+  width: 100%;
+  max-width: 1300px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 50px;
 }
-.review_top_more{
-    font-size: 20px;
-    margin-top: 50px;
-    display: flex;
-    border-bottom: solid 3px black;
-    margin-right: 80px;
+.review_top {
+  display: flex;
+  justify-content: space-between;
 }
-.review_top_more p{
-    text-align: left;
+.review_top_title {
+  line-height: 45px;
 }
-.review_top_more a{
-   padding-left: 63px;
+.review_top_title h1 {
+  font-size: 40px;
 }
-
+.review_top_title .best {
+  font-size: 40px;
+  color: black;
+  font-weight: bold;
+}
+.review_top_title p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.review_top_more {
+  font-size: 20px;
+  margin-top: 50px;
+  display: flex;
+  border-bottom: solid 3px black;
+}
+.review_top_more p {
+  margin-right: 70px;
+}
+.review_top_more a {
+  
+}
+/* .review-slide{
+    width: 100%;
+    height: 650px;
+    background-color: blueviolet;
+    margin-bottom: 50px;
+} */
 /* review main */
-
 
 /* .review_bg{
 position: relative;
 display: block;
   width: 350px; */
-  /* height: 500px; */
-  /* background-color: #fff;
+/* height: 500px; */
+/* background-color: #fff;
   
 } */
-.review_txt h2{
-    font-size: 18px;
+.review_txt h2 {
+  font-size: 16px;
+  font-weight: 600;
 }
-.review_txt p,span{
-    font-size: 14px;
-    color: #707070;
+.review_txt p,
+span {
+  font-size: 14px;
+  color: #707070;
 }
-.review_span{
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+.review_span {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
 }
-.review_img{
-    
- padding: 25px 25px 0px 25px;
+.review_img {
+  padding: 25px 25px 0px 25px;
 }
+
 /* .review_img img{
     width: 100%;
     width: 300px;
     height: 300px;
 } */
 .review_bg {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    position: relative;
-    display: block;
-    max-width: 350px; /* 필요에 따라 최대 너비를 제한 */
-    background-color: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  display: block;
+  /* max-width: 350px; 필요에 따라 최대 너비를 제한 */
+  /* height: 500px; */
+  background-color: #fff;
 }
 
 .review_img img {
-    width: 100%; /* 슬라이드 내에서 이미지가 컨테이너의 너비를 채우도록 */
-    height: auto; /* 이미지의 비율을 유지하면서 높이 자동 조정 */
+  width: 100%; /* 슬라이드 내에서 이미지가 컨테이너의 너비를 채우도록 */
+  height: auto; /* 이미지의 비율을 유지하면서 높이 자동 조정 */
 }
 
-.review_txt{
-    border-bottom: solid 1px #d0d0d0;
-    padding: 10px 25px 5px 25px;
+.review_txt {
+  border-bottom: solid 1px #d0d0d0;
+  padding: 10px 25px 5px 25px;
 }
-.review_txt p{
-    padding-top: 10px;
-    line-height: 20px;
-    height: 50px;
+.review_txt p {
+  padding-top: 10px;
+  line-height: 20px;
+  height: 50px;
   /* 2. 넘치는 영역을 가린다. */
   overflow: hidden;
-   /* 3. display: -webkit-box */
-   display: -webkit-box;
+  /* 3. display: -webkit-box */
+  display: -webkit-box;
   /* 4. text-overflow: elipsis */
   text-overflow: ellipsis;
   /* 5. 아래 코드를 입력한다. */
@@ -108,25 +122,34 @@ display: block;
   -webkit-box-orient: vertical;
 }
 
-.review_txt span{
-    margin-top : 5px;
+.review_txt span {
+  margin-top: 5px;
 }
-.review_img2{
-    padding: 0px 8px 19px 25px;
+.review_img2 {
+  padding: 0px 8px 19px 25px;
 }
-.review_txt2{
-    padding-top: 5px;
-    display: flex
+.review_txt2 {
+  padding-top: 5px;
+  display: flex;
 }
-.review_txt2 p{
-    font-size: 13px;
-    color: #575757;
-    margin-top: 5px;
+.review_txt2 p {
+  font-size: 13px;
+  color: #575757;
+  margin-top: 5px;
 }
-.star{
+.star {
+  /* position: absolute;
+  bottom: 20px;
+  left: 68px; */
+  margin-top: 5px;
+  max-width: 67.46px;
+  max-height: 13.5px;
+}
+/* 스와이퍼 스크롤바 */
+.scroll-bar-wrap{
+    width: 100%;
     position: absolute;
-    bottom: 20px;
-    left: 68px;
-    max-width: 67.46px;
-    max-height: 13.5px;
+    bottom: 0;
+    z-index: 9999999;
+    
 }
