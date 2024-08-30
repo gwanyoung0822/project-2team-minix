@@ -40,6 +40,7 @@ body {
     margin-top: 10%;
 }
 .highlight {
+    font-size: 3.5vw;
     font-weight: bold;
     color: #ffffff;
 }
@@ -50,7 +51,7 @@ body {
     justify-content: center; /* 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
     gap: 15px; /* 버블 사이의 간격 */
-    height: 110%; /* 컨테이너가 부모 요소의 높이만큼 차지하게 설정 */
+    height: 120%; /* 컨테이너가 부모 요소의 높이만큼 차지하게 설정 */
     text-align: center; /* 텍스트 중앙 정렬 */
     padding-top: 50px;
 }
@@ -70,7 +71,6 @@ body {
     /* AOS 애니메이션 조정 */
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     display: inline-block;
     max-width: 650px; /* 최대 너비 설정 */
     word-wrap: break-word; /* 긴 텍스트가 말풍선 밖으로 나가지 않도록 */
@@ -135,11 +135,12 @@ body {
 .bubble_right .sp_bb4 {
     transform: translateX(-30px); /* 왼쪽으로 30px 이동 */
 }
-/* aos */
-[data-aos="fade-up"].aos-animate {
-    opacity: 1;
-    transform: translateY(0); /* 위로 올라오며 자연스럽게 나타남 */
-  }
+
+/* scroll btn */
+.scroll_btn{ 
+    margin-top: 45px;
+    cursor: pointer;
+}
 
 /* sec1_copy_wrap 컨테이너 스타일 */
 .sec1_copy_wrap {
@@ -197,7 +198,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px; /* 각 섹션 사이의 간격 */
-    padding: 40px 0;
+    padding: 80px 0;
 }
 
 /* sec2_row */
