@@ -14,16 +14,21 @@
 /*  */
 .next-sec-btn{
     position: absolute;
-    bottom: 150px;
+    bottom: 15%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 99;
     cursor: pointer;
+    width: 55px;
+    height: 55px;
+}
+.next-sec-btn img{
+    width: 100%;
 }
 .buy-img{
-width: 220px;
+width: 13vw;
 position: absolute;
-right: 10%;
+right: 9%;
 top: 45%;
 transform: translateY(-50%);
 z-index: 99;
@@ -32,4 +37,53 @@ padding-bottom: 5px;
 }
 .buy-img img{
     width: 100%;
+}
+/* 반응형 */
+@media screen and (max-width:1280px) {
+    .next-sec-btn{
+        bottom: 13%;
+        width: 50px;
+    }
+    .buy-img{
+        width: 13vw;
+        border-bottom: 3px solid #fff;
+        right: 7%;
+        top: 50%;
+    }
+}
+@media screen and (max-width: 768px) {
+    .visual{
+        padding-top: 12vw;
+    }
+    .next-sec-btn{
+        bottom: 10%;
+        width: 40px;
+    }
+    .buy-img{
+        width: 20vw;
+        border-bottom: 2px solid #fff;
+        right: 5%;
+        top: 50%;
+    }
+    .next-sec-btn{
+        display: none;
+    }
+    .buy-img{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .next-sec-btn{
+        bottom: 5%;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .next-sec-btn{
+        display: none;
+    }
+    .buy-img{
+        display: none;
+    }
 }
