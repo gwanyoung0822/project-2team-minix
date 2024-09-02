@@ -27,6 +27,7 @@
   z-index: 999;
   background-color: #fff;
   justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
 }
 .mb-logo {
   width: 30%;
@@ -59,5 +60,16 @@
   }
   .mb-header {
     display: flex;
+  }
+}
+@media screen and (max-width: 480px) {
+  .mb-buy-btn img{
+    height: 35%;
+  }
+  .mb-logo{
+    width: 25%;
+  }
+  .mb-buy-btn{
+    padding-right: 20px;
   }
 }
