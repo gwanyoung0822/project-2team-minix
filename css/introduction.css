@@ -371,7 +371,7 @@ margin-right: 100px;
 @media (max-width: 360px) {
     
     .sec1_inner {
-        width: 80%; /* 내포된 컨텐츠가 화면에 맞게 조정 */
+        width: 100%; /* 내포된 컨텐츠가 화면에 맞게 조정 */
     }
 
     .sec1_title .highlight {
@@ -382,21 +382,21 @@ margin-right: 100px;
     }
 
     .bubble {
-<<<<<<< HEAD
-        font-size: vw; /* 말풍선 텍스트 크기 조정 */
-=======
-        font-size: 1.5vw; /* 말풍선 텍스트 크기 조정 */
->>>>>>> aa16e22ef04c8c0eb96c3ce09d830110b4a42683
+        font-size: 2vw; /* 말풍선 텍스트 크기 조정 */
         padding: 5px; /* 말풍선 패딩 조정 */
-        max-width: 300px; /* 말풍선 최대 너비 조정 */
     }
-
+    .bubbles{
+        gap: 0;
+    }
+    .bubble_left, .bubble_right{
+        gap: 10px;
+    }
     .sp_bb1 {
-        margin-right: 20px;
+        margin-right: 10px;
     }
 
     .sp_bb2 {
-        margin-right: 30px;
+        margin-right: 20px;
     }
 
     .sp_bb3 {
@@ -404,7 +404,7 @@ margin-right: 100px;
     }
 
     .sp_bb4 {
-        margin-right: 40px;
+        margin-right: 30px;
     }
 
     .sp_bb5 {
