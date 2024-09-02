@@ -48,8 +48,9 @@ $(document).ready(function () {
   }
   // 다음 섹션 이동
   $(".next-sec-btn").click(function(){
+    let sec1_h = $(".visual").height()
     window.scrollTo({
-      top: 1080,
+      top: sec1_h,
       behavior: "smooth",
     })
   })
