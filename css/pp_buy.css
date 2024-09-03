@@ -3,11 +3,97 @@
 .pp-buy{
     width: 100%;
 }
+.pp-buy-wrap{
+    padding-top: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
 .sw-buy{
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
+    margin: 0;
 }
 .sw-buy img{
     height: 105%;
     /* object-fit: cover; */
+}
+.sw-buy::before{
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    background: url("../images/zoom_icon.png")no-repeat center;
+    background-size: cover;
+    z-index: 99;
+}
+.buy-interaction{
+    width: 425px;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 50px;
+}
+.buy-txt-wrap{
+}
+.buy-tit{
+    font-size: 49px;
+    font-weight: 500;
+    font-family: "Noto Sans KR", sans-serif;
+    margin-bottom: 50px;
+}
+.real-price{
+    font-size: 22px;
+    color: #ccc;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.buy-sale{
+    color: #ff5044;
+    padding-right: 5px;
+    font-weight: bold;
+}
+.buy-price{
+    font-size: 40px;
+    font-weight: bold;
+    margin-right: -3px;
+    margin-bottom: 10px;
+}
+.color-choice-txt{
+    font-size: 16px;
+    font-weight: 500;
+    color: #999;
+}
+.product-color-wrap{
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #111;
+}
+.product-color{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #111;
+    border: 1px solid #ddd;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.color-green{
+background-color: #8A9479;
+}
+.color-white{
+background-color: #FDFBF9;
+}
+.product-buy-btn{
+    /* margin-left: 50px; */
+    height: 60px;
+    border: none;
+    background-color: #111;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
 }
