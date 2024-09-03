@@ -3,7 +3,7 @@
 .header{
     width: 100%;
     height: 5vw;
-    position: fixed;
+    position: relative;
     background-color: #fff;
 }
 .logo{
