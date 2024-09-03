@@ -26,9 +26,13 @@ padding-right: 15px;
     display: flex;
 }
 /* 푸터 하단 좌측 */
+.footer_bot{
+    display: flex; 
+    justify-content: space-between;
+}
 .ft_left{
-    display: block;
-    position: relative;
+    display: flex; 
+    gap: 40px;
     padding-top: 80px;
 }
 .ft_left li a{
@@ -36,21 +40,25 @@ padding-right: 15px;
     color: #A5A5A5;
 }
 .ft_lefttxt1{
-
-position: absolute;
-width: 120px;
+display: flex; 
+flex-direction: column;
+/* position: absolute; */
+/* width: 120px;
 left: 0px;
 top: 80px;
-font-size: 14px;
+font-size: 14px;*/
 line-height: 30px;
 }
 .ft_lefttxt2{
-position: absolute;
-width: 90px;
+display: flex;
+flex-direction: column;
+line-height: 30px;
+/* position: absolute; */
+/* width: 90px;
 left: 150px;
 top: 80px;
 font-size: 14px;
-line-height: 30px;
+ */
 }
 .ft_lefttxt1 li a{
     text-decoration: none;
@@ -66,12 +74,13 @@ line-height: 30px;
 .ft_right{
     display: block;
     position: relative;
+    padding-top: 80px;
 }
-.ft_right_txt p{
+.ft_right_txt1{
 font-size: 14px;
 color: #A5A5A5;
 text-align: right;
-line-height: 36px;
+line-height: 40px;
 }
 .ft_right_txt a{
     color: #A5A5A5;
@@ -80,6 +89,18 @@ line-height: 36px;
 .ft_right_txt .check{
     text-decoration: underline;
     color: #A5A5A5;
+}
+.ft_right_txt2{
+    font-size: 14px;
+    color: #8a8a8a;
+    text-align: right;
+line-height: 40px;
+}
+.ft_right_copyright{
+    font-size: 14px;
+    color: #8a8a8a;
+    text-align: right;
+line-height: 40px;
 }
 
 
