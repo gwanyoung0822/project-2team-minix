@@ -104,6 +104,16 @@ span {
   /* border-bottom: solid 1px #d0d0d0; */
   padding: 10px 25px 5px 25px;
 }
+.review_txt h2{
+  overflow: hidden;
+  /* 3. display: -webkit-box */
+  display: -webkit-box;
+  /* 4. text-overflow: elipsis */
+  text-overflow: ellipsis;
+  /* 5. 아래 코드를 입력한다. */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
 .review_txt p {
   padding-top: 10px;
   line-height: 20px;
@@ -163,4 +173,11 @@ span {
   color: #575757;
   margin-top: 5px;
 }
+}
+
+
+@media screen and (max-width: 320px){
+  .review_top{
+    display: flex;
+  }
 }
