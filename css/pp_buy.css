@@ -3,3 +3,11 @@
 .pp-buy{
     width: 100%;
 }
+.sw-buy{
+    width: 500px;
+    height: 500px;
+}
+.sw-buy img{
+    height: 105%;
+    /* object-fit: cover; */
+}
