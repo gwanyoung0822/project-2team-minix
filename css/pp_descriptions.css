@@ -106,15 +106,20 @@
     height: 600px;
     display: flex;
 }
-
+.gallery img{
+    width: 90%;
+    height: 600px;
+}
 .gallery li {
     flex: 1;
     border: 1px solid #333;
-    transition: all 0.5s;
+    transition: all 0.5s ease; /* 애니메이션 추가 */
     position: relative;
     overflow: hidden;
     background-size: cover;
     background-position: center;
+    /* GIF 이미지 애니메이션 멈추기 */
+    background-repeat: no-repeat;
 }
 
 .gallery li:hover {
@@ -152,10 +157,27 @@
 }
 
 .contants h2 {
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 .contants p {
+    font-size: 25px;
     margin-bottom: 10px;
+}
+/* 애니메이션 멈춤과 투명도 조절 */
+.gallery li.paused {
+    opacity: 0.5; /* 투명도 줄이기 */
+}
+
+.gallery li.paused img {
+    animation-play-state: paused; /* 애니메이션 멈춤 */
+}
+
+/* 호버 시 텍스트 컨텐츠 확대 및 표시 */
+.gallery li:hover .contants {
+    bottom: 0;
+    font-size: 2em; /* 폰트 크기 확대 */
+    opacity: 0.8; /* 완전 불투명 */
 }

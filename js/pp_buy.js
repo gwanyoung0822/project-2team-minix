@@ -3,67 +3,105 @@ $(document).ready(function () {
     loop: true,
     pagination: {
       el: ".swiper-pagination",
-      clickable: true, // 페이징을 클릭하면 해당 영역으로 이동, 필요시 지정해 줘야 기능 작동
+      clickable: true,
     },
     on: {
-        slideChangeTransitionEnd: function () {
+      slideChangeTransitionEnd: function () {
         const activeImg = $(".swiper-slide-active img").attr("src");
         $(".zoom-display-img").attr("src", activeImg);
-        // 
-        $(".inner-frame").remove()
-        $(".swiper-slide-active").append(`<div class="inner-frame"></div>`)
+        // 모든 슬라이드에서 기존 .inner-frame 요소를 제거
+        $(".swiper-slide .inner-frame").remove();
+
+        // 현재 활성화된 슬라이드에 .inner-frame 추가 및 position 스타일 설정
+        $(".swiper-slide-active").append(`<div class="inner-frame"></div>`);
+        const $newInnerFrame = $(".swiper-slide-active .inner-frame");
+
+        // Add 'active' class to the .inner-frame of the active slide
+        // $newInnerFrame.addClass("active");
+
+        // 스타일에 position 속성을 추가하여 위치 지정 가능하게 설정
+        // $newInnerFrame.css({
+        //   position: "absolute", // position 값을 absolute로 설정
+        //   top: 0,
+        //   left: 0,
+        // });
+
+        // 새 슬라이드에 이벤트 연결
+        addMouseMoveEvent($newInnerFrame);
       },
     },
   });
-  $(".color-green").click(function(){
-    $(".cart").append(`<div class="cart-product">
-                    <div class="cart-tit">[미닉스] 미니건조기 PRO+</div>
-                    <div class="cart-color">네이처그린</div>
-                  </div>
-                  <div class="cart-price">
-                    369,000원<i class="fa-solid fa-xmark"></i>
-                  </div>`)
-  })
-  $(".color-white").click(function(){
-    
-    $(".cart").append(`<div class="cart-product">
-                    <div class="cart-tit">[미닉스] 미니건조기 PRO+</div>
-                    <div class="cart-color">그레이스</div>
-                  </div>
-                  <div class="cart-price">
-                    369,000원<i class="fa-solid fa-xmark"></i>
-                  </div>`)
-  })
-});
 
-window.addEventListener("load", function () {
-  //줌
-  const imageWrapper = document.querySelector(".sw-buy");
-  const innerFrame = document.querySelector(".inner-frame");
-  const zoomDisplay = document.querySelector(".zoom-display");
-  const zoomDisplayImage = document.querySelector(".zoom-display-img");
+  // 줌 관련 이벤트 함수 정의
+  function addMouseMoveEvent(innerFrame) {
+    const $imageWrapper = $(".sw-buy");
+    const $zoomDisplay = $(".zoom-display");
+    const $zoomDisplayImage = $(".zoom-display-img");
 
-  imageWrapper.addEventListener(`mousemove`, function (e) {
-    const rect = imageWrapper.getBoundingClientRect();
-    console.log(rect);
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    // Set inner frame position
-    innerFrame.style.left = `${x - innerFrame.offsetWidth / 2}px`;
-    innerFrame.style.top = `${y - innerFrame.offsetHeight / 2}px`;
-    innerFrame.style.display = "block";
+    // 기존 이벤트 리스너를 제거하여 중복 등록 방지
+    // $imageWrapper.off("mousemove mouseleave");
 
-    // Set zoom display position and update zoom image
-    zoomDisplay.style.display = "block";
+    $imageWrapper.on("mousemove", function (e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-    // Calculate zoom image position
-    const zoomImageX = (x / imageWrapper.clientWidth) * (zoomDisplayImage.clientWidth - zoomDisplay.clientWidth);
-    const zoomImageY = (y / imageWrapper.clientHeight) * (zoomDisplayImage.clientHeight - zoomDisplay.clientHeight);
-    zoomDisplayImage.style.left = `-${zoomImageX}px`;
-    zoomDisplayImage.style.top = `-${zoomImageY}px`;
+      // Set inner frame position
+      innerFrame.css({
+        left: `${x - innerFrame.width() / 2}px`,
+        top: `${y - innerFrame.height() / 2}px`,
+        display: "block",
+      });
+
+      // Set zoom display position and update zoom image
+      $zoomDisplay.css("display", "block");
+
+      // Calculate zoom image position
+      const zoomImageX = (x / $imageWrapper.width()) * ($zoomDisplayImage.width() - $zoomDisplay.width());
+      const zoomImageY = (y / $imageWrapper.height()) * ($zoomDisplayImage.height() - $zoomDisplay.height());
+      $zoomDisplayImage.css({
+        left: `-${zoomImageX}px`,
+        top: `-${zoomImageY}px`,
+      });
+    });
+
+    $imageWrapper.on("mouseleave", function () {
+      innerFrame.hide();
+      $zoomDisplay.css("display", "none");
+    });
+  }
+
+  // 초기 페이지 로드 시 활성 슬라이드에 이벤트 연결
+  const $initialInnerFrame = $(".swiper-slide-active .inner-frame");
+  addMouseMoveEvent($initialInnerFrame);
+  // 색상 클릭시 카트에 담기는 함수
+  $(".color-green").click(function () {
+    $(".cart-wrap").remove();
+    $(".cart").append(`<div class="cart-wrap">
+        <div class="cart-product">
+          <div class="cart-tit">[미닉스] 미니건조기 PRO+</div>
+          <div class="cart-color">네이처그린</div>
+        </div>
+        <div class="cart-price">
+        369,000원 <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>`);
   });
-  imageWrapper.addEventListener("mouseleave", function () {
-    innerFrame.style.display = "none";
-    zoomDisplay.style.display = "none";
+  $(".color-white").click(function () {
+    $(".cart-wrap").remove();
+    $(".cart").append(`
+        <div class="cart-wrap">
+        <div class="cart-product">
+          <div class="cart-tit">[미닉스] 미니건조기 PRO+</div>
+          <div class="cart-color">그레이스</div>
+        </div>
+        <div class="cart-price">
+        369,000원 <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      `);
+  });
+  $(".fa-xmark").click(function () {
+    $(".cart-wrap").remove();
   });
 });
