@@ -60,6 +60,7 @@
 .det2-main .small{
    font-size: 30px;
    color: #000;
+   font-weight: 500;
 }
 /* .test1,.test3{
    padding-left: 100px;
@@ -79,7 +80,15 @@
    font-weight: bold;
    color: #000;
 }
-.det2-main .big{
+.test1 .number,.test2 .number,.test3 .number,.test4 .number{
    font-size: 80px;
    font-weight: bold;
+   color: #000;
+}
+.det2-main .big{
+   font-size: 40px;
+   font-weight: bold;
+}
+.date{
+   padding-top: 5px;
 }

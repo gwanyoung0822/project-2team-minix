@@ -25,13 +25,26 @@ window.onload = function () {
           dragSize: 250, // dragSize를 210으로 설정
         },
       },
-      560: {
+      580: {
         spaceBetween: 20,
-        slidesPerView: 3,
+        slidesPerView: 2.4,
+        scrollbar: {
+          dragSize: 200, // dragSize를 210으로 설정
+        },
+      },
+      410: {
+        spaceBetween:22,
+        slidesPerView:1.7,
+        scrollbar: {
+          dragSize: 180, // dragSize를 210으로 설정
+        },
       },
       320: {
         spaceBetween: 20,
-        slidesPerView: 1.5,
+        slidesPerView: 1.2,
+        scrollbar: {
+          dragSize: 80, // dragSize를 210으로 설정
+        },
       },
     }, // 슬라이드 사이의 간격
     loop: true, // 슬라이드 반복 여부
