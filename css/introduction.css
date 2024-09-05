@@ -87,8 +87,11 @@ body {
 .bubble_right {
     display: flex; /* 플렉스 박스 사용 */
     flex-direction: column; /* 수직 방향으로 배치 */
-    gap: 35px; /* 요소 간의 간격 설정 */
 }
+.bubble img {
+    padding: 5%;
+}
+
 
 .bubble_left {
     align-items: flex-start; /* 왼쪽 정렬 */
@@ -263,10 +266,6 @@ body {
     .sec1_bg {
         height: 80vh; /* 높이를 뷰포트 높이의 80%로 설정하여 더 작은 화면에서 적절히 조정 */
     }
-    .bubble_left,
-.bubble_right {
-    gap: 25px; /* 요소 간의 간격 설정 */
-}
     .scroll_btn img {
         width: 40px; /* 작은 화면에서 버튼 크기를 줄임 */
     }
@@ -294,24 +293,32 @@ body {
     .scroll_btn img {
         display: none; /* 작은 화면에서 스크롤 버튼을 숨김 */
     }
-    .bubble_left,
-    .bubble_right {
-        gap: 15px; /* 요소 간의 간격 설정 */
+    .sec1_title{
+        margin: 5%;
+    }
+    .bubble_left , .bubble_right {
+        gap: 10px;
+    }
+    .bubbles img{
+        min-width: 50px;
+    }
+    .sec1_inner{
+        padding: 0;
     }
     .sp_bb1 {
-        margin-right: 30px; /* 오른쪽 여백 조정 */
+        margin-right: 10px; /* 오른쪽 여백 조정 */
     }
     .sp_bb2 {
-        margin-right: 60px; /* 오른쪽 여백 조정 */
+        margin-right: 10px; /* 오른쪽 여백 조정 */
     }
     .sp_bb3 {
-        margin-left: 100px; /* 왼쪽 여백 조정 */
+        margin-left: 60px; /* 왼쪽 여백 조정 */
     }
     .sp_bb4 {
-        margin-right: 70px; /* 오른쪽 여백 조정 */
+        margin-right: 20px; /* 오른쪽 여백 조정 */
     }
     .sp_bb5 {
-        margin-left: 30px; /* 왼쪽 여백 조정 */
+        margin-left: 20px; /* 왼쪽 여백 조정 */
     }
     .scroll_btn img {
         display: none; /* 스크롤 버튼 숨김 */
@@ -358,16 +365,19 @@ body {
     }
 }
 
-/* 화면 너비가 360px 이하일 때 */
-@media (max-width: 360px) {
+/* 화면 너비가 460px 이하일 때 */
+@media (max-width: 460px) {
     .scroll_btn img {
         display: none; /* 작은 화면에서 스크롤 버튼을 숨김 */
     }
+    .bubbles{
+        padding: 0;
+    }
+    .sec1_inner{
+        padding: 0;
+    }
     .sec1_copy_wrap{
         margin-top: 0px;
-    }
-    .bubble_left, .bubble_right {
-        gap: 5px; /* 요소 간의 간격 설정 */
     }
     .sp_bb1 {
         margin-right: 10px; /* 오른쪽 여백 조정 */

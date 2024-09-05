@@ -1,12 +1,14 @@
 @charset "utf-8";
 
-.pp-det-inner {
-    color: rgb(255, 255, 255);
+* {
+    box-sizing: border-box;
 }
 
+/* 전체 / 큰 레이아웃 */
 .pp-descriptions {
     width: 100%;
     background-color: rgb(0, 0, 0);
+    color: #fff;
 }
 
 .pp-det-wrap {
@@ -26,117 +28,134 @@
     max-width: 1300px;
     margin: 0 auto;
     padding: 20px;
+    margin-bottom: 15%;
+}
+/* 서브타이틀 관련 */
+.pp-det-txtwrap{
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    
+}
+/* 갤러리 아이템 확대 */
+.gallery li.open {
+    flex: 3;
+    transition: flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
 }
 
+/* 텍스트 아이템 확대 */
+.open-text {
+    font-size: 2em;
+    font-weight: bold;
+    transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    margin-bottom: 30px;
+}
+
+/* 나머지 텍스트 아이템 축소 */
+.shrink-text {
+    font-size: 0.8em;
+    transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    opacity: 0.5;  /* 선택 사항: 축소된 텍스트의 불투명도 조정 */
+}
+
+.pp-det-title{
+    position: relative;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    /* background-color: aquamarine; */
+    margin-top: 150px;
+    margin-bottom: 150px;
+    line-height: 1.3;
+}
+.pp-det-title-top{
+    font-size: 40px;
+}
+.pp-det-title-mid{
+    font-size: 60px;
+    font-weight: bold;
+}
+.pp-det-title-bt{
+    font-size: 20px;
+}
 .pp-det-imgwrap {
     display: flex;
     flex-direction: column;
 }
-
-.img-sec1, .img-sec2 {
-    display: flex;
+.sec1-title{
     width: 100%;
-    height: 400px; /* 높이는 원하는 대로 조정하세요 */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    
 }
 
-.img-sec1 div, .img-sec2 div {
+.sec2-title{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 70px;
+    margin-top: 100px;
+}
+
+
+/* 갤러리 */
+.gallery {
+    width: 100%;
+    height: 600px;
+    display: flex;
+}
+
+.gallery li {
     flex: 1;
     border: 1px solid #333;
     transition: all 0.5s;
     position: relative;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
-.img-sec1 div:hover, .img-sec2 div:hover {
+.gallery li:hover {
     flex: 3;
 }
 
-.sec1-img1 {
-    background: url(../images/1-1.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec1-img2 {
-    background: url(../images/1-2.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec1-img3 {
-    background: url(../images/1-3.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec1-img4 {
-    background: url(../images/1-4.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec1-img5 {
-    background: url(../images/1-5.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec2-img1 {
-    background: url(../images/2-1.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec2-img2 {
-    background: url(../images/2-2.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec2-img3 {
-    background: url(../images/2-3.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec2-img4 {
-    background: url(../images/2-4.gif) no-repeat center center;
-    background-size: cover;
-}
-
-.sec2-img5 {
-    background: url(../images/2-5.gif) no-repeat center center;
-    background-size: cover;
-}
-
-/* sub_txt 스타일 수정 */
-.sec1-sub-txt, .sec2-sub-txt {
-    display: flex;
+.contants {
+    position: absolute;
+    bottom: -310px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* 텍스트 배경 투명도 */
+    background-color: #000000;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    z-index: 2; /* 텍스트가 이미지 위에 오도록 */
-    transition: top 0.5s ease-in-out;
+    height: 150px;
+    padding: 20px;
+    padding-top: 55px;
+    line-height: 1.6;
+    transition: bottom 0.5s ease-in-out;
+    opacity: 0.8;
 }
 
-/* 이미지 위 텍스트 정보 스타일링 */
-.img-txt-info1, .img-txt-info2, .img-txt-info3, .img-txt-info4, .img-txt-info5 {
+.gallery li:hover .contants {
+    bottom: 0;
+}
+
+.contants::after {
+    content: "";
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    color: #fff;
-    font-size: 18px;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
-    border-radius: 5px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 55px;
+    top: -20px;
+    left: 0;
+    transform: rotate(-5deg) scale(1.3);
 }
 
-.sec1-img1:hover .img-txt-info1, 
-.sec1-img2:hover .img-txt-info2, 
-.sec1-img3:hover .img-txt-info3, 
-.sec1-img4:hover .img-txt-info4, 
-.sec1-img5:hover .img-txt-info5,
-.sec2-img1:hover .img-txt-info1, 
-.sec2-img2:hover .img-txt-info2, 
-.sec2-img3:hover .img-txt-info3, 
-.sec2-img4:hover .img-txt-info4, 
-.sec2-img5:hover .img-txt-info5 {
-    opacity: 1;
+.contants h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contants p {
+    margin-bottom: 10px;
 }
