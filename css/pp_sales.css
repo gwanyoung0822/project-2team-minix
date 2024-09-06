@@ -1,75 +1,74 @@
-/* 기본 스타일 */
-
-.det2-main {
+.det2 {
+   background-color: #fff;
+ }
+ 
+ .det2 .inner {
+   width: 100%;
+   max-width: 1300px;
+   display: block;
+   margin: 0 auto;
+   padding: 50px 20px;
+ }
+ 
+ .det2-top {
+   text-align: center;
+   font-size: 50px;
+   font-weight: bold;
+   line-height: 70px;
+ }
+ .test1 .number,
+ .test2 .number,
+ .test3 .number,
+ .test4 .number {
+   
+   font-size: 80px;
+   font-weight: bold;
+   color: #000;
+ }
+ .test1,.test2,.test4{
+   display: flex;
+   align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+ }
+ /* 메인 영역 배치 */
+ .det2-main {
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between; /* 요소들이 가로로 배치되게 함 */
-   align-items: center;
+   justify-content: space-between;
  }
  
- .det2-main > div {
-   flex: 1; /* 모든 요소가 같은 비율로 공간을 차지 */
-   min-width: 25%; /* 각 요소가 최소 25%의 너비를 유지 */
+ .rank {
+   flex: 1 1 calc(50% - 20px);
    box-sizing: border-box;
-   padding: 20px; /* 구역 간의 간격 추가 */
-   text-align: center; /* 텍스트를 가운데 정렬 */
+   padding: 20px;
+   margin-bottom: 20px;
+   background-color: #fff;
  }
  
- /* 폰트 크기 설정 */
- .det2-main .big {
-   font-size: 40px;
+ /* 작은 화면에서는 1줄에 1개씩 배치 */
+ @media screen and (max-width: 768px) {
+   .rank {
+     flex: 1 1 100%;
+     margin-bottom: 20px;
+   }
  }
  
- .det2-main .number {
-   font-size: 80px;
-   font-weight: bold;
- }
- 
- .det2-main .one {
-   font-size: 80px;
- }
- 
+ /* 기본 텍스트 스타일 */
  .det2-main .small {
    font-size: 30px;
+   color: #000;
+   font-weight: 500;
  }
  
- .test4 span {
-   font-size: 30px;
+ .number {
+   font-size: 40px;
    font-weight: bold;
+   color: #000;
  }
  
- /* 반응형 미디어 쿼리 */
- @media screen and (max-width: 768px) {
-   .det2-main {
-     flex-direction: row; /* 가로로 나열 */
-     flex-wrap: wrap; /* 필요시 줄 바꿈 */
-   }
- 
-   .det2-main > div {
-     flex: 1 1 100%; /* 작은 화면에서는 각 요소가 한 줄을 차지 */
-     padding: 15px; /* 패딩을 줄여서 공간 확보 */
-     min-width: 100%; /* 요소의 최소 너비 100%로 설정 */
-   }
- 
-   /* 폰트 크기 조정 */
-   .det2-main .number,
-   .det2-main .one {
-     font-size: 60px; /* 숫자의 크기를 조정 */
-   }
- 
-   .det2-main .small,
-   .test4 span {
-     font-size: 24px; /* 작은 텍스트 크기를 줄여서 모양 유지 */
-   }
- 
-   .det2-main .big {
-     font-size: 30px; /* 제목 크기를 줄여서 레이아웃을 유지 */
-   }
- 
-   /* 여백 조정 */
-   .det2-main1-2,
-   .det2-main2-2 {
-     margin-top: 20px; /* 작은 화면에서는 상단 여백을 줄임 */
-   }
+ .date {
+   font-size: 14px;
+   color: #666;
  }
  

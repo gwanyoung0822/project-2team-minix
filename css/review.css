@@ -196,6 +196,15 @@ span {
 .review_top_more2wrap {
   display: none;
 }
+.swiper-scrollbar {
+  position: absolute;
+  bottom: 0; /* 스크롤바를 슬라이더 하단에 고정 */
+  left: 0;
+  width: 100%; /* 스크롤바 너비를 슬라이더 전체에 맞춤 */
+  height: 8px; /* 스크롤바의 높이 조절 */
+  background-color: rgba(0, 0, 0, 0.1); /* 스크롤바 배경색 */
+  z-index: 10; /* 스크롤바가 슬라이드 위에 표시되도록 설정 */
+}
 @media screen and (max-width: 768px) {
   .review_top_more2wrap {
     display: none;
@@ -268,6 +277,9 @@ span {
   }
 }
 @media screen and (max-width: 580px) {
+  .review {
+    padding-bottom: 40px;
+  }
   .review_top {
     display: flex;
     justify-content: center;
@@ -295,6 +307,9 @@ span {
   }
 }
 @media screen and (max-width: 350px) {
+  .review {
+    padding-bottom: 20px;
+  }
   .review_top {
     display: flex;
     justify-content: center;

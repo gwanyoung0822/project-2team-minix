@@ -97,6 +97,7 @@ font-size: 14px;
   text-decoration: underline;
   color: #a5a5a5;
 }
+
 .ft_right_txt2 {
   font-size: 14px;
   color: #8a8a8a;
@@ -109,8 +110,13 @@ font-size: 14px;
   text-align: right;
   line-height: 60px;
 }
+span.check a{
+  color: #a5a5a5;
+  text-decoration: underline;
+}
 
 /* footer - 768 */
+
 .footer-tab {
   display: none;
   width: 100%;
@@ -180,7 +186,17 @@ font-size: 14px;
   padding-top: 50px;
   padding-bottom: 50px;
 }
+li.under{
+  text-decoration: underline;
+  color: #a5a5a5;
+}
 @media (max-width: 768px) {
+  span.check a{
+    color: #a5a5a5;
+    text-decoration: underline;
+    font-size: 14px;
+  }
+  
   .footer {
     display: none;
   }
@@ -294,9 +310,22 @@ font-size: 14px;
     display: flex;
     justify-content: center;
   }
+  span.check a{
+    color: #a5a5a5;
+    text-decoration: underline;
+    font-size: 10px;
+  }
+  
 }
 
 @media (max-width: 320px) {
+  /* 사업자정보확인 링크 스타일 적용 */
+  span.check a{
+    color: #a5a5a5;
+    text-decoration: underline;
+    font-size: 10px;
+  }
+  
   .footer-tab-bot {
     display: none;
   }
@@ -382,4 +411,5 @@ font-size: 14px;
     display: flex;
     justify-content: center;
   }
+  
 }
