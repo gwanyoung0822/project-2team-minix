@@ -22,22 +22,19 @@ body {
     left: 0;
     width: 100%; /* 배경 이미지가 컨테이너의 전체 너비를 차지하도록 설정 */
     z-index: -1; /* 배경이 다른 요소들 뒤에 위치하도록 설정 */
-    background-size: cover; /* 배경 이미지가 컨테이너를 덮도록 설정 */
-    background-position: center; /* 배경 이미지의 중심을 맞추도록 설정 */
 }
 
 .sec1_inner {
     position: relative; /* 내부 요소의 절대 위치 설정을 위해 relative 설정 */
     width: 80%;
-    max-width: 100%;
-    padding: 20px;
+    max-width: 1300px !important;
+    /* padding: 20px; */
     margin: 0 auto; /* 자동 중앙 정렬 */
     z-index: 1; /* 내부 요소들이 배경 이미지 위에 위치하도록 설정 */
 }
 
 .sec1_inner img {
     width: 100%; /* 너비를 100%로 설정 */
-    
 }
 
 .sec1_title,
@@ -85,6 +82,7 @@ body {
 /* .bubble_left와 .bubble_right의 스타일 */
 .bubble_left,
 .bubble_right {
+    width: 100%;
     display: flex; /* 플렉스 박스 사용 */
     flex-direction: column; /* 수직 방향으로 배치 */
 }
