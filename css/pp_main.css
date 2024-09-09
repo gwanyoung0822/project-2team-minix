@@ -27,6 +27,9 @@ body {
 img {
   display: block;
 }
+a{
+  text-decoration: none;
+}
 .inner {
   max-width: 1300px;
   margin: auto;
@@ -71,4 +74,34 @@ img {
   right: 25px;
   z-index: 99;
   cursor: pointer;
+}
+.sec-list{
+  position: fixed;
+  top: 50%;
+  left: 2%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  z-index: 999;
+}
+.sec-list li{
+  font-size: 20px;
+  font-weight: 700;
+  color: #ccc;
+  cursor: pointer;
+}
+.sec-list li a{
+  color: #ccc;
+}
+.sec-list li a.active{
+  color: #333;
+}
+.sec-list li a.active.white{
+  color: #fff;
+}
+.sec-list li b{
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 20px;
 }
