@@ -63,7 +63,12 @@ img{
     z-index: 99;
     cursor: pointer;
 }
-
+.fix-buy-btn{
+    position: fixed;
+    bottom: 140px;
+    right: 25px;
+    z-index: 98;
+}
 @media screen and (max-width:768px) {
     .fixBtn{
         transform: scale(0.7);

@@ -32,8 +32,11 @@ right: 9%;
 top: 45%;
 transform: translateY(-50%);
 z-index: 99;
-border-bottom: 4px solid #fff;
-padding-bottom: 5px;
+/* border-bottom: 4px solid #fff;
+padding-bottom: 5px; */
+border: 4px solid #fff;
+border-radius: 50px;
+padding: 10px 20px;
 }
 .buy-img img{
     width: 100%;
