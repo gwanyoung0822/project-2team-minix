@@ -70,43 +70,43 @@
 
 /* 반응형 스타일 */
 @media screen and (max-width: 768px) {
-    .sec3 .inner{
-        padding-bottom: 40px;
-    }
-    .sec3-left h1 {
-        font-size: 15px;
-        padding-top: 60px;
-    }
-    .sec3-left p {
-        font-size: 10px;
-    }
-    .sec3-right h1 {
-        font-size: 15px;
-        padding-top: 60px;
-    }
-    .sec3-right-txt ul li {
-        font-size: 10px;
-        padding-bottom: 10px;
-    }
-    .sec3-right-txt ul li span {
-        font-size: 10px;
-    }
-    .sec3-right-txt1 {
-        padding-right: 40px;
-    }
-    .sec3-left img {
-        max-width: 248px;
-        width: 100%;
-        padding-top: 28px;
-        
-        /* 미디어 쿼리에서 이미지 위치를 서서히 이동 */
-        transform: translateY(20px);
-    }
+  .sec3 .inner {
+    padding-bottom: 40px;
+  }
+  .sec3-left h1 {
+    font-size: 15px;
+    padding-top: 60px;
+  }
+  .sec3-left p {
+    font-size: 10px;
+  }
+  .sec3-right h1 {
+    font-size: 15px;
+    padding-top: 60px;
+  }
+  .sec3-right-txt ul li {
+    font-size: 10px;
+    padding-bottom: 10px;
+  }
+  .sec3-right-txt ul li span {
+    font-size: 10px;
+  }
+  .sec3-right-txt1 {
+    padding-right: 40px;
+  }
+  .sec3-left img {
+    max-width: 248px;
+    width: 100%;
+    padding-top: 28px;
+
+    /* 미디어 쿼리에서 이미지 위치를 서서히 이동 */
+    transform: translateY(20px);
+  }
 }
 
 @media screen and (max-width: 480px) {
-    .sec3-left img {
-        max-width: 200px;
-        transform: translateY(40px); /* 더 아래로 이동 */
-    }
+  .sec3-left img {
+    max-width: 200px;
+    transform: translateY(40px); /* 더 아래로 이동 */
+  }
 }
