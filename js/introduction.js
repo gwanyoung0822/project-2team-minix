@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({});
   const galleryItems = document.querySelectorAll(".gallery li");
   const textItems = document.querySelectorAll(".pp-det-txtwrap > div");
 
