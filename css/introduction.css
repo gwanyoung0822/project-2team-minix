@@ -13,6 +13,7 @@ body {
 .main_copy img{
     width: 100%;
     text-align: center;
+    margin: 20px 0 20px 0;
 }
 /* 제품비교 */
 .compare{
@@ -21,6 +22,7 @@ body {
 .compare img{
     width: 100%;
     text-align: center;
+    margin: 10px 0 10px 0;
 }
 /* 제품실적 */
 .det2 {
@@ -368,6 +370,12 @@ span.small {
     max-width: 1300px;
     margin: 0 auto;
     margin-bottom: 15%;
+}
+
+/* 갤러리 타이틀 */
+.pp-det-title img{
+  width: 100%;
+  margin: 30px 0 30px 0;
 }
 /* 서브타이틀 관련 */
 .pp-det-txtwrap{

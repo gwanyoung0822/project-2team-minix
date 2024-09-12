@@ -10,11 +10,18 @@
   width: 100%;
 }
 
+.review_inner {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  margin-bottom: 200px;
+}
+
 .review_title {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px; /* 제목과 배경 사이의 여백 설정 */
 }
 
 .review_title img {
@@ -23,38 +30,31 @@
 }
 
 .review_bg {
-  display: flex; /* Flexbox 사용 */
-  justify-content: space-between; /* 아이템 간 간격 균등하게 */
-  align-items: center; /* 세로 중앙 정렬 */
-  margin: 0 auto;
-  width: 1300px;
-  height: 650px;
-  background-color: #EDE6DB;
-  padding: 20px; /* 패딩 추가 */
+  position: relative; /* 아이템들을 배경 안에 배치하기 위한 relative 설정 */
+  width: 100%;
+  max-width: 1300px; /* 최대 너비 설정 */
+  height: 650px; /* 고정 높이 설정 */
+  background: #EDE6DB; /* 배경 색상 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  overflow: hidden; /* 내부 요소가 컨테이너를 넘지 않도록 설정 */
 }
 
 .review_item {
-  width: 30%; /* 각 리뷰 이미지 너비 */
-  height: auto;
+  position: relative;
+  width: 100%; /* 아이템 너비 설정 */
+  height: auto; /* 높이 자동 조정 */
   display: flex;
-  justify-content: center; /* 아이템을 가운데로 정렬 */
+  justify-content: center;
+
+}
+#review_item1{
+  padding-top: 20px;
 }
 
 .review_item img {
-  width: 100%; /* 컨테이너에 맞게 이미지 크기 조정 */
-  height: 100%;
+  margin-top: 10px;
+  width: 90%; /* 아이템 이미지 크기 조정 */
+  height: auto; /* 비율 유지 */
 }
 
-/* 반응형 스타일 */
-@media (max-width: 1024px) {
-  .review_bg {
-    width: 100%;
-    flex-direction: column;
-    height: auto;
-  }
 
-  .review_item {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
