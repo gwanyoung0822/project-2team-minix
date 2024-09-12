@@ -1,0 +1,392 @@
+.review {
+  background-color: #ede6db;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
+}
+.review a {
+  text-decoration: none;
+  color: black;
+}
+.review .inner {
+  width: 100%;
+  max-width: 1300px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+.review_top {
+  display: flex;
+  justify-content: space-between;
+}
+.review_top_title {
+  line-height: 45px;
+}
+.review_top_title h1 {
+  font-size: 40px;
+}
+.review_top_title .best {
+  font-size: 40px;
+  color: black;
+  font-weight: bold;
+}
+.review_top_title p {
+  font-size: 20px;
+  font-weight: 500;
+}
+.review_top_more {
+  font-size: 20px;
+  margin-top: 50px;
+  display: flex;
+  border-bottom: solid 3px black;
+}
+.review_top_more p {
+  margin-right: 70px;
+}
+
+.review_top_more2wrap {
+  display: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+  position: relative;
+}
+
+.review_top_more2 a img {
+  max-width: 40px;
+  width: 100%;
+  margin-left: 20px;
+}
+.review_top_more2wrap::after {
+  content: ""; /* 가상 요소의 콘텐츠는 없으므로 빈 문자열 */
+  position: absolute;
+  bottom: -5px; /* 부모 요소 아래에 밑줄을 그리기 위한 위치 */
+  left: 50%; /* 부모 요소의 가운데로 위치 설정 */
+  transform: translateX(-50%); /* 가운데 정렬 */
+  width: 240px; /* 원하는 밑줄의 길이 */
+  border-bottom: solid 2px #000; /* 밑줄의 두께와 색상 설정 */
+}
+
+/* .review-slide{
+    width: 100%;
+    height: 650px;
+    background-color: blueviolet;
+    margin-bottom: 50px;
+} */
+/* review main */
+
+/* .review_bg{
+position: relative;
+display: block;
+  width: 350px; */
+/* height: 500px; */
+/* background-color: #fff;
+  
+} */
+.swiper-container {
+  width: 100%; /* 부모 요소의 너비에 따라 반응 */
+  height: 100%; /* 부모 요소의 높이에 따라 반응 */
+}
+
+.swiper-slide {
+  width: 80vw; /* 화면 너비의 80%를 사용 */
+  height: auto; /* 높이는 내용에 따라 자동으로 조정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.review_txt h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+.review_txt p,
+span {
+  font-size: 14px;
+  color: #707070;
+}
+.review_span {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.review_img {
+  padding: 25px 25px 0px 25px;
+}
+
+/* .review_img img{
+    width: 100%;
+    width: 300px;
+    height: 300px;
+} */
+.review_bg {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: relative;
+  display: block;
+  /* max-width: 350px; 필요에 따라 최대 너비를 제한 */
+  /* height: 500px; */
+  background-color: #fff;
+}
+
+.review_img img {
+  width: 100%; /* 슬라이드 내에서 이미지가 컨테이너의 너비를 채우도록 */
+  height: auto; /* 이미지의 비율을 유지하면서 높이 자동 조정 */
+}
+
+.review_txt {
+  /* border-bottom: solid 1px #d0d0d0; */
+  padding: 10px 25px 5px 25px;
+}
+.review_txt h2 {
+  overflow: hidden;
+  /* 3. display: -webkit-box */
+  display: -webkit-box;
+  /* 4. text-overflow: elipsis */
+  text-overflow: ellipsis;
+  /* 5. 아래 코드를 입력한다. */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.review_txt p {
+  padding-top: 10px;
+  line-height: 20px;
+  height: 50px;
+  /* 2. 넘치는 영역을 가린다. */
+  overflow: hidden;
+  /* 3. display: -webkit-box */
+  display: -webkit-box;
+  /* 4. text-overflow: elipsis */
+  text-overflow: ellipsis;
+  /* 5. 아래 코드를 입력한다. */
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* .review_txt span {
+  margin-top: 5px;
+} */
+.review_img2 {
+  padding: 0px 8px 19px 25px;
+}
+.review_txt2 {
+  padding-top: 5px;
+  display: flex;
+}
+.review_txt2 p {
+  font-size: 13px;
+  color: #575757;
+  margin-top: 5px;
+}
+.review_span {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #d0d0d0;
+}
+.star {
+  /* position: absolute;
+  bottom: 20px;
+  left: 68px; */
+  margin-top: 5px;
+  max-width: 67.46px;
+  max-height: 13.5px;
+}
+.review_top_more2wrap {
+  display: none;
+}
+.swiper-scrollbar {
+  position: absolute;
+  bottom: 0; /* 스크롤바를 슬라이더 하단에 고정 */
+  left: 0;
+  width: 100%; /* 스크롤바 너비를 슬라이더 전체에 맞춤 */
+  height: 8px; /* 스크롤바의 높이 조절 */
+  background-color: rgba(0, 0, 0, 0.1); /* 스크롤바 배경색 */
+  z-index: 10; /* 스크롤바가 슬라이드 위에 표시되도록 설정 */
+}
+@media screen and (max-width: 768px) {
+  .review_top_more2wrap {
+    display: none;
+  }
+  .review_top_title {
+    padding-left: 27px;
+  }
+  .review_top_more {
+    margin-right: 27px;
+  }
+  .review_top_more p {
+    margin-right: 20px;
+  }
+  .review_img {
+    padding: 15px 15px 0px 15px;
+  }
+  .review_txt {
+    /* border-bottom: solid 1px #d0d0d0; */
+    padding: 5px 12px 0px 15px;
+  }
+  .review_txt h2 {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .review_txt h2 {
+    overflow: hidden;
+    /* 3. display: -webkit-box */
+    display: -webkit-box;
+    /* 4. text-overflow: elipsis */
+    text-overflow: ellipsis;
+    /* 5. 아래 코드를 입력한다. */
+    -webkit-line-clamp: unset; /* -webkit-line-clamp를 제거 */
+    -webkit-box-orient: unset; /* -webkit-box-orient를 제거 */
+  }
+  .review_span {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .review_txt p,
+  span {
+    font-size: 11px;
+  }
+  .review_txt2 p {
+    font-size: 11px;
+    color: #575757;
+    margin-top: 5px;
+  }
+  .review_img2 {
+    padding: 0px 5px 15px 15px;
+  }
+  .review_span {
+    padding-top: ;
+  }
+
+  .review-slide {
+    margin-left: 27px;
+    margin-right: 27px;
+  }
+  .review-info p {
+    letter-spacing: -0.55px;
+  }
+  .star {
+    /* position: absolute;
+    bottom: 20px;
+    left: 68px; */
+    margin-top: 5px;
+    max-width: 57px;
+    max-height: 13.5px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .review {
+    padding-bottom: 40px;
+  }
+  .review_top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .review_top_more2wrap::after {
+    display: block;
+    width: 240px; /* 580px 이하에서 적용할 밑줄의 길이 */
+  }
+
+  .review_top_more {
+    display: none;
+  }
+  .review_top_more2wrap {
+    display: block;
+    display: flex;
+  }
+  .review_top_more2wrap p {
+    font-size: 30px;
+  }
+  .review_top_more2wrap a img {
+    max-width: 60px;
+    width: 100%;
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .review {
+    padding-bottom: 20px;
+  }
+  .review_top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .review_top_title {
+    padding-left: 0;
+  }
+  .review_top_title h1,
+  .review_top_title .best {
+    font-size: 25px;
+  }
+  .review_top_title p {
+    font-size: 15px;
+  }
+  .review_top_more {
+    display: none;
+  }
+  .review_top_more2wrap {
+    display: block;
+    margin-top: 20px;
+    display: flex;
+  }
+  .review_top_more2wrap p {
+    font-size: 16px;
+  }
+  .review_top_more2wrap a img {
+    max-width: 40px;
+    width: 100%;
+    margin-left: 20px;
+  }
+  .review_top_more2wrap::after {
+    display: block;
+    width: 150px; /* 320px 이하에서 적용할 밑줄의 길이 */
+  }
+  .review {
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .review {
+    padding-bottom: 20px;
+  }
+  .review_top_more2wrap {
+    display: block;
+    margin-top: 20px;
+    display: flex;
+  }
+  .review_top {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .review_top_title {
+    padding-left: 0;
+  }
+  .review_top_title h1,
+  .review_top_title .best {
+    font-size: 25px;
+  }
+  .review_top_title p {
+    font-size: 15px;
+  }
+  .review_top_more {
+    display: none;
+  }
+  .review_top_more2wrap::after {
+    display: block;
+    width: 150px; /* 320px 이하에서 적용할 밑줄의 길이 */
+  }
+  .review_top_more2wrap p {
+    font-size: 16px;
+  }
+  .review_top_more2wrap a img {
+    max-width: 40px;
+    width: 100%;
+    margin-left: 20px;
+  }
+}
