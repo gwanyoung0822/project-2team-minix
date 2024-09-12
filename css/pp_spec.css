@@ -30,9 +30,7 @@
   max-width: 521px;
   max-height: 326px;
   padding-right: 30px;
-  /* 트랜지션 추가 */
-  transition: transform 1s ease-in-out;
-  transform: translateY(0); /* 기본 위치 */
+  padding-top: 50px;
 }
 .sec3-right h1 {
   padding-top: 100px;
@@ -70,6 +68,10 @@
 
 /* 반응형 스타일 */
 @media screen and (max-width: 768px) {
+  .sec3-left{
+    
+    text-align: center;
+  }
   .sec3 .inner {
     padding-bottom: 40px;
   }
@@ -95,18 +97,54 @@
     padding-right: 40px;
   }
   .sec3-left img {
-    max-width: 248px;
+    max-width: 300px;
     width: 100%;
-    padding-top: 28px;
-
-    /* 미디어 쿼리에서 이미지 위치를 서서히 이동 */
-    transform: translateY(20px);
+    padding-top: 60px;
+    padding-left: 50px;
+  }
+  .sec3-right h1{
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .sec3-left img {
-    max-width: 200px;
-    transform: translateY(40px); /* 더 아래로 이동 */
+  .sec3-left{
+    text-align: center;
   }
+ .sec3-main{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .sec3-left img{
+    padding: 0;
+    max-width: 251px;
+    width: 100%;
+    padding-top: 20px;
+  }
+  .sec3-right h1{
+    text-align: center;
+    padding-bottom: 0px;
+  }
+  .sec3-right-txt{
+    padding-top: 30px;
+  }
+  .sec3-left h1 {
+        font-size: 15px;
+        padding-top: 40px;
+    }
+}
+@media screen and (max-width: 320px){
+  .sec3-main{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+  .sec3-left img{
+    padding: 0;
+    max-width: 251px;
+    width: 100%;
+  }
+
+  
 }
