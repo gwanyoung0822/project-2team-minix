@@ -6,6 +6,260 @@ body {
     font-family: 'Inter', sans-serif; /* 전체 페이지에 'Inter' 폰트를 사용 */
 }
 /* 전체 / 큰 레이아웃 */
+/* =====================================섹션1 ================================================*/
+/* sec1 섹션 */
+.sec1_wrap {
+  position: relative; /* 내부 요소의 절대 위치 설정을 위해 relative 설정 */
+  height: 650px;
+  width: 100%; /* 부모 컨테이너의 너비에 맞게 설정 */
+}
+
+.sec1_bg {
+  position: absolute; /* 배경 이미지 위치 설정 */
+  top: 0;
+  left: 0;
+  width: 100%; /* 배경 이미지가 컨테이너의 전체 너비를 차지하도록 설정 */
+  z-index: -1; /* 배경이 다른 요소들 뒤에 위치하도록 설정 */
+}
+
+.sec1_inner {
+  position: relative; /* 내부 요소의 절대 위치 설정을 위해 relative 설정 */
+  width: 80%;
+  max-width: 1300px;
+  /* padding: 20px; */
+  margin: 0 auto; /* 자동 중앙 정렬 */
+  z-index: 1; /* 내부 요소들이 배경 이미지 위에 위치하도록 설정 */
+}
+
+.sec1_inner img {
+  width: 100%; /* 너비를 100%로 설정 */
+}
+
+.sec1_title,
+.highlight {
+  padding-top: 10%;
+  font-family: 'Inter', sans-serif; /* 'Inter' 폰트를 사용 */
+  font-weight: 350; /* 폰트 두께 설정 */
+  font-size: 3.0vw; /* 화면 너비의 3%로 폰트 크기 설정 */
+  text-align: center;
+  line-height: 1.5; /* 줄 간격 설정 */
+  color: #FFFFFF; /* 텍스트 색상을 흰색으로 설정 */
+}
+
+.highlight {
+  font-weight: bold; /* 강조된 텍스트는 굵은 폰트 설정 */
+}
+
+.sec1_copy,
+.highlight2 {
+  font-family: 'Inter', sans-serif; /* 'Inter' 폰트를 사용 */
+  font-weight: 350; /* 폰트 두께 설정 */
+  font-size: 3.0vw; /* 화면 너비의 3%로 폰트 크기 설정 */
+  line-height: 1.5; /* 줄 간격 설정 */
+  color: #020202; /* 텍스트 색상을 어두운 회색으로 설정 */
+  margin: 10% 0; /* 상하 여백을 10%로 설정 */
+}
+
+.highlight2 {
+  font-weight: bold; /* 강조된 텍스트는 굵은 폰트 설정 */
+}
+
+/* .bubbles 컨테이너 스타일 */
+.bubbles {
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: center;
+  align-items: center; /* 수직 중앙 정렬 */
+}
+
+.bubble img {
+  width: 100%; /* 부모 컨테이너의 너비에 맞게 이미지 크기 설정 */
+  height: auto; /* 이미지 비율을 유지하면서 높이 자동 조정 */
+  object-fit: cover; /* 이미지 비율을 유지하면서 구겨짐 방지 */
+}
+
+/* .bubble_left와 .bubble_right의 스타일 */
+.bubble_left,
+.bubble_right {
+  width: 100%;
+  display: flex; /* 플렉스 박스 사용 */
+  flex-direction: column; /* 수직 방향으로 배치 */
+}
+.bubble img {
+  padding: 5%;
+}
+
+
+.bubble_left {
+  align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+.bubble_right {
+  align-items: flex-end; /* 오른쪽 정렬 */
+}
+
+/* 각 .bubble의 여백 설정 */
+.sp_bb1 {
+  margin-right: 50px; /* 오른쪽 여백 설정 */
+}
+.sp_bb2 {
+  margin-right: 80px; /* 오른쪽 여백 설정 */
+}
+.sp_bb3 {
+  margin-left: 150px; /* 왼쪽 여백 설정 */
+}
+.sp_bb4 {
+  margin-right: 100px; /* 오른쪽 여백 설정 */
+}
+.sp_bb5 {
+  margin-left: 50px; /* 왼쪽 여백 설정 */
+}
+
+/* 스크롤 버튼 스타일 */
+.scroll_btn {
+  margin-top: 3%; /* 상단 여백 설정 */
+  cursor: pointer; /* 마우스 커서를 포인터로 변경 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+.scroll_btn img {
+  max-width: fit-content;
+  margin: 0 auto; /* 자동 중앙 정렬 */
+}
+
+
+/* sec1_copy_wrap 컨테이너 스타일 */
+.sec1_copy_wrap {
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  width: 100%; /* 너비를 100%로 설정 */
+}
+
+/* sec1_copy 스타일 */
+.sec1_copy {
+  font-family: 'Inter', sans-serif; /* 'Inter' 폰트를 사용 */
+  font-size: 50px; /* 폰트 크기 설정 */
+  line-height: 1.2; /* 줄 간격 설정 */
+  color: #000000; /* 텍스트 색상을 검정색으로 설정 */
+}
+
+
+/* 반응형 스타일 */
+
+/* 화면 너비가 1024px 이하일 때 */
+@media (max-width: 1024px) {
+  .sec1_bg {
+      height: 80vh; /* 높이를 뷰포트 높이의 80%로 설정하여 더 작은 화면에서 적절히 조정 */
+  }
+  .scroll_btn img {
+      width: 40px; /* 작은 화면에서 버튼 크기를 줄임 */
+  }
+  .sec1_copy_wrap {
+      margin-top: 40px; /* 상단 여백 설정 */
+      display: flex; /* 플렉스 박스 사용 */
+      justify-content: center; /* 수평 중앙 정렬 */
+      align-items: center; /* 수직 중앙 정렬 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+      width: 100%; /* 너비를 100%로 설정 */
+  }
+  .sec1_copy, .highlight2 {
+      font-size: 40px; /* 폰트 크기 조정 */
+  }
+}
+
+/* 화면 너비가 768px 이하일 때 */
+@media (max-width: 768px) {
+  .scroll_btn img {
+      display: none; /* 작은 화면에서 스크롤 버튼을 숨김 */
+  }
+  .sec1_title{
+      margin: 5%;
+  }
+  .bubble_left , .bubble_right {
+      gap: 10px;
+  }
+  .bubbles img{
+      min-width: 50px;
+  }
+  .sec1_inner{
+      padding: 0;
+  }
+  .sp_bb1 {
+      margin-right: 10px; /* 오른쪽 여백 조정 */
+  }
+  .sp_bb2 {
+      margin-right: 10px; /* 오른쪽 여백 조정 */
+  }
+  .sp_bb3 {
+      margin-left: 60px; /* 왼쪽 여백 조정 */
+  }
+  .sp_bb4 {
+      margin-right: 20px; /* 오른쪽 여백 조정 */
+  }
+  .sp_bb5 {
+      margin-left: 20px; /* 왼쪽 여백 조정 */
+  }
+  .scroll_btn img {
+      display: none; /* 스크롤 버튼 숨김 */
+  }
+  
+  .sec1_copy_wrap {
+      margin-top: 60px; /* 상단 여백 조정 */
+      display: flex; /* 플렉스 박스 사용 */
+      justify-content: center; /* 수평 중앙 정렬 */
+      align-items: center; /* 수직 중앙 정렬 */
+      text-align: center; /* 텍스트 중앙 정렬 */
+      width: 100%; /* 너비를 100%로 설정 */
+      height: 140px; /* 높이 설정 */
+  }
+  .sec1_copy, .highlight2 {
+      font-size: 30px; /* 폰트 크기 조정 */
+  }
+
+}
+
+/* 화면 너비가 460px 이하일 때 */
+@media (max-width: 460px) {
+  .scroll_btn img {
+      display: none; /* 작은 화면에서 스크롤 버튼을 숨김 */
+  }
+  .bubbles{
+      padding: 0;
+  }
+  .sec1_inner{
+      padding: 0;
+  }
+  .sec1_copy_wrap{
+      margin-top: 0px;
+  }
+  .sp_bb1 {
+      margin-right: 10px; /* 오른쪽 여백 조정 */
+  }
+  .sp_bb2 {
+      margin-right: 20px; /* 오른쪽 여백 조정 */
+  }
+  .sp_bb3 {
+      margin-left: 50px; /* 왼쪽 여백 조정 */
+  }
+  .sp_bb4 {
+      margin-right: 30px; /* 오른쪽 여백 조정 */
+  }
+  .sp_bb5 {
+      margin-left: 20px; /* 왼쪽 여백 조정 */
+  }
+  .sec1_copy, .highlight2 {
+      font-size: 20px; /* 폰트 크기 조정 */
+  }
+  .scroll_btn img {
+      width: 25px; /* 스크롤 버튼 크기 조정 */
+      display: none; /* 스크롤 버튼 숨김 */
+  }
+  .sec1_copy {
+      font-size: 20px; /* 폰트 크기 조정 */
+  }
+}
+/* =====================================섹션1 ================================================*/
+
 /* 메인카피 */
 .main_copy{
     width: 100%;
@@ -24,7 +278,9 @@ body {
     text-align: center;
     margin: 10px 0 10px 0;
 }
-/* 제품실적 */
+
+/* ============================세일즈============================================================== */
+/* 세일즈 */
 .det2 {
   background-color: #EDE6DB;
 }
@@ -345,8 +601,7 @@ span.small {
   }
 }
 
-  
-  
+/* ============================갤러리============================================================== */
 /* 갤러리랩 */
 .pp-descriptions {
     width: 100%;
@@ -388,14 +643,14 @@ span.small {
 /* 갤러리 아이템 확대 */
 .gallery li.open {
     flex: 3;
-    transition: flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    transition: flex 0.7s ease; /* 딜레이를 줄이고, 빠르게 반응하도록 설정 */
 }
 
 /* 텍스트 아이템 확대 */
 .open-text {
     font-size: 2em;
     font-weight: bold;
-    transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    transition: font-size 0.7s ease;
     margin-bottom: 30px;
 }
 
@@ -403,7 +658,7 @@ span.small {
 .shrink-text {
     font-size: 0.8em;
     transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
-    opacity: 0.5;  /* 선택 사항: 축소된 텍스트의 불투명도 조정 */
+    opacity: 0.7;  /* 선택 사항: 축소된 텍스트의 불투명도 조정 */
 }
 /* 갤러리 타이틀 */
 .pp-det-title{
@@ -417,22 +672,6 @@ text-align: center;
     display: flex;
     flex-direction: column;
 }
-.sec1-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 70px;
-    
-}
-
-.sec2-title{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 70px;
-    margin-top: 100px;
-}
-
 
 /* 갤러리 */
 .gallery {
@@ -454,29 +693,44 @@ text-align: center;
     background-position: center;
     /* GIF 이미지 애니메이션 멈추기 */
     background-repeat: no-repeat;
+    
 }
-
 .gallery li:hover {
-    flex: 3;
+    flex: 4;
+}
+.gallery li:hover:first-child{
+  background-position: left center;
 }
 
-.contants {
-    position: absolute;
-    bottom: -310px;
-    width: 100%;
-    background-color: #000000;
-    color: #fff;
-    text-align: center;
-    height: 150px;
-    padding: 20px;
-    padding-top: 55px;
-    line-height: 1.6;
-    transition: bottom 0.5s ease-in-out;
-    opacity: 0.8;
+.gallery li .contants {
+  transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  position: absolute;
+  bottom: -310px;
+  left: 50%;
+  transform: translateX(-50%); /* 텍스트를 중앙으로 배치 */
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  text-align: center;
+  height: 150px;
+  padding: 20px;
+  padding-top: 20px;
+  line-height: 1.6;
+  transition: bottom 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  opacity: 0.8;
 }
 
 .gallery li:hover .contants {
     bottom: 0;
+}
+
+/* 호버하지 않은 나머지 텍스트들 축소 및 양쪽으로 밀어내기 */
+.gallery li:not(:hover) .pp-det-txtwrap {
+  font-size: 0.8em; /* 축소된 텍스트 크기 */
+  text-align: center;
+  opacity: 0.5; /* 불투명도 조정 */
+  transform: translateX(-50%) scale(0.9); /* 살짝 밀려나고 작아짐 */
+  transition: transform 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
 }
 
 .contants::after {
@@ -484,10 +738,11 @@ text-align: center;
     position: absolute;
     background-color: rgb(0, 0, 0);
     width: 100%;
-    height: 55px;
+    height: 40px;
     top: -20px;
     left: 0;
     transform: rotate(-5deg) scale(1.3);
+    z-index: -1;
 }
 
 .contants h2 {
