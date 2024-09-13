@@ -86,9 +86,9 @@ $(document).ready(function () {
         369,000원 <i class="fa-solid fa-xmark"></i>
         </div>
       </div>`);
-      $(".fa-xmark").click(function () {
-        $(".cart-wrap").remove();
-      });
+    $(".fa-xmark").click(function () {
+      $(".cart-wrap").remove();
+    });
   });
   $(".color-white").click(function () {
     $(".cart-wrap").remove();
@@ -103,11 +103,11 @@ $(document).ready(function () {
         </div>
       </div>
       `);
-      $(".fa-xmark").click(function () {
-        $(".cart-wrap").remove();
-      });
-    });
     $(".fa-xmark").click(function () {
       $(".cart-wrap").remove();
     });
+  });
+  $(".fa-xmark").click(function () {
+    $(".cart-wrap").remove();
+  });
 });
