@@ -2,262 +2,74 @@
 /* sec1 ,copy */
 /* 공통 스타일 */
 * {
-    margin: 0; /* 모든 요소의 기본 마진을 0으로 설정 */
-    padding: 0; /* 모든 요소의 기본 패딩을 0으로 설정 */
-    box-sizing: border-box; /* 요소의 패딩과 테두리를 너비와 높이에 포함시킴 */
+  margin: 0; /* 모든 요소의 기본 마진을 0으로 설정 */
+  padding: 0; /* 모든 요소의 기본 패딩을 0으로 설정 */
+  box-sizing: border-box; /* 요소의 패딩과 테두리를 너비와 높이에 포함시킴 */
 }
 body {
-    font-family: 'Inter', sans-serif; /* 전체 페이지에 'Inter' 폰트를 사용 */
+  font-family: "Noto Sans KR", sans-serif !important;
 }
-
-/* sec1 섹션 */
-.sec1_wrap {
-    position: relative; /* 내부 요소의 절대 위치 설정을 위해 relative 설정 */
-    width: 100%; /* 부모 컨테이너의 너비에 맞게 설정 */
-    height: 100vh; /* 섹션의 높이를 뷰포트 높이에 맞추어 설정 */
+.detail-tab{
+    margin: 100px auto;
+    width: 600px;
+    height: 60px;
+    display: flex;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    padding: 15px 0;
 }
-
-.sec1_bg {
-    position: absolute; /* 배경 이미지 위치 설정 */
-    top: 0;
-    left: 0;
-    width: 100%; /* 배경 이미지가 컨테이너의 전체 너비를 차지하도록 설정 */
-    z-index: -1; /* 배경이 다른 요소들 뒤에 위치하도록 설정 */
-}
-
-.sec1_inner {
-    position: relative; /* 내부 요소의 절대 위치 설정을 위해 relative 설정 */
-    width: 80%;
-    max-width: 1300px;
-    /* padding: 20px; */
-    margin: 0 auto; /* 자동 중앙 정렬 */
-    z-index: 1; /* 내부 요소들이 배경 이미지 위에 위치하도록 설정 */
-}
-
-.sec1_inner img {
-    width: 100%; /* 너비를 100%로 설정 */
-}
-
-.sec1_title,
-.highlight {
-    font-family: 'Inter', sans-serif; /* 'Inter' 폰트를 사용 */
-    font-weight: 350; /* 폰트 두께 설정 */
-    font-size: 3.0vw; /* 화면 너비의 3%로 폰트 크기 설정 */
+.detail-tab li{
+    flex: 1;
     text-align: center;
-    line-height: 1.5; /* 줄 간격 설정 */
-    color: #FFFFFF; /* 텍스트 색상을 흰색으로 설정 */
-    margin: 10% 0; /* 상하 여백을 10%로 설정 */
+    line-height: 30px;
+    font-size: 20px;
+    color: #999;
 }
-
-.highlight {
-    font-weight: bold; /* 강조된 텍스트는 굵은 폰트 설정 */
+.detail-tab li:first-child{
+    border-right: 1px solid #999;
 }
-
-.sec1_copy,
-.highlight2 {
-    font-family: 'Inter', sans-serif; /* 'Inter' 폰트를 사용 */
-    font-weight: 350; /* 폰트 두께 설정 */
-    font-size: 3.0vw; /* 화면 너비의 3%로 폰트 크기 설정 */
-    line-height: 1.5; /* 줄 간격 설정 */
-    color: #020202; /* 텍스트 색상을 어두운 회색으로 설정 */
-    margin: 10% 0; /* 상하 여백을 10%로 설정 */
+.detail-tab .active{
+    color: #111;
+    font-weight: 500;
 }
-
-.highlight2 {
-    font-weight: bold; /* 강조된 텍스트는 굵은 폰트 설정 */
+.description{
+    position: relative;
+    margin: 0 auto;
+    width: 860px;
+    height: 1000px;
+    /* height: inherit; */
+    overflow: hidden;
 }
-
-/* .bubbles 컨테이너 스타일 */
-.bubbles {
-    display: flex; /* 플렉스 박스 사용 */
-    justify-content: center;
-    align-items: center; /* 수직 중앙 정렬 */
+.desc-open-btn{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    /* padding: 15px 80px; */
+    width: 400px;
+    height: 70px;
+    background-color: #fff;
+    border: 1px solid #333;
+    cursor: pointer;
+    font-family: "Noto Sans KR", sans-serif !important;
+    font-size: 20px;
 }
-
-.bubble img {
-    width: 100%; /* 부모 컨테이너의 너비에 맞게 이미지 크기 설정 */
-    height: auto; /* 이미지 비율을 유지하면서 높이 자동 조정 */
-    object-fit: cover; /* 이미지 비율을 유지하면서 구겨짐 방지 */
+.btn-wrap{
+    width: 860px;
+    height: 200px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
-
-/* .bubble_left와 .bubble_right의 스타일 */
-.bubble_left,
-.bubble_right {
-    width: 100%;
-    display: flex; /* 플렉스 박스 사용 */
-    flex-direction: column; /* 수직 방향으로 배치 */
-}
-.bubble img {
-    padding: 5%;
-}
-
-
-.bubble_left {
-    align-items: flex-start; /* 왼쪽 정렬 */
-}
-
-.bubble_right {
-    align-items: flex-end; /* 오른쪽 정렬 */
-}
-
-/* 각 .bubble의 여백 설정 */
-.sp_bb1 {
-    margin-right: 50px; /* 오른쪽 여백 설정 */
-}
-.sp_bb2 {
-    margin-right: 80px; /* 오른쪽 여백 설정 */
-}
-.sp_bb3 {
-    margin-left: 150px; /* 왼쪽 여백 설정 */
-}
-.sp_bb4 {
-    margin-right: 100px; /* 오른쪽 여백 설정 */
-}
-.sp_bb5 {
-    margin-left: 50px; /* 왼쪽 여백 설정 */
-}
-
-/* 스크롤 버튼 스타일 */
-.scroll_btn {
-    margin-top: 3%; /* 상단 여백 설정 */
-    cursor: pointer; /* 마우스 커서를 포인터로 변경 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-}
-.scroll_btn img {
-    max-width: fit-content;
-    margin: 0 auto; /* 자동 중앙 정렬 */
-}
-
-
-/* sec1_copy_wrap 컨테이너 스타일 */
-.sec1_copy_wrap {
-    display: flex; /* 플렉스 박스 사용 */
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-    width: 100%; /* 너비를 100%로 설정 */
-}
-
-/* sec1_copy 스타일 */
-.sec1_copy {
-    font-family: 'Inter', sans-serif; /* 'Inter' 폰트를 사용 */
-    font-size: 50px; /* 폰트 크기 설정 */
-    line-height: 1.2; /* 줄 간격 설정 */
-    color: #000000; /* 텍스트 색상을 검정색으로 설정 */
-}
-
-
-/* 반응형 스타일 */
-
-/* 화면 너비가 1024px 이하일 때 */
-@media (max-width: 1024px) {
-    .sec1_bg {
-        height: 80vh; /* 높이를 뷰포트 높이의 80%로 설정하여 더 작은 화면에서 적절히 조정 */
-    }
-    .scroll_btn img {
-        width: 40px; /* 작은 화면에서 버튼 크기를 줄임 */
-    }
-    .sec1_copy_wrap {
-        margin-top: 40px; /* 상단 여백 설정 */
-        display: flex; /* 플렉스 박스 사용 */
-        justify-content: center; /* 수평 중앙 정렬 */
-        align-items: center; /* 수직 중앙 정렬 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        width: 100%; /* 너비를 100%로 설정 */
-    }
-    .sec1_copy, .highlight2 {
-        font-size: 40px; /* 폰트 크기 조정 */
-    }
-}
-
-/* 화면 너비가 768px 이하일 때 */
-@media (max-width: 768px) {
-    .scroll_btn img {
-        display: none; /* 작은 화면에서 스크롤 버튼을 숨김 */
-    }
-    .sec1_title{
-        margin: 5%;
-    }
-    .bubble_left , .bubble_right {
-        gap: 10px;
-    }
-    .bubbles img{
-        min-width: 50px;
-    }
-    .sec1_inner{
-        padding: 0;
-    }
-    .sp_bb1 {
-        margin-right: 10px; /* 오른쪽 여백 조정 */
-    }
-    .sp_bb2 {
-        margin-right: 10px; /* 오른쪽 여백 조정 */
-    }
-    .sp_bb3 {
-        margin-left: 60px; /* 왼쪽 여백 조정 */
-    }
-    .sp_bb4 {
-        margin-right: 20px; /* 오른쪽 여백 조정 */
-    }
-    .sp_bb5 {
-        margin-left: 20px; /* 왼쪽 여백 조정 */
-    }
-    .scroll_btn img {
-        display: none; /* 스크롤 버튼 숨김 */
-    }
-    
-    .sec1_copy_wrap {
-        margin-top: 60px; /* 상단 여백 조정 */
-        display: flex; /* 플렉스 박스 사용 */
-        justify-content: center; /* 수평 중앙 정렬 */
-        align-items: center; /* 수직 중앙 정렬 */
-        text-align: center; /* 텍스트 중앙 정렬 */
-        width: 100%; /* 너비를 100%로 설정 */
-        height: 140px; /* 높이 설정 */
-    }
-    .sec1_copy, .highlight2 {
-        font-size: 30px; /* 폰트 크기 조정 */
-    }
-
-}
-
-/* 화면 너비가 460px 이하일 때 */
-@media (max-width: 460px) {
-    .scroll_btn img {
-        display: none; /* 작은 화면에서 스크롤 버튼을 숨김 */
-    }
-    .bubbles{
-        padding: 0;
-    }
-    .sec1_inner{
-        padding: 0;
-    }
-    .sec1_copy_wrap{
-        margin-top: 0px;
-    }
-    .sp_bb1 {
-        margin-right: 10px; /* 오른쪽 여백 조정 */
-    }
-    .sp_bb2 {
-        margin-right: 20px; /* 오른쪽 여백 조정 */
-    }
-    .sp_bb3 {
-        margin-left: 50px; /* 왼쪽 여백 조정 */
-    }
-    .sp_bb4 {
-        margin-right: 30px; /* 오른쪽 여백 조정 */
-    }
-    .sp_bb5 {
-        margin-left: 20px; /* 왼쪽 여백 조정 */
-    }
-    .sec1_copy, .highlight2 {
-        font-size: 20px; /* 폰트 크기 조정 */
-    }
-    .scroll_btn img {
-        width: 25px; /* 스크롤 버튼 크기 조정 */
-        display: none; /* 스크롤 버튼 숨김 */
-    }
-    .sec1_copy {
-        font-size: 20px; /* 폰트 크기 조정 */
-    }
+.btn-wrap::after{
+    content: "";
+    position: absolute;
+    width: 860px;
+    height: 300px;
+    bottom: 100%;
+    left: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
