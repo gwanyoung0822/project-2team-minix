@@ -2,6 +2,7 @@
   position: relative;
   display: block;
   width: 100%;
+  margin-top: 200px;
 }
 
 .event .inner {
@@ -98,5 +99,11 @@
   color: green;
   font-size: 14px;
   margin-top: 10px;
+  margin-left: 90px;
 }
-
+.submitwrap{
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
