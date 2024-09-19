@@ -20,7 +20,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px; /* 제목과 배경 사이의 여백 설정 */
+  margin-top: 3%;
 }
 
 .review_title img {
