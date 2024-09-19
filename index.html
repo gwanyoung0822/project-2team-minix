@@ -82,7 +82,7 @@
 
         <!-- 두 번째 '오늘 하루 열지 않음'과 닫기 버튼 -->
         <div class="close-wrap">
-          <label><input type="checkbox" id="notToday" /> 오늘 하루 열지않음</label>
+          <label><input type="checkbox" id="notToday"/><span class="notToday">오늘 하루 열지않음</span></label>
           <span class="close-btn">&times;</span>
         </div>
       </div>
@@ -97,7 +97,7 @@
     </div>
     <!-- csbtn -->
      <div class="cs-btn-event fixBtn">
-      <a href="#" class="event-btn">
+      <a href="#" class="event-btn fixBtn">
         <img src="images/eventbtn.png" alt="이벤트버튼">
       </a>
      </div>
@@ -381,31 +381,32 @@
       </div>
       <!-- 이벤트 섹션 -->
       <section class="event">
-        <div class="inner">
-          <!-- 이미지와 폼을 담고 있는 컨테이너 -->
-          <div class="image-container">
-            <!-- 이벤트 이미지 -->
-            <img src="images/event1.png" alt="이벤트 이미지" />
-            <!-- 이벤트 참여 폼 -->
-            <div class="event-wrap">
-              <div class="event-form">
-                <div class="name-flex">
-                  <label for="name" class="name">성함</label>
-                  <input type="text" id="name" placeholder="성함을 입력하세요" required />
-                </div>
-                <div class="phone-flex">
-                  <label for="phone" class="phone">번호</label>
-                  <input type="text" id="phone" placeholder="휴대폰 번호를 입력하세요" required />
-                </div>
-                <div class="submitbtn">
-                  <button id="submitButton">이벤트 참여하기</button>
-                </div>
-                <div class="success-message">이벤트 참여가 완료되었습니다!</div>
-              </div>
-            </div>
+  <div class="inner">
+    <!-- 이미지와 폼을 담고 있는 컨테이너 -->
+    <div class="image-container">
+      <!-- 이벤트 이미지 -->
+      <img src="images/event1.png" alt="이벤트 이미지" class="responsive-image" />
+      <!-- 이벤트 참여 폼을 이미지 위에 배치 -->
+      <div class="event-wrap">
+        <div class="event-form overlay-content">
+          <div class="name-flex">
+            <label for="name" class="name">성함</label>
+            <input type="text" id="name" placeholder="성함을 입력하세요" required />
           </div>
+          <div class="phone-flex">
+            <label for="phone" class="phone">번호</label>
+            <input type="text" id="phone" placeholder="휴대폰 번호를 입력하세요" required />
+          </div>
+          <div class="submitbtn">
+            <button id="submitButton">이벤트 참여하기</button>
+          </div>
+          <div class="success-message">이벤트 참여가 완료되었습니다!</div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
       <!-- 구매 버튼 -->
       <div class="bbtn-container3">
         <button class="bbtn">

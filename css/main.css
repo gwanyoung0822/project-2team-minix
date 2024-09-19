@@ -148,19 +148,7 @@ img{
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* 검정 배경 투명도 */
-}
-
-/* 모달 컨테이너 */
-.modal {
-    display: block; /* 기본적으로 숨김 */
-    position: fixed;
-    z-index: 9999; /* 가장 앞에 위치 */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+height: 100%;
     background-color: rgba(0, 0, 0, 0.7); /* 검정 배경 투명도 */
 }
 
@@ -182,7 +170,6 @@ img{
     padding: 10px;
     background-color: black;
     color: white;
-    font-size: 14px;
     align-items: center;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -209,16 +196,98 @@ img{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+input[type="checkbox"]{
+    vertical-align: middle;
+}
 
 /* 반응형 조정 */
-@media screen and (max-width: 768px) {
-    .popup {
-        width: 80%;
-    }
-}
+
 
 @media screen and (max-width:768px) {
     .fixBtn{
+        transform: scale(0.7);
+    }
+    .cs-btn-event{
+        transform: scale(0.7);
+    }
+ .modal-content {
+            width: 40%; /* 화면 너비의 80%로 조정 */
+            margin: 15% auto;
+        }
+        .cs-btn-event img {
+            max-width: 40.6px; /* 작은 화면에서는 크기를 더 줄임 */
+            right: 25px;
+        }
+        .cs-btn-event {
+            position: fixed;
+            bottom: 200px;
+            right: 34px;
+            z-index: 99;
+            cursor: pointer;
+            animation: updown 1.5s infinite;
+        }
+}
+@media screen and (max-width:564px){
+    input[type="checkbox"] {
+        transform: scale(0.8); /* 80% 크기로 줄이기 */
+        -webkit-transform: scale(0.8); /* 크롬 및 사파리 호환 */
+        -moz-transform: scale(0.8); /* 파이어폭스 호환 */
+        -o-transform: scale(0.8); /* 오페라 호환 */
+        -ms-transform: scale(0.8); /* IE 호환 */
+    }
+    .close-btn{
+        transform: scale(0.9);
+    }
+    .close-wrap .notToday{
+        font-size: 12px;
+    }
+    .close-wrap {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 7px;
+        background-color: black;
+        color: white;
+        align-items: center;
+        
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+@media screen and (max-width:405px){
+    input[type="checkbox"] {
+        transform: scale(0.75); /* 80% 크기로 줄이기 */
+        -webkit-transform: scale(0.75); /* 크롬 및 사파리 호환 */
+    }
+    .close-btn{
+        transform: scale(0.8);
+    }
+    .close-wrap .notToday{
+        font-size: 10px;
+    }
+    .close-wrap {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 3px;
+        background-color: black;
+        color: white;
+        align-items: center;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+}
+/* 320px 이하의 화면에서 모달 창 크기 조정 */
+@media screen and (max-width: 320px) {
+    .modal-content {
+        width: 50%; /* 화면 너비의 90%로 조정 */
+        margin: 20% auto;
+    }
+    input[type="checkbox"] {
+        transform: scale(0.7); 
+        -webkit-transform: scale(0.7); /* 크롬 및 사파리 호환 */
+    }
+    .close-btn{
         transform: scale(0.7);
     }
 }
