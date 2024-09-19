@@ -2,26 +2,24 @@ document.addEventListener("DOMContentLoaded", function () {
   AOS.init({});
   const galleryItems = document.querySelectorAll(".gallery li");
   const textItems = document.querySelectorAll(".pp-det-txtwrap > div");
-  const bubbles = document.querySelector('.bubbles');
+  const bubbles = document.querySelector(".bubbles");
   const updateGap = () => {
-      const width = bubbles.offsetWidth;
-      const gap = width * 0.02; // 너비의 2%를 간격으로 설정
-      bubbles.style.gap = `${gap}px`;
+    const width = bubbles.offsetWidth;
+    const gap = width * 0.02; // 너비의 2%를 간격으로 설정
+    bubbles.style.gap = `${gap}px`;
   };
   updateGap();
-  window.addEventListener('resize', updateGap); // 창 크기 변경 시 간격 업데이트
-$(".scroll_btn").click(function () {
-  // sec1_copy_wrap 요소를 선택합니다.
-  const sec1CopyWrap = document.querySelector(".sec1_copy_wrap");
-
-  // ec1_copy_wrap 요소의 최상단 위치를 계산합니다.
-  const sec1CopyWrapTop = sec1CopyWrap.offsetTop;
-  // sec1_copy_wrap 요소의 최상단으로 부드럽게 스크롤합니다.
-  window.scrollTo({
-    top: sec1CopyWrapTop,
-    behavior: "smooth",
+  window.addEventListener("resize", updateGap); // 창 크기 변경 시 간격 업데이트
+  $(".next-sec-btn2").click(function () {
+    const compareWrap = document.querySelector(".main_copy");
+    const compareWrapTop = compareWrap.offsetTop;
+    window.scrollTo({
+      top: compareWrapTop,
+      behavior: "smooth",
+    });
   });
-});
+  // ===================================갤러리====================================================
+  
   function toggleOpen() {
     // 모든 갤러리 아이템에서 'open' 클래스 제거
     galleryItems.forEach((item) => item.classList.remove("open"));
@@ -52,6 +50,7 @@ $(".scroll_btn").click(function () {
     // 현재 갤러리 아이템의 'paused' 클래스를 제거
     this.classList.remove("paused");
   }
+  
 
   function resetItems() {
     // 모든 갤러리 아이템에서 'open' 클래스 제거 및 'paused' 클래스 제거
@@ -71,6 +70,8 @@ $(".scroll_btn").click(function () {
     item.addEventListener("mouseover", toggleOpen);
     item.addEventListener("mouseout", resetItems);
   });
+  // ===================================갤러리====================================================
+
   /**
    * 숫자 애니메이션 함수
    * @param {HTMLElement} element - 애니메이션을 적용할 요소
