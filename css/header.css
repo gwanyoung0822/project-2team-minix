@@ -37,7 +37,7 @@
 }
 .mb-logo img {
   height: 100%;
-  transform: scale(1.5);
+  transform: scale(0.5);
 }
 .mb-buy-btn {
   display: flex;

@@ -11,6 +11,7 @@
   display: block;
   position: relative;
   margin: 0 auto;
+  padding: 0 30px;
   padding-bottom: 120px;
 }
 .footer_top {
@@ -32,7 +33,7 @@
   justify-content: space-between;
 }
 .ft_left {
-  width: 100%;
+  width: 45%;
   max-width: 100%;
   display: flex;
   gap: 40px;
