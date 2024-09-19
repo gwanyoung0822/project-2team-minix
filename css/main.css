@@ -23,7 +23,58 @@ body{
 img{
     display: block;
 }
+/* 이벤트 참여하기 버튼의 스타일 */
+.event-participate-btn {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    z-index: 100; /* 기존 버튼 위에 나타나게 설정 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* 기본적으로 숨김 상태 */
+    
+}
+/* .event-btn{
+    animation: updown 1.5s infinite;
+} */
+/* 애니메이션 효과 */
+@keyframes updown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}
+
+.event-participate-btn button {
+    background-color: #ff6600;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.event-participate-btn button:hover {
+    background-color: #e65c00; /* 버튼에 마우스를 올리면 색상이 변경 */
+}
 /* 탑버튼 */
+.cs-btn-event{
+    position: fixed;
+    bottom: 200px;
+    right: 27px;
+    z-index: 99;
+    cursor: pointer;
+    animation: updown 1.5s infinite;
+}
 .cs-btn{
     position: fixed;
     bottom: 80px;

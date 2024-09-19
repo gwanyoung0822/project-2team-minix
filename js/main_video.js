@@ -72,5 +72,4 @@ $(document).ready(function () {
     $(".cs-btn-kakao").toggleClass("show")
     $(".cs-btn-naver").toggleClass("show")
   })
-
 });
