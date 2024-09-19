@@ -8,6 +8,9 @@
   justify-content: flex-end;
   position: relative;
 }
+.swiper-wrap{
+  position: relative;
+}
 .sw-buy {
   width: 450px;
   height: 450px;
@@ -15,6 +18,7 @@
   position: relative;
 }
 .sw-buy img {
+  /* height: 102%; */
   height: 105%;
   /* object-fit: cover; */
 }
@@ -27,6 +31,9 @@
   right: 3%;
   background: url("../images/zoom_icon.png") no-repeat center;
   background-size: cover;
+  z-index: 99;
+}
+.swiper-slide-active{
   z-index: 99;
 }
 .swiper-pagination {
@@ -160,13 +167,14 @@
 /* 이미지 확대 */
 .zoom-display {
   position: absolute;
-  top: 20%; /* Position it where you want the zoomed image to appear */
-  left: 15%;
+  top: 26%; /* Position it where you want the zoomed image to appear */
+  right: 68%;
   border: 1px solid #000;
   width: 400px; /* Width of the zoomed image display area */
   height: 400px; /* Height of the zoomed image display area */
   overflow: hidden;
   display: none;
+  z-index: 100;
 }
 .inner-frame {
   position: absolute;
@@ -181,8 +189,8 @@
 }
 .zoom-display-img {
   position: absolute;
-  width: 200%; /* Adjust zoom level as needed */
-  height: 200%; /* Adjust zoom level as needed */
+  width: 250%; /* Adjust zoom level as needed */
+  height: 250%; /* Adjust zoom level as needed */
 }
 /* 섹션 이동 버튼 */
 #move-sec-btn {
@@ -199,5 +207,35 @@
   .pp-buy-wrap{
     justify-content: center;
   }
-
+}
+@media screen and (max-width: 900px) {
+  .pp-buy-wrap{
+    justify-content: flex-end;
+    flex-direction: column;
+    
+    width: 100%;
+  }
+  .sw-buy{
+    margin: 0 auto;
+  }
+  .buy-interaction{
+    margin: 50px auto 0;
+    padding: 0;
+  }
+}
+@media screen and (max-width:450px) {
+  .sw-buy{
+    width: 100%;
+  }
+  .buy-interaction{
+    width: 100%;
+    padding: 0 20px;
+  }
+  .buy-txt-wrap{
+    width: 100%;
+  }
+  .sw-buy::before{
+    width: 7%;
+    height: 7%;
+  }
 }

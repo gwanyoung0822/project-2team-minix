@@ -110,4 +110,20 @@ $(document).ready(function () {
   $(".fa-xmark").click(function () {
     $(".cart-wrap").remove();
   });
+  // 스와이퍼 높이 넓이에 비례하도록
+  window.addEventListener("resize", function() {
+    if (window.innerWidth <= 450) {
+      // 화면 너비가 768px 이하일 때 실행할 코드
+      // console.log("화면 너비가 768px 이하입니다.");
+      $(".sw-buy").width("100%")
+      const swBuyW = $(".sw-buy").width()
+      $(".sw-buy").height(swBuyW)
+      // console.log(swBuyW);
+      
+      }
+      else if(window.innerWidth > 450){
+        $(".sw-buy").height(450)
+        $(".sw-buy").width(450)
+      }
+  })
 });
