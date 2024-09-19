@@ -14,7 +14,6 @@
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
-  margin-bottom: 200px;
 }
 
 .review_title {
@@ -33,10 +32,10 @@
   position: relative; /* 아이템들을 배경 안에 배치하기 위한 relative 설정 */
   width: 100%;
   max-width: 1300px; /* 최대 너비 설정 */
-  height: 650px; /* 고정 높이 설정 */
   background: #EDE6DB; /* 배경 색상 설정 */
   margin: 0 auto; /* 중앙 정렬 */
   overflow: hidden; /* 내부 요소가 컨테이너를 넘지 않도록 설정 */
+  padding: 5%;
 }
 
 .review_item {
@@ -45,16 +44,17 @@
   height: auto; /* 높이 자동 조정 */
   display: flex;
   justify-content: center;
-
-}
-#review_item1{
-  padding-top: 20px;
 }
 
 .review_item img {
   margin-top: 10px;
   width: 90%; /* 아이템 이미지 크기 조정 */
   height: auto; /* 비율 유지 */
+  margin-bottom: 10px;
 }
 
-
+.bbtn-container3{
+  display: flex;
+  justify-content: center; /* 버튼을 중앙에 배치 */
+  margin: 5% 0; 
+}
