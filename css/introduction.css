@@ -119,6 +119,7 @@ body {
     text-align: center;
     margin: 10px 0 10px 0;
 }
+
 /* ============================강점============================================================== */
 /* 전체 래퍼 */
 .strength_wrap {
@@ -148,7 +149,6 @@ body {
 /* 이미지 박스 */
 .image-box1 img, .image-box2 img, .image-box3 img {
   width: 100%; /* 부모 요소에 맞춰 이미지 크기 조정 */
-  height: auto; /* 비율 유지 */
   max-width: 400px; /* 최대 너비 설정 */
   max-height: 400px; /* 최대 높이 설정 */
   object-fit: cover; /* 이미지를 박스 크기에 맞춰 채우기 */
@@ -183,6 +183,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 1300px; /* 전체 레이아웃의 너비 */
+  overflow: hidden;
 }
 
 /* 각 이미지와 텍스트를 감싸는 박스 */
@@ -191,6 +192,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 100%; /* 이미지와 텍스트 박스의 고정 너비 */
+  overflow: hidden;
 }
 
 /* 이미지 박스 */
@@ -226,7 +228,7 @@ body {
 /* 768px 이하에서 레이아웃 조정 */
 @media (max-width: 768px) {
   .strength_inner {
-    width: 80%;
+    width: 90%;
     align-items: center; /* 중앙 정렬 */
     gap: 10px;
   }
@@ -236,8 +238,12 @@ body {
   }
 
   .image-box1 img, .image-box2 img, .image-box3 img {
-    max-width: 250px; /* 이미지 최대 너비 조정 */
+    max-width: 210px; /* 이미지 최대 너비 조정 */
+    min-width: 210px;
     max-height: 250px;
+  }
+  .txt-box1{
+    min-width: 200px;
   }
 }
 
@@ -250,7 +256,6 @@ body {
 
   .item-box {
     width: 100%; /* 너비 조정 */
-    margin-bottom: 20px; /* 항목 사이의 여백 */
   }
 
   .image-box1 img, .image-box2 img, .image-box3 img {
@@ -258,10 +263,14 @@ body {
     max-height: 200px;
   }
   .image-box1 img{
-    min-width: 200px;
+    min-width: 210px;
   }
   .txt-box1 img, .txt-box2 img, .txt-box3 img{
     max-width: 200px;
+    min-width: 100px;
+  }
+  .txt-box1 , .txt-box2, .txt-box3 {
+    margin: 0;
   }
 }
 
@@ -836,6 +845,12 @@ width: 50%;
     font-size: 2em; /* 폰트 크기 확대 */
     opacity: 0.8; /* 완전 불투명 */
 }
+.contants {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
 /* 갤러리 하단 버튼 컨테이너 */
 /* 갤러리 내부의 버튼 컨테이너 */
 .bbtn-container2 {
@@ -843,20 +858,93 @@ width: 50%;
   justify-content: center; /* 버튼을 중앙에 배치 */
   margin: 5% 0; /* 위쪽에 여백 추가 */
 }
+
 /* Swiper 컨테이너에 대한 스타일 */
-/* 스와이퍼 숨김 처리 */
-.swiper-container {
+
+/* 스와이퍼 슬라이더 스타일 조정 */
+.swiper.sw-gallery {
   display: none;
+  width: 100%;
+  height: 500px; /* 필요에 따라 조정 */
+  position: relative; /* 내비게이션 버튼을 정확하게 배치하기 위한 위치 설정 */
 }
 
-.contants {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 20px;
+/* 스와이퍼 이미지 스타일 */
+.swiper-slide img {
+  width: 100%;
+  height: auto; /* 비율에 맞게 조정 */
+  object-fit: cover; /* 이미지를 컨테이너에 맞게 채우기 */
+}
+/* Swiper 슬라이드 컨텐츠 스타일 */
+.swiper-slide .contants {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50% , 93%); /* 중앙 정렬 */
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* 투명한 검정 배경 */
+  color: #fff;
   text-align: center;
+  height: 150px;
+  padding: 20px;
+  opacity: 0.8;
 }
 
 
+/* 내비게이션 버튼 hover 상태 */
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* hover 시 배경색 조정 */
+}
+
+/* 페이지네이션 컨테이너 스타일 */
+.swiper-pagination {
+  bottom: 50px !important; /* 페이지네이션 위치 조정 */
+  text-align: center; /* 가운데 정렬 */
+  position: relative; /* 상대 위치 설정 */
+}
+
+/* 페이지네이션 바 스타일 (배경 선) */
+.swiper-pagination::before {
+  content: "";
+  width: 80px; /* 선의 길이 */
+  height: 3px; /* 선의 두께 */
+  background-color: #ccc; /* 선 색상 */
+  position: absolute;
+  top: 45%; /* 수직 위치 */
+  left: 50%; /* 수평 중앙 정렬 */
+  transform: translate(-50%, -50%); /* 중앙 위치 조정 */
+  z-index: -1; /* 선이 불릿 뒤에 있도록 설정 */
+}
+
+/* 페이지네이션 불릿 기본 스타일 */
+.swiper-pagination-bullet {
+  width: 15px; /* 불릿 너비 */
+  height: 15px; /* 불릿 높이 */
+  background-color: #ccc; /* 불릿 색상 */
+  border-radius: 50%; /* 둥글게 만들기 */
+  opacity: 1; /* 불릿의 불투명도 */
+  display: inline-block; /* 불릿을 수평으로 나열 */
+  margin: 0 5px; /* 불릿 간의 간격 */
+  position: relative; /* 불릿을 상대 위치로 설정 */
+}
+
+/* 활성 페이지네이션 불릿 스타일 */
+.swiper-pagination-bullet-active {
+  background-color: #111; /* 활성 불릿 색상 */
+  z-index: 20; /* 활성 불릿의 z-index 조정 */
+}
+
+/* 활성 페이지네이션 불릿 스타일 */
+.swiper-pagination-bullet:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 6px; /* 선의 두께 */
+  height: 3px; /* 선의 두께 */
+  background-color: #ccc; /* 선 색상 */
+  top: 50%;
+  right: -8px; /* 선과 불릿 사이의 거리 조정 */
+  transform: translateY(-50%); /* 수직 가운데 정렬 */
+}
 
 /* 반응형 스타일 */
 @media (max-width: 768px) {
@@ -866,7 +954,14 @@ width: 50%;
   .pp-det-txtwrap{
     display: none; /* 텍스트랩 숨김 */
   }
-  .swiper-container {
-    display:block;
-    }
+
+      .swiper.sw-gallery {
+        height: 600px; /* 모바일 화면에 맞는 높이 조정 */
+        display:block;
+      }
+}
+.swiper.sw-gallery img{
+  width: 100%;
+  scale: 1.2;
+  height: 400px;
 }

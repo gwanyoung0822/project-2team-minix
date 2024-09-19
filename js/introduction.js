@@ -19,8 +19,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   // ===================================갤러리====================================================
-  // 갤러리 스와이퍼
-  
+  // 스와이퍼 초기화 및 해제
+  let swiper;
+
+  const initSwiper = () => {
+    if (window.innerWidth <= 768 && !swiper) {
+      swiper = new Swiper(".swiper.sw-gallery", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        slidesPerView: 1,
+        spaceBetween: 10,
+        autoplay: {
+          delay: 3000, // 자동 슬라이드 전환 시간 (밀리초)
+          disableOnInteraction: false, // 사용자 상호작용 후에도 자동 전환 유지
+        },
+      });
+    }
+  };
+
+  const destroySwiper = () => {
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth <= 768 && !swiper) {
+      initSwiper();
+    } else if (window.innerWidth > 768) {
+      destroySwiper();
+    }
+  };
+
+  window.addEventListener("resize", handleResize);
+  handleResize(); // 초기 호출
   // 갤러리 호버 애드클래스
   function toggleOpen() {
     // 모든 갤러리 아이템에서 'open' 클래스 제거
