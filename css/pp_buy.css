@@ -206,13 +206,24 @@
 @media screen and (max-width: 1330px) {
   .pp-buy-wrap{
     justify-content: center;
+    padding: 3%;
   }
+  .inner-frame{
+    display: none !important;
+  }
+  .zoom-display{
+    display: none !important;
+  }
+  .sw-buy::before{
+    display: none;
+  }
+
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 930px) {
   .pp-buy-wrap{
     justify-content: flex-end;
     flex-direction: column;
-    
+    padding: 0;
     width: 100%;
   }
   .sw-buy{
@@ -237,5 +248,34 @@
   .sw-buy::before{
     width: 7%;
     height: 7%;
+  }
+  .buy-tit {
+    font-size: 10vw;
+    margin-bottom: 20px;
+  }
+  .real-price{
+    font-size: 5vw;
+  }
+  .buy-price{
+    font-size: 8vw;
+  }
+  .color-choice-txt{
+    font-size: 4vw;
+  }
+  .cart-tit{
+    font-size: 4vw;
+  }
+  .cart-color{
+    font-size: 4vw;
+  }
+  .cart-price{
+    font-size: 5vw;
+  }
+  .cart {
+    height: 18vw;
+  }
+  .product-buy-btn {
+    height: 13vw;
+    font-size: 5vw;
   }
 }

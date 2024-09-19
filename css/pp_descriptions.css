@@ -10,7 +10,7 @@ body {
   font-family: "Noto Sans KR", sans-serif !important;
 }
 .detail-tab{
-    margin: 100px auto;
+    margin: 150px auto 100px;
     width: 90%;
     max-width: 600px;
     height: 60px;
@@ -66,10 +66,17 @@ body {
     height: 70px;
     background-color: #fff;
     border: 1px solid #333;
+    margin: 50px auto;
+}
+.closeBtn a{
+    display: block;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     font-family: "Noto Sans KR", sans-serif !important;
     font-size: 20px;
-    margin: 50px auto;
+    color: #333;
+    line-height: 70px;
 }
 .desc-open-btn{
     display: block;
@@ -106,6 +113,26 @@ body {
     left: 0;
     background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
+@media screen and (max-width:1330px) {
+    .detail-tab{
+        margin: 100px auto 50px;
+    }
+}
+@media screen and (max-width:930px) {
+    .detail-tab{
+        margin: 50px auto;
+    }
+}
 @media screen and (max-width:500px) {
-    
+    .desc-open-btn{
+        height: 14vw;
+        font-size: 4vw;
+    }
+    .closeBtn{
+        height: 14vw;
+    }
+    .closeBtn a{
+        font-size: 4vw;
+        line-height: 14vw;
+    }
 }
