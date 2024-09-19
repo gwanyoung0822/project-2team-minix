@@ -25,7 +25,12 @@ $(document).ready(function () {
   function playVideoOnActiveSlide() {
     var currentSlide = $(swVisual.slides[swVisual.activeIndex]);
     var video = currentSlide.find("video").get(0);
-
+    document.addEventListener("fullscreenchange", function (event) {
+      if (document.fullscreenElement) {
+        // 전체 화면 모드가 활성화될 때 비디오를 다시 표시하지 않도록 설정
+        document.exitFullscreen();
+      }
+    });
     if (video) {
       video.play();
 
@@ -67,5 +72,5 @@ $(document).ready(function () {
     $(".cs-btn-kakao").toggleClass("show")
     $(".cs-btn-naver").toggleClass("show")
   })
-  
+
 });

@@ -1,24 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
-    AOS.init({});
-      const bubbles = document.querySelector('.bubbles');
-      const updateGap = () => {
-          const width = bubbles.offsetWidth;
-          const gap = width * 0.02; // 너비의 2%를 간격으로 설정
-          bubbles.style.gap = `${gap}px`;
-      };
-      updateGap();
-      window.addEventListener('resize', updateGap); // 창 크기 변경 시 간격 업데이트
-    $(".scroll_btn").click(function () {
-      // sec1_copy_wrap 요소를 선택합니다.
-      const sec1CopyWrap = document.querySelector(".sec1_copy_wrap");
-  
-      // ec1_copy_wrap 요소의 최상단 위치를 계산합니다.
-      const sec1CopyWrapTop = sec1CopyWrap.offsetTop;
-      // sec1_copy_wrap 요소의 최상단으로 부드럽게 스크롤합니다.
-      window.scrollTo({
-        top: sec1CopyWrapTop,
-        behavior: "smooth",
-      });
-    });
+    const detailTab = document.querySelectorAll(".detail-tab li")
+    const tabDesc = document.querySelector(".tab-desc")
+    const tabReview = document.querySelector(".tab-review")
+    const reviewSec = document.querySelector(".review")
+    const descSec = document.querySelector(".description")
+    detailTab.forEach((tab)=>{
+      tab.addEventListener("click",function(){
+        detailTab.forEach((tab) => tab.classList.remove("active"));
+        this.classList.add("active")
+      })
+    })
+    tabDesc.addEventListener("click",function(){
+      reviewSec.style.display = "none"
+      descSec.style.display = "block"
+    })
+    tabReview.addEventListener("click",function(){
+      reviewSec.style.display = "block"
+      descSec.style.display = "none"
+    })
+    // 상세정보 열기닫기
+    const descOpenBtn = document.querySelector(".desc-open-btn")
+    const closeBtn = document.querySelector(".closeBtn")
+    const btnWrap = document.querySelector(".btn-wrap")
+    descOpenBtn.addEventListener("click",function(){
+      descOpenBtn.style.display = "none"
+      btnWrap.style.display = "none"
+      descSec.classList.add("open")
+    })
+    closeBtn.addEventListener("click",function(){
+      descSec.classList.remove("open")
+      descOpenBtn.style.display = "block"
+      btnWrap.style.display = "block"
+    })
   });
   
