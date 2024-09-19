@@ -33,13 +33,13 @@ $(document).ready(function() {
     });
   
     // '오늘 하루 열지 않음' 체크 시 모달을 바로 닫고 쿠키 저장
-    notTodayCheckbox.click(function () {
-      if (notTodayCheckbox.is(":checked")) {
+    // notTodayCheckbox.click(function () {
+    //   if (notTodayCheckbox.is(":checked")) {
         // '오늘 하루 열지 않음'이 체크된 경우 쿠키 설정
-        document.cookie = "notToday=true; path=/; max-age=86400"; // 1일 동안 쿠키 저장
-        modal.hide();
-      }
-    });
+    //     document.cookie = "notToday=true; path=/; max-age=86400"; // 1일 동안 쿠키 저장
+    //     modal.hide();
+    //   }
+    // });
     // 새로고침 시 성공 메시지가 유지되지 않도록 로컬 스토리지 제거
     // 만약 로컬 스토리지를 쓴 적이 있다면 이 라인으로 기존 데이터를 지울 수 있습니다.
     localStorage.removeItem("eventSuccess");
