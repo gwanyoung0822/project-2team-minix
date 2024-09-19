@@ -11,7 +11,8 @@ body {
 }
 .detail-tab{
     margin: 100px auto;
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     height: 60px;
     display: flex;
     border-top: 1px solid #999;
@@ -25,20 +26,50 @@ body {
     font-size: 20px;
     color: #999;
 }
+.detail-tab li a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+    color: #999;
+}
 .detail-tab li:first-child{
     border-right: 1px solid #999;
 }
-.detail-tab .active{
+.detail-tab li.active a{
     color: #111;
     font-weight: 500;
 }
 .description{
     position: relative;
-    margin: 0 auto;
-    width: 860px;
-    height: 1000px;
+    height: 800px;
     /* height: inherit; */
     overflow: hidden;
+    /* display: none; */
+}
+.desc-img-wrap{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 860px;
+}
+.desc-img-wrap img{
+    width: 100%;
+}
+.description.open{
+    overflow: visible;
+    height: inherit;
+}
+.closeBtn{
+    display: block;
+    width: 80%;
+    max-width: 400px;
+    height: 70px;
+    background-color: #fff;
+    border: 1px solid #333;
+    cursor: pointer;
+    font-family: "Noto Sans KR", sans-serif !important;
+    font-size: 20px;
+    margin: 50px auto;
 }
 .desc-open-btn{
     display: block;
@@ -47,7 +78,8 @@ body {
     transform: translateX(-50%);
     bottom: 50px;
     /* padding: 15px 80px; */
-    width: 400px;
+    width: 80%;
+    max-width: 400px;
     height: 70px;
     background-color: #fff;
     border: 1px solid #333;
@@ -56,7 +88,8 @@ body {
     font-size: 20px;
 }
 .btn-wrap{
-    width: 860px;
+    width: 100%;
+    max-width: 860px;
     height: 200px;
     background-color: #fff;
     position: absolute;
@@ -69,7 +102,10 @@ body {
     position: absolute;
     width: 860px;
     height: 300px;
-    bottom: 100%;
+    bottom: 99%;
     left: 0;
     background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+@media screen and (max-width:500px) {
+    
 }

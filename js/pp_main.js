@@ -24,24 +24,24 @@ $(document).ready(function () {
     //   $(this).css("color","#000")
     // }
   });
-  $(window).scroll(function () {
-    if ($(".sec-list").offset().top >= $(".pp-descriptions").offset().top) {
-      $(".sec-list li a").css("color", "#ccc");
-      $(".sec-list li a").removeClass("active");
-      $(".sec-list li a").eq(1).addClass("active");
-    } 
-    else if ($(".sec-list li a.active").offset().top >= $(".pp-descriptions").offset().top && $(".sec-list li a").offset().top < $(".det2").offset().top) {
-      // console.log( $(".pp-descriptions").offset().top);
+  // $(window).scroll(function () {
+  //   if ($(".sec-list").offset().top >= $(".pp-descriptions").offset().top) {
+  //     $(".sec-list li a").css("color", "#ccc");
+  //     $(".sec-list li a").removeClass("active");
+  //     $(".sec-list li a").eq(1).addClass("active");
+  //   } 
+  //   else if ($(".sec-list li a.active").offset().top >= $(".pp-descriptions").offset().top && $(".sec-list li a").offset().top < $(".det2").offset().top) {
+  //     // console.log( $(".pp-descriptions").offset().top);
 
-      $(".active").css("color", "#fff");
-    } else if ($(".sec-list li a.active").offset().top >= $(".sec3").offset().top) {
-      // console.log( $(".pp-descriptions").offset().top);
+  //     $(".active").css("color", "#fff");
+  //   } else if ($(".sec-list li a.active").offset().top >= $(".sec3").offset().top) {
+  //     // console.log( $(".pp-descriptions").offset().top);
 
-      $(".active").css("color", "#fff");
-    } 
-    else {
-      $(".active").css("color", "#000");
-    }
-  });
-  $(".sec-list li a");
+  //     $(".active").css("color", "#fff");
+  //   } 
+  //   else {
+  //     $(".active").css("color", "#000");
+  //   }
+  // });
+
 });
