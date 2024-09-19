@@ -100,11 +100,11 @@
       <a href="#" class="event-btn fixBtn">
         <img src="images/eventbtn.png" alt="이벤트버튼">
       </a>
-     </div>
-     <!-- 숨겨진 이벤트 참여하기 버튼 -->
-<div id="eventParticipate" class="event-participate-btn" style="display: none;">
-  <button>이벤트 참여하기</button>
-</div>
+    </div>
+    <!-- 숨겨진 이벤트 참여하기 버튼 -->
+    <div id="eventParticipate" class="event-participate-btn" style="display: none">
+      <button>이벤트 참여하기</button>
+    </div>
     <div class="cs-btn fixBtn">
       <img src="images/cs_btn.png" alt="고객센터" />
     </div>
@@ -139,12 +139,12 @@
         <div class="swiper sw-visual">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <video class="visual-video" muted>
+              <video class="visual-video" muted playsinline webkit-playsinline>
                 <source src="video/main-video1.mp4" type="video/mp4" />
               </video>
             </div>
             <div class="swiper-slide">
-              <video class="visual-video" muted>
+              <video class="visual-video" muted playsinline webkit-playsinline>
                 <source src="video/main-video2.mp4" type="video/mp4" />
               </video>
             </div>
@@ -248,6 +248,7 @@
                 <div class="pp-det-title">
                   <img src="images/pt_title.png" alt="타이틀" />
                 </div>
+                <!-- 텍스트 설명 -->
                 <div class="pp-det-txtwrap">
                   <div class="sub1-txt1"><p>구김방지</p></div>
                   <div class="sub1-txt2"><p>99.9% UV-C 살균</p></div>
@@ -256,6 +257,7 @@
                   <div class="sub1-txt5"><p>저소음 + 저진동</p></div>
                   <div class="sub1-txt6"><p>간편한 필터 청소</p></div>
                 </div>
+                <!-- 이미지 갤러리 -->
                 <div class="pp-det-imgwrap">
                   <ul class="gallery">
                     <li style="background-image: url(../images/2-1.gif)">
@@ -296,12 +298,63 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-              <!-- 구매 버튼 -->
-              <div class="bbtn-container2">
-                <button class="bbtn">
-                  <a href="product_page.html" class="btn_txt">구매하러 가기</a>
-                </button>
+                <!-- 스와이퍼 슬라이더 (초기에는 숨김) -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="../images/2-1.gif" alt="스와이퍼1">
+                      <div class="contants">
+                        <h2>구김방지</h2>
+                        <p>"구김 없이 바로 꺼내 입으세요."</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/1-2.gif" alt="스와이퍼2">
+                      <div class="contants">
+                        <h2>99.9% UV-C 살균</h2>
+                        <p>"진드기, 꽃가루 완벽 살균!"</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/1-6.gif" alt="스와이퍼3">
+                      <div class="contants">
+                        <h2>의류관리 기능</h2>
+                        <p>소중한 옷 데일리로 관리하세요.</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/1-4.gif" alt="스와이퍼4">
+                      <div class="contants">
+                        <h2>온풍건조 시스템</h2>
+                        <p>울, 니트 줄어듬 방지!</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/1-5.gif" alt="스와이퍼5">
+                      <div class="contants">
+                        <h2>저소음 + 저진동</h2>
+                        <p>전자레인지 보다 조용한!</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="../images/2-4.gif" alt="스와이퍼6">
+                      <div class="contants">
+                        <h2>간편한 필터 청소</h2>
+                        <p>가볍게 먼지만 털어내세요.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 스와이퍼 내비게이션 -->
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+                </div>
+                <!-- 구매 버튼 -->
+                <div class="bbtn-container2">
+                  <button class="bbtn">
+                    <a href="product_page.html" class="btn_txt">구매하러 가기</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
