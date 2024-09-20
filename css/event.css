@@ -29,16 +29,13 @@
 }
 
 /* 이벤트 폼 스타일 */
-.event-wrap{
-  position: relative;
+.event-wrap {
+  position: absolute;
+  top: 63%;
+  left: 50%;
   display: block;
 }
 .event-form {
-  position: absolute;
-  transform: translate(-32%, -30%);
-    position: absolute;
-    bottom: 0%;
-    right: 0%;
   padding: 20px;
   border-radius: 10px;
   max-width: 600px;
@@ -46,13 +43,15 @@
 
 /* 성함과 번호 입력 영역 */
 
-.name-flex, .phone-flex {
+.name-flex,
+.phone-flex {
   display: flex;
   align-items: center; /* 레이블과 입력 필드 수평 정렬 */
   margin-bottom: 15px; /* 레이블과 입력 필드 그룹 사이의 간격 */
 }
 
-.name-flex label, .phone-flex label {
+.name-flex label,
+.phone-flex label {
   width: 80px; /* 레이블의 고정된 너비 */
   margin-right: 20px; /* 레이블과 입력 필드 사이의 간격 */
   font-size: 26px;
@@ -85,11 +84,11 @@
   font-weight: bold;
   cursor: pointer;
 }
-.submitbtn{
-   display: flex;
+.submitbtn {
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 90px; 
+  margin-left: 90px;
 }
 .event-form button:hover {
   background-color: #dfb371;
@@ -103,27 +102,147 @@
   margin-top: 10px;
   margin-left: 90px;
 }
-.submitwrap{
+.submitwrap {
   display: flex;
   justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  align-items: center;
+  flex-direction: column;
 }
-@media screen and (max-width : 768px) {
-  .event-form {
-    position: absolute;
-    bottom: 0px;
-    right: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
+@media screen and (max-width : 1024px) {
+  .name-flex label,
+  .phone-flex label {
+    width: 65px; /* 레이블의 고정된 너비 */
+    margin-right: 10px; /* 레이블과 입력 필드 사이의 간격 */
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: left; /* 레이블 텍스트 정렬 */
+  }
+  .event-form input {
+    flex: 1;
+    padding: 7px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 260px;
+    width: 100%;
+  }
+    .event-form button {
+      margin-top: 20px;
+      max-width: 200px;
+      width: 100%;
+      padding: 8px;
+      background-color: #dec6a1;
+      border: none;
+      border-radius: 70px;
+      color: black;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+  }
 }
-.name-flex label, .phone-flex label {
-  width: 80px;
-  margin-right: 10px;
+@media screen and (max-width: 880px) {
+  .name-flex label, .phone-flex label {
+    width: 50px;
+    margin-right: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+.submitbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 60px;
+}
+.event-form button {
+  margin-top: 10px;
+  max-width: 180px;
+  width: 100%;
+  padding: 6px;
+  background-color: #dec6a1;
+  border: none;
+  border-radius: 70px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.event-form {
+  padding: 15px;
+  
+}
+}
+@media screen and (max-width: 768px) {
+  .name-flex label, .phone-flex label {
+    width: 40px;
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+.event-form input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  min-width: 220px;
+  width: 100%;
+}
+.event-form button {
+  margin-top: 5px;
+  max-width: 160px;
+  width: 100%;
+  padding: 5px;
+  background-color: #dec6a1;
+  border: none;
+  border-radius: 70px;
+  color: black;
   font-size: 16px;
   font-weight: bold;
-  color: #333;
-  text-align: left;
+  cursor: pointer;
+}
+.event-form {
+  padding: 10px;
 }
 }
+@media screen and (max-width: 650px){
+  .name-flex label, .phone-flex label {
+    width: 35px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+.event-form input {
+  flex: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  min-width: 200px;
+  width: 100%;
+}
+.event-form button {
+  margin-top: 0px;
+  max-width: 150px;
+  width: 100%;
+  padding: 4px;
+  background-color: #dec6a1;
+  border: none;
+  border-radius: 70px;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.event-form {
+  padding: 8px;
+}
+}
+
+
