@@ -104,6 +104,49 @@ body {
   width: 100%;
 }
 @media screen and (max-width: 768px){
+  .sec1_title,
+.highlight{
+  font-size: 4.0vw;
+}
+  .bubbles {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .bubble_left,.bubble_right{
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+  .sp_bb1 {
+    padding-right: 0%; /* 왼쪽 여백 조정 */
+    margin-left: 0%;
+    width: 85%;
+  }
+  
+  .sp_bb2 {
+    padding-right: 0%; /* 오른쪽 여백 조정 */
+    margin-left: 0%;
+    width: 70%;
+  }
+  
+  .sp_bb3 {
+    padding-left: 0%; /* 왼쪽 여백 조정 */
+    margin-left: 0%;
+    width: 70%;
+  }
+  
+  .sp_bb4 {
+    padding-right: 0%; /* 오른쪽 여백 조정 */
+    margin-left: 0%;
+    width: 75%;
+  }
+  
+  .sp_bb5 {
+    padding-right: 0%; /* 왼쪽 여백 조정 */
+    margin-left: 0%;
+    width: 75%;
+  }
   .next-sec-btn2{
     display: none;
   }
@@ -112,12 +155,18 @@ body {
 
 /* 메인카피 */
 .main_copy{
+  display: flex;
+  justify-content: center;
     width: 100%;
+    background-color: #fff;
+    padding: 5%;
+}
+.copy_box{
+  max-width: 1300px;
+  
 }
 .main_copy img{
     width: 100%;
-    text-align: center;
-    margin: 10px 0 10px 0;
 }
 
 /* ============================강점============================================================== */
@@ -196,6 +245,11 @@ body {
 }
 
 /* 이미지 박스 */
+.image-box1,.image-box2,.image-box3{
+  width: 100%;
+  display: flex;
+  justify-content: center
+}
 .image-box1 img, .image-box2 img, .image-box3 img {
   width: 400px;
   height: 400px;
@@ -204,7 +258,7 @@ body {
 
 /* 텍스트 박스 */
 .txt-box1, .txt-box2, .txt-box3 {
-  width: auto;
+  width: 90%;
   height: 80px; /* 텍스트 박스의 높이 */
   display: flex;
   justify-content: center;
@@ -228,9 +282,8 @@ body {
 /* 768px 이하에서 레이아웃 조정 */
 @media (max-width: 768px) {
   .strength_inner {
-    width: 90%;
+    flex-direction: column; /* 세로 배열 */
     align-items: center; /* 중앙 정렬 */
-    gap: 10px;
   }
 
   .item-box img {
@@ -238,29 +291,25 @@ body {
   }
 
   .image-box1 img, .image-box2 img, .image-box3 img {
-    max-width: 210px; /* 이미지 최대 너비 조정 */
-    min-width: 210px;
-    max-height: 250px;
-  }
-  .txt-box1{
+    max-width: 500px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
+    max-height: 500px;
   }
+}
+.txt-box1, .txt-box2, .txt-box3 {
+  margin: 5%; /* 이미지와 텍스트 사이의 간격 */
 }
 
 /* 360px 이하에서 레이아웃 조정 */
 @media (max-width: 360px) {
-  .strength_inner {
-    flex-direction: column; /* 세로 배열 */
-    align-items: center; /* 중앙 정렬 */
-  }
 
   .item-box {
     width: 100%; /* 너비 조정 */
   }
 
   .image-box1 img, .image-box2 img, .image-box3 img {
-    max-width: 200px; /* 이미지 최대 너비 조정 */
-    max-height: 200px;
+    max-width: 250px; /* 이미지 최대 너비 조정 */
+    max-height: 250px;
   }
   .image-box1 img{
     min-width: 210px;
@@ -268,6 +317,7 @@ body {
   .txt-box1 img, .txt-box2 img, .txt-box3 img{
     max-width: 200px;
     min-width: 100px;
+    max-height: 200px;
   }
   .txt-box1 , .txt-box2, .txt-box3 {
     margin: 0;
@@ -276,31 +326,59 @@ body {
 
 /* ==================================강점 끝=========================================================== */
 /* 제품비교 */
-.compare{
-    width: 100%;
-    padding: 0 17%;
+.compare {
+  width: 100%;
+  padding: 0 7%;
 }
-.compare img{
-    width: 100%;
-    text-align: center;
+.compare img {
+  width: 100%;
+  text-align: center;
 }
-@media (max-width: 768px) {
-  .compare {
-    padding: 2% 5%;
-  }
 
+/* 기본 이미지는 기본적으로 보임 */
+.default-img {
+  display: block; /* 큰 화면에서 보임 */
 }
-@media (max-width: 360px){
-  .compare{
-    padding: 0 2%;
-  }
+
+/* 대체 이미지는 기본적으로 숨김 */
+.mobile-img1 ,.mobile-img2 {
+  display: none; /* 큰 화면에서 숨김 */
+}
+
+@media (max-width: 768px) {
+.compare {
+  padding: 2% 5%;
+}
+
+/* 768px 이하에서는 기본 이미지를 숨기고 대체 이미지를 표시 */
+.default-img {
+  display: none;
+}
+.mobile-img1 {
+  padding-left: 10%;
+  padding-right: 10%;
+  display: block; /* 작은 화면에서 보임 */
+}
+.mobile-img2 {
+  padding-top: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: block; /* 작은 화면에서 보임 */
+}
+}
+
+@media (max-width: 360px) {
+.compare {
+  padding: 0 2%;
+}
 }
 /* 구매버튼 */
 /* 비교와 갤러리 사이에 위치한 버튼을 감싸는 컨테이너 */
 .bbtn-container {
   display: flex;
   justify-content: center; /* 버튼을 가운데로 정렬 */
-  margin: 4% 0; /* 위쪽에 여백 추가 */
+  margin-bottom: 3%;
+  margin-top: 3%;
 }
 
 /* 버튼 스타일 */
@@ -332,13 +410,18 @@ body {
 /* 반응형 조정 */
 @media (max-width: 768px) {
   .bbtn {
-    width: 100%;
-    margin-left: 20%;
-    margin-right: 20%;
+    height: 60px;
+    width: 30%;
   }
 }
 
 @media (max-width: 360px) {
+  .bbtn-container {
+    display: flex;
+    justify-content: center; /* 버튼을 가운데로 정렬 */
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
   .bbtn {
     height: 30px;
     max-width: 100px;
@@ -854,9 +937,10 @@ width: 50%;
 /* 갤러리 하단 버튼 컨테이너 */
 /* 갤러리 내부의 버튼 컨테이너 */
 .bbtn-container2 {
+  width: 300px;
   display: flex;
   justify-content: center; /* 버튼을 중앙에 배치 */
-  margin: 5% 0; /* 위쪽에 여백 추가 */
+  margin: 3%;
 }
 
 /* Swiper 컨테이너에 대한 스타일 */
@@ -865,15 +949,12 @@ width: 50%;
 .swiper.sw-gallery {
   display: none;
   width: 100%;
-  height: 500px; /* 필요에 따라 조정 */
   position: relative; /* 내비게이션 버튼을 정확하게 배치하기 위한 위치 설정 */
 }
 
 /* 스와이퍼 이미지 스타일 */
 .swiper-slide img {
-  width: 100%;
-  height: auto; /* 비율에 맞게 조정 */
-  object-fit: cover; /* 이미지를 컨테이너에 맞게 채우기 */
+  width: 400px;
 }
 /* Swiper 슬라이드 컨텐츠 스타일 */
 .swiper-slide .contants {
@@ -887,7 +968,6 @@ width: 50%;
   text-align: center;
   height: 150px;
   padding: 20px;
-  opacity: 0.8;
 }
 
 
@@ -898,9 +978,8 @@ width: 50%;
 
 /* 페이지네이션 컨테이너 스타일 */
 .swiper-pagination {
-  bottom: 50px !important; /* 페이지네이션 위치 조정 */
+  margin-top: 3%;
   text-align: center; /* 가운데 정렬 */
-  position: relative; /* 상대 위치 설정 */
 }
 
 /* 페이지네이션 바 스타일 (배경 선) */
@@ -954,11 +1033,23 @@ width: 50%;
   .pp-det-txtwrap{
     display: none; /* 텍스트랩 숨김 */
   }
-
-      .swiper.sw-gallery {
-        height: 600px; /* 모바일 화면에 맞는 높이 조정 */
-        display:block;
-      }
+  .swiper-slide .contants::after {
+    background-color: rgba(0, 0, 0,0.6);
+    opacity: 1;
+    width: 100%;
+    height: 40px;
+    top: -17px;
+    left: 0;
+    opacity: 0.8;
+    transform: rotate(-5deg) scale(1.2);
+    z-index: -1;
+}
+.swiper-slide .contants {
+bottom: 33%;
+}
+.swiper.sw-gallery {
+  display:block;
+}
 }
 .swiper.sw-gallery img{
   width: 100%;
