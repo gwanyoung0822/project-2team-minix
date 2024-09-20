@@ -281,6 +281,9 @@ span {
   .review {
     padding-bottom: 40px;
   }
+  .review_top_title{
+    padding-left: 0px;
+  }
   .review_top {
     display: flex;
     justify-content: center;

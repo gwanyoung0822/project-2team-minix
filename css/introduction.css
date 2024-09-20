@@ -529,6 +529,17 @@ span.middlep {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+span.small {
+  margin-right: clamp(8px, 2vw, 20px); /* 작은 화면에서도 간격 유지 */
+}
+
+.test1,
+.test2,
+.test3,
+.test4 {
+  margin-bottom: clamp(8px, 2vw, 15px); /* 작은 화면에서도 간격 유지 */
+}
+
 
 /* 768px 이상의 화면에서는 한 줄에 2개의 요소가 배치 */
 .rank {
@@ -680,6 +691,42 @@ span.middlep {
 
 /* 작은 화면에서 배치 변경 */
 @media screen and (max-width: 768px) {
+  .rank {
+    flex: 1 1 calc(50% - 10px); /* 320px 이하에서도 두 개의 요소가 배치되도록 */
+  }
+
+  .det2-main {
+    padding-top: 20px; /* 작은 화면에서 여백 조정 */
+  }
+  span.small {
+    font-size: clamp(30px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+  }
+  span.number {
+    font-size: clamp(60px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    min-width: 30px;
+  }
+  span.one {
+    font-size: clamp(60px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    letter-spacing: -1px;
+    margin-left: 0px;
+  }
+  span.smallp {
+    font-size: clamp(40px, 3.5vw, 32px);
+  }
+  span.middlep {
+    font-size: clamp(40px, 3vw, 20px);
+  }
+
+  .det2-main {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  span.date {
+    font-size: 20px;
+  }
+
   .det2-main {
     display: flex;
     flex-direction: column; /* 세로로 배치 */
@@ -701,20 +748,85 @@ span.middlep {
   .det2-main2-2 {
     order: 4;
   }
-}
 
-span.small {
-  margin-right: clamp(8px, 2vw, 20px); /* 작은 화면에서도 간격 유지 */
-}
 
-.test1,
-.test2,
-.test3,
-.test4 {
-  margin-bottom: clamp(8px, 2vw, 15px); /* 작은 화면에서도 간격 유지 */
+}
+@media screen and (max-width: 600px){
+  .rank {
+    flex: 1 1 calc(50% - 10px); /* 320px 이하에서도 두 개의 요소가 배치되도록 */
+  }
+
+  .det2-main {
+    padding-top: 20px; /* 작은 화면에서 여백 조정 */
+  }
+  span.small {
+    font-size: clamp(24px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+  }
+  span.number {
+    font-size: clamp(50px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    min-width: 30px;
+  }
+  span.one {
+    font-size: clamp(50px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    letter-spacing: -1px;
+    margin-left: 0px;
+  }
+  span.smallp {
+    font-size: clamp(30px, 3.5vw, 32px);
+  }
+  span.middlep {
+    font-size: clamp(30px, 3vw, 20px);
+  }
+
+  .det2-main {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  span.date {
+    font-size: 14px;
+  }
 }
 /* 작은 화면에서의 요소 간격 및 크기 조정 */
 @media screen and (max-width: 480px) {
+  .rank {
+    flex: 1 1 calc(50% - 10px); /* 320px 이하에서도 두 개의 요소가 배치되도록 */
+  }
+
+  .det2-main {
+    padding-top: 20px; /* 작은 화면에서 여백 조정 */
+  }
+  span.small {
+    font-size: clamp(20px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+  }
+  span.number {
+    font-size: clamp(40px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    min-width: 30px;
+  }
+  span.one {
+    font-size: clamp(40px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    letter-spacing: -1px;
+    margin-left: 0px;
+  }
+  span.smallp {
+    font-size: clamp(12px, 3.5vw, 32px);
+  }
+  span.middlep {
+    font-size: clamp(10px, 3vw, 20px);
+  }
+
+  .det2-main {
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  span.date {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 380px) {
   .rank {
     flex: 1 1 calc(50% - 10px); /* 320px 이하에서도 두 개의 요소가 배치되도록 */
   }
