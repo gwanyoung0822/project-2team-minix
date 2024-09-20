@@ -84,7 +84,7 @@ img{
 }
 .cs-btn-kakao{
     position: fixed;
-    bottom: 88px;
+    bottom: 80px;
     right: 29px;
     z-index: 98;
     cursor: pointer;
@@ -93,7 +93,7 @@ img{
 }
 .cs-btn-naver{
     position: fixed;
-    bottom: 88px;
+    bottom: 80px;
     right: 29px;
     z-index: 98;
     cursor: pointer;
@@ -129,6 +129,13 @@ img{
 }
 .fix-buy-btn:hover img:nth-child(1){
     display: none;
+}
+.fixBtn{
+    width: 50px;
+    height: 50px;
+}
+.fixBtn img{
+    width: 100%;
 }
 /* .fix-buy-btn a{
     display: block;
@@ -224,7 +231,7 @@ input[type="checkbox"]{
         }
         .cs-btn-event {
             position: fixed;
-            bottom: 160px;
+            bottom: 145px;
             right: 12px;
             z-index: 99;
             cursor: pointer;
@@ -232,7 +239,7 @@ input[type="checkbox"]{
         }
         .fix-buy-btn{
             right: 10px;
-            bottom: 110px;
+            bottom: 100px;
         }
         .top-btn{
             right: 10px;
@@ -240,11 +247,19 @@ input[type="checkbox"]{
         }
         .cs-btn{
             right: 10px;
-            bottom: 60px;
+            bottom: 55px;
         }
         .cs-btn-kakao,.cs-btn-naver{
             right: 10px;
-            bottom: 65px;
+            bottom: 55px;
+        }
+        .cs-btn-kakao.show{
+            opacity: 1;
+            transform: translateX(-45px);
+        }
+        .cs-btn-naver.show{
+            opacity: 1;
+            transform: translateX(-90px);
         }
     }
 @media screen and (max-width:564px){

@@ -17,7 +17,7 @@
   box-sizing: border-box;
   list-style: none;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
 body {
@@ -28,7 +28,7 @@ body {
 img {
   display: block;
 }
-a{
+a {
   text-decoration: none;
 }
 .inner {
@@ -36,6 +36,21 @@ a{
   margin: auto;
 }
 /* 탑버튼 */
+.fix-buy-btn{
+  position: fixed;
+  bottom: 140px;
+  right: 25px;
+  z-index: 98;
+}
+.fix-buy-btn img:nth-child(2){
+  display: none;
+}
+.fix-buy-btn:hover img:nth-child(2){
+  display: block;
+}
+.fix-buy-btn:hover img:nth-child(1){
+  display: none;
+}
 .cs-btn {
   position: fixed;
   bottom: 80px;
@@ -45,7 +60,7 @@ a{
 }
 .cs-btn-kakao {
   position: fixed;
-  bottom: 88px;
+  bottom: 80px;
   right: 29px;
   z-index: 98;
   cursor: pointer;
@@ -54,7 +69,7 @@ a{
 }
 .cs-btn-naver {
   position: fixed;
-  bottom: 88px;
+  bottom: 80px;
   right: 29px;
   z-index: 98;
   cursor: pointer;
@@ -76,7 +91,14 @@ a{
   z-index: 99;
   cursor: pointer;
 }
-.sec-list{
+.fixBtn {
+  width: 50px;
+  height: 50px;
+}
+.fixBtn img {
+  width: 100%;
+}
+/* .sec-list{
   position: fixed;
   top: 50%;
   left: 2%;
@@ -105,27 +127,35 @@ a{
   font-size: 30px;
   font-weight: 900;
   line-height: 20px;
-}
-@media screen and (max-width:768px) {
-  .fixBtn img{
+} */
+@media screen and (max-width: 768px) {
+  
+  .fixBtn img {
     transform: scale(0.8);
-}
+  }
   .fix-buy-btn{
     right: 10px;
-    bottom: 110px;
+    bottom: 100px;
 }
-.top-btn{
+  .top-btn {
     right: 10px;
     bottom: 10px;
-}
-.cs-btn{
+  }
+  .cs-btn {
     right: 10px;
-    bottom: 60px;
-}
-.cs-btn-kakao,.cs-btn-naver{
+    bottom: 55px;
+  }
+  .cs-btn-kakao,
+  .cs-btn-naver {
     right: 10px;
-    bottom: 65px;
-}.fixBtn img{
-        transform: scale(0.8);
-    }
+    bottom: 55px;
+  }
+  .cs-btn-kakao.show {
+    opacity: 1;
+    transform: translateX(-45px);
+  }
+  .cs-btn-naver.show {
+    opacity: 1;
+    transform: translateX(-90px);
+  }
 }
