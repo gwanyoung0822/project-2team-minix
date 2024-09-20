@@ -21,10 +21,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // ===================================갤러리====================================================
   // 스와이퍼 초기화 및 해제
   let swiper;
-
   const initSwiper = () => {
     if (window.innerWidth <= 768 && !swiper) {
       swiper = new Swiper(".swiper.sw-gallery", {
+        slidesPerView: 1, // 한 번에 보이는 슬라이드 개수
+        spaceBetween: 10, // 슬라이드 간 간격
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -34,28 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        slidesPerView: 1,
-        spaceBetween: 10,
         autoplay: {
           delay: 3000, // 자동 슬라이드 전환 시간 (밀리초)
           disableOnInteraction: false, // 사용자 상호작용 후에도 자동 전환 유지
         },
       });
-    }
-  };
-
-  const destroySwiper = () => {
-    if (swiper) {
-      swiper.destroy(true, true);
-      swiper = null;
-    }
-  };
-
-  const handleResize = () => {
-    if (window.innerWidth <= 768 && !swiper) {
-      initSwiper();
-    } else if (window.innerWidth > 768) {
-      destroySwiper();
     }
   };
 
