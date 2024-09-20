@@ -91,6 +91,9 @@ body {
   padding-right: 5%; /* 왼쪽 여백 조정 */
   margin-left: 25%;
 }
+.bubble_colums{
+  display: none;
+}
 /* ======================================================스크롤 버튼 */
 .next-sec-btn2{
   width: 55px;
@@ -116,7 +119,7 @@ body {
   .bubble_left,.bubble_right{
     align-items: center;
     margin-top: 20px;
-    
+    display: none;
   }
   .sp_bb1 {
     padding-right: 0%; /* 왼쪽 여백 조정 */
@@ -147,9 +150,22 @@ body {
     margin-left: 0%;
     width: 75%;
   }
+  .bubble_colums{
+    display: block;
+  }
+  .bb_colums >img{
+    padding-top: 5%;
+  }
   .next-sec-btn2{
     display: none;
   }
+}
+@media screen and (max-width: 480px){
+  .bubble_colums{
+    padding: 7%;
+  }
+}
+@media screen and (max-width: 360px){
 }
 /* =====================================섹션1 ================================================*/
 
@@ -285,19 +301,26 @@ body {
     flex-direction: column; /* 세로 배열 */
     align-items: center; /* 중앙 정렬 */
   }
-
-  .item-box img {
+  .item-box  {
     width: 100%; /* 너비 조정 */
   }
 
   .image-box1 img, .image-box2 img, .image-box3 img {
-    max-width: 500px; /* 이미지 최대 너비 조정 */
+    padding: 3%;
+    max-width: 400px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
-    max-height: 500px;
+    max-height: 400px;
   }
 }
 .txt-box1, .txt-box2, .txt-box3 {
-  margin: 5%; /* 이미지와 텍스트 사이의 간격 */
+  margin: 1%; /* 이미지와 텍스트 사이의 간격 */
+}
+.txt-box1 img{
+  max-width: 240px;
+  max-height: 47.81px;
+}
+ .txt-box2 img, .txt-box3 img{
+  max-width: 250px;
 }
 
 /* 360px 이하에서 레이아웃 조정 */
@@ -311,8 +334,8 @@ body {
     max-width: 250px; /* 이미지 최대 너비 조정 */
     max-height: 250px;
   }
-  .image-box1 img{
-    min-width: 210px;
+  .txt-box1 img{
+    max-height: 38.25px;
   }
   .txt-box1 img, .txt-box2 img, .txt-box3 img{
     max-width: 200px;
@@ -332,7 +355,8 @@ body {
 }
 .compare img {
   width: 100%;
-  text-align: center;
+
+
 }
 
 /* 기본 이미지는 기본적으로 보임 */
@@ -410,8 +434,11 @@ body {
 /* 반응형 조정 */
 @media (max-width: 768px) {
   .bbtn {
-    height: 60px;
+    height: 40px;
     width: 30%;
+  }
+  .bbtn .btn_txt {
+    font-size: 16px;
   }
 }
 
@@ -775,6 +802,7 @@ span.small {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center
 }
 
 .pp-det-inner {
@@ -796,7 +824,6 @@ span.small {
   width: 100%;
   display: flex;
   justify-content: center;
-
   margin: 5% 0;
 }
 .pp-det-title img{
@@ -935,11 +962,11 @@ width: 50%;
   text-align: center;
 }
 /* 갤러리 하단 버튼 컨테이너 */
-/* 갤러리 내부의 버튼 컨테이너 */
 .bbtn-container2 {
-  width: 300px;
+  width: 100%;
   display: flex;
   justify-content: center; /* 버튼을 중앙에 배치 */
+  align-items: center;
   margin: 3%;
 }
 
@@ -949,27 +976,30 @@ width: 50%;
 .swiper.sw-gallery {
   display: none;
   width: 100%;
-  position: relative; /* 내비게이션 버튼을 정확하게 배치하기 위한 위치 설정 */
 }
 
 /* 스와이퍼 이미지 스타일 */
-.swiper-slide img {
+.swiper-wrapper > img {
   width: 400px;
+  height: 400px;
+  object-fit: cover; /* 잘림 방지 */
 }
 /* Swiper 슬라이드 컨텐츠 스타일 */
 .swiper-slide .contants {
   position: absolute;
-  bottom: 50%;
+  bottom: 0; /* 갤러리와 동일하게 하단 정렬 */
   left: 50%;
-  transform: translate(-50% , 93%); /* 중앙 정렬 */
+  transform: translate(-50%, 90%); /* 수평 중앙 정렬 */
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* 투명한 검정 배경 */
+  background-color: rgba(0, 0, 0, 1); /* 투명한 검정 배경 */
   color: #fff;
   text-align: center;
-  height: 150px;
-  padding: 20px;
+  height: 150px; /* 높이를 갤러리와 동일하게 설정 */
+  padding: 20px; /* 패딩 동일하게 설정 */
+  line-height: 1.6; /* 줄 높이 동일하게 설정 */
+  opacity: 0.8; /* 불투명도 조정 */
+  z-index: 99;
 }
-
 
 /* 내비게이션 버튼 hover 상태 */
 .swiper-button-next:hover, .swiper-button-prev:hover {
@@ -986,9 +1016,10 @@ width: 50%;
 .swiper-pagination::before {
   content: "";
   width: 80px; /* 선의 길이 */
-  height: 3px; /* 선의 두께 */
+  height: 2px; /* 선의 두께 */
   background-color: #ccc; /* 선 색상 */
   position: absolute;
+  opacity: 0.8; /* 불릿의 불투명도 */
   top: 45%; /* 수직 위치 */
   left: 50%; /* 수평 중앙 정렬 */
   transform: translate(-50%, -50%); /* 중앙 위치 조정 */
@@ -997,11 +1028,11 @@ width: 50%;
 
 /* 페이지네이션 불릿 기본 스타일 */
 .swiper-pagination-bullet {
-  width: 15px; /* 불릿 너비 */
-  height: 15px; /* 불릿 높이 */
+  width: 10px; /* 불릿 너비 */
+  height: 10px; /* 불릿 높이 */
   background-color: #ccc; /* 불릿 색상 */
   border-radius: 50%; /* 둥글게 만들기 */
-  opacity: 1; /* 불릿의 불투명도 */
+  opacity: 0.8; /* 불릿의 불투명도 */
   display: inline-block; /* 불릿을 수평으로 나열 */
   margin: 0 5px; /* 불릿 간의 간격 */
   position: relative; /* 불릿을 상대 위치로 설정 */
@@ -1017,33 +1048,40 @@ width: 50%;
 .swiper-pagination-bullet:not(:last-child)::after {
   content: "";
   position: absolute;
-  width: 6px; /* 선의 두께 */
-  height: 3px; /* 선의 두께 */
+  width: 5px; /* 선의 두께 */
+  height: 1px; /* 선의 두께 */
   background-color: #ccc; /* 선 색상 */
   top: 50%;
-  right: -8px; /* 선과 불릿 사이의 거리 조정 */
+  right: -10px; /* 선과 불릿 사이의 거리 조정 */
   transform: translateY(-50%); /* 수직 가운데 정렬 */
 }
 
 /* 반응형 스타일 */
 @media (max-width: 768px) {
+  .pp-det-title img{
+    width: 80vw;
+  }
   .gallery {
     display: none; /* 기본 갤러리를 숨김 */
+  }
+  .swiper.sw-gallery {
+    width: 100%;
+    display: block;
   }
   .pp-det-txtwrap{
     display: none; /* 텍스트랩 숨김 */
   }
   .swiper-slide .contants::after {
-    background-color: rgba(0, 0, 0,0.6);
-    opacity: 1;
+    content: "";
+    position: absolute;
+    background-color: rgb(0, 0, 0 ,1);
     width: 100%;
     height: 40px;
-    top: -17px;
+    top: -20px;
     left: 0;
-    opacity: 0.8;
-    transform: rotate(-5deg) scale(1.2);
+    transform: rotate(-5deg) scale(1.3);
     z-index: -1;
-}
+  }
 .swiper-slide .contants {
 bottom: 33%;
 }
@@ -1056,3 +1094,4 @@ bottom: 33%;
   scale: 1.2;
   height: 400px;
 }
+/* ===================================갤러리 끝====================== */
