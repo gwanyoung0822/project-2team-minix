@@ -34,11 +34,12 @@
   height: 100%;
   display: flex;
   justify-content: center;
+  padding-left: 30px;
 }
 .mb-logo img {
   height: 100%;
   transform: scale(0.5);
-}
+} 
 .mb-buy-btn {
   display: flex;
   align-items: center;

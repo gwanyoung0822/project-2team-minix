@@ -204,29 +204,48 @@ input[type="checkbox"]{
 
 
 @media screen and (max-width:768px) {
-    .fixBtn{
-        transform: scale(0.7);
+    /* .fixBtn{
+        transform: scale(0.9);
+    } */
+    .fixBtn img{
+        transform: scale(0.8);
     }
-    .cs-btn-event{
-        transform: scale(0.7);
-    }
+    /* .cs-btn-event{
+        transform: scale(1);
+    } */
  .modal-content {
             width: 40%; /* 화면 너비의 80%로 조정 */
             margin: 15% auto;
         }
         .cs-btn-event img {
-            max-width: 40.6px; /* 작은 화면에서는 크기를 더 줄임 */
+            /* max-width: 40.6px; 작은 화면에서는 크기를 더 줄임 */
             right: 25px;
         }
         .cs-btn-event {
             position: fixed;
-            bottom: 200px;
-            right: 34px;
+            bottom: 160px;
+            right: 12px;
             z-index: 99;
             cursor: pointer;
             animation: updown 1.5s infinite;
         }
-}
+        .fix-buy-btn{
+            right: 10px;
+            bottom: 110px;
+        }
+        .top-btn{
+            right: 10px;
+            bottom: 10px;
+        }
+        .cs-btn{
+            right: 10px;
+            bottom: 60px;
+        }
+        .cs-btn-kakao,.cs-btn-naver{
+            right: 10px;
+            bottom: 65px;
+        }
+    }
 @media screen and (max-width:564px){
     input[type="checkbox"] {
         transform: scale(0.8); /* 80% 크기로 줄이기 */
