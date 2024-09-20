@@ -106,3 +106,26 @@ a{
   font-weight: 900;
   line-height: 20px;
 }
+@media screen and (max-width:768px) {
+  .fixBtn img{
+    transform: scale(0.8);
+}
+  .fix-buy-btn{
+    right: 10px;
+    bottom: 110px;
+}
+.top-btn{
+    right: 10px;
+    bottom: 10px;
+}
+.cs-btn{
+    right: 10px;
+    bottom: 60px;
+}
+.cs-btn-kakao,.cs-btn-naver{
+    right: 10px;
+    bottom: 65px;
+}.fixBtn img{
+        transform: scale(0.8);
+    }
+}

@@ -288,7 +288,7 @@ span {
   }
   .review_top_more2wrap::after {
     display: block;
-    width: 240px; /* 580px 이하에서 적용할 밑줄의 길이 */
+    width: 190px; /* 580px 이하에서 적용할 밑줄의 길이 */
   }
 
   .review_top_more {
@@ -299,12 +299,14 @@ span {
     display: flex;
   }
   .review_top_more2wrap p {
-    font-size: 30px;
+    font-size: 22px;
+    line-height: 30px;
   }
   .review_top_more2wrap a img {
-    max-width: 60px;
+    max-width: 50px;
     width: 100%;
-    margin-left: 20px;
+    margin-left: 10px;
+    padding-top: 5px;
   }
 }
 @media screen and (max-width: 350px) {
