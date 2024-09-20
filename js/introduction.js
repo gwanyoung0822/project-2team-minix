@@ -42,6 +42,19 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   };
+  const destroySwiper = () => {
+    if (swiper) {
+      swiper.destroy(true, true);
+      swiper = null;
+    }
+  };
+  const handleResize = () => {
+    if (window.innerWidth <= 768 && !swiper) {
+      initSwiper();
+    } else if (window.innerWidth > 768) {
+      destroySwiper();
+    }
+  };
 
   window.addEventListener("resize", handleResize);
   handleResize(); // 초기 호출
