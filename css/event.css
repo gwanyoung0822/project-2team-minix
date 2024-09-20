@@ -108,6 +108,9 @@
   align-items: center;
   flex-direction: column;
 }
+.image-container-tab{
+  display: none;
+}
 @media screen and (max-width : 1024px) {
   .name-flex label,
   .phone-flex label {
@@ -174,7 +177,7 @@
   
 }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
   .name-flex label, .phone-flex label {
     width: 40px;
     margin-right: 10px;
@@ -209,11 +212,126 @@
   padding: 10px;
 }
 }
-@media screen and (max-width: 650px){
+@media screen and (max-width: 768px) {
+  .image-container {
+    display: none;
+  }
+  
+  .image-container-tab {
+    display: block;
+    position: relative;
+  }
+  .image-container-tab img{
+    width: 100%;
+  }
+  
+  .event-wrap {
+    position: absolute;
+    top: 89%;
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translateX(-50%); /* X축에서 정확히 중앙으로 이동 */
+    width: 80%; /* 너비를 적절하게 설정 */
+    display: block;
+    text-align: center; /* 내용 가운데 정렬 */
+  }
+
+  .event-form button {
+    margin-top: 5px;
+    max-width: 250px;
+    width: 100%;
+    padding: 8px;
+    background-color: #dec6a1;
+    border: none;
+    border-radius: 70px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
   .name-flex label, .phone-flex label {
-    width: 35px;
+    width: 60px;
     margin-right: 10px;
-    font-size: 14px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+  }
+
+  .event-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 280px;
+    width: 100%;
+  }
+}
+@media screen and (max-width:660px) {
+  .event-wrap{
+    top: 87%;
+  }
+}
+@media screen and (max-width:560px) {
+  .event-form button {
+    margin-top: 0px;
+    max-width: 210px;
+    width: 100%;
+    padding: 5px;
+    background-color: #dec6a1;
+    border: none;
+    border-radius: 70px;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.event-wrap{
+  top: 87%;
+}
+.submitbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.name-flex label, .phone-flex label {
+  width: 60px;
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+}
+@media screen and (max-width:510px){
+  .event-wrap{
+    top: 86%;
+  }
+  .name-flex label, .phone-flex label {
+    width: 60px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+.event-form input {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 280px;
+  width: 100%;
+}
+}
+@media screen and (max-width:438px){
+  .name-flex label, .phone-flex label {
+    width: 40px;
+    margin-right: 10px;
+    font-size: 17px;
     font-weight: bold;
     color: #333;
     text-align: left;
@@ -223,15 +341,70 @@
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 13px;
   min-width: 200px;
   width: 100%;
 }
 .event-form button {
   margin-top: 0px;
+  max-width: 170px;
+  width: 100%;
+  padding: 3px;
+  background-color: #dec6a1;
+  border: none;
+  border-radius: 70px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+}
+@media screen and (max-width: 400px){
+  .event-form {
+    padding: 3px;
+}
+.event-form button {
+  margin-top: 0px;
   max-width: 150px;
   width: 100%;
-  padding: 4px;
+  padding: 3px;
+  background-color: #dec6a1;
+  border: none;
+  border-radius: 70px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.name-flex label, .phone-flex label {
+  width: 40px;
+  margin-right: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+.event-form input {
+  flex: 1;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 13px;
+  min-width: 100px;
+  width: 80%;
+}
+
+}
+@media screen and (max-width: 320px) {
+  .event-form {
+    padding: 2px;
+}
+.event-form button {
+  margin-top: 0px;
+  max-width: 120px;
+  width: 100%;
+  padding: 3px;
   background-color: #dec6a1;
   border: none;
   border-radius: 70px;
@@ -240,9 +413,21 @@
   font-weight: bold;
   cursor: pointer;
 }
-.event-form {
-  padding: 8px;
+.name-flex label, .phone-flex label {
+  width: 30px;
+  margin-right: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+.event-form input {
+  flex: 1;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1px;
+  min-width: 100px;
+  width: 80%;
 }
 }
-
-
