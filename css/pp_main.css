@@ -36,6 +36,27 @@ a {
   margin: auto;
 }
 /* 탑버튼 */
+.cs-btn-event{
+  position: fixed;
+  bottom: 200px;
+  right: 27px;
+  z-index: 99;
+  cursor: pointer;
+  animation: updown 1.5s infinite;
+}
+/* 애니메이션 효과 */
+@keyframes updown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .fix-buy-btn{
   position: fixed;
   bottom: 140px;
@@ -98,6 +119,58 @@ a {
 .fixBtn img {
   width: 100%;
 }
+/* 기존 cs-btn-event 스타일 */
+.cs-btn-event {
+  position: fixed;
+  bottom: 200px;
+  right: 27px;
+  z-index: 99;
+  cursor: pointer;
+  animation: updown 1.5s infinite;
+}
+
+.fixBtn {
+  width: 50px;
+  height: 50px;
+}
+
+.fixBtn img {
+  width: 100%;
+}
+
+/* 이미지 기반 말풍선 스타일 */
+.tooltip {
+  position: absolute;
+  bottom: 60px; /* 버튼 위에 말풍선 이미지 위치 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; /* 말풍선 이미지의 너비 */
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.tooltip img {
+  width: 100%;
+  height: auto;
+}
+
+/* 텍스트를 이미지 안에 배치 */
+.tooltip-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* 마우스를 올렸을 때 말풍선 보이기 */
+.cs-btn-event:hover .tooltip {
+  opacity: 1;
+}
 /* .sec-list{
   position: fixed;
   top: 50%;
@@ -158,4 +231,16 @@ a {
     opacity: 1;
     transform: translateX(-90px);
   }
+  .cs-btn-event img {
+    /* max-width: 40.6px; 작은 화면에서는 크기를 더 줄임 */
+    right: 25px;
+}
+.cs-btn-event {
+    position: fixed;
+    bottom: 145px;
+    right: 12px;
+    z-index: 99;
+    cursor: pointer;
+    animation: updown 1.5s infinite;
+}
 }
