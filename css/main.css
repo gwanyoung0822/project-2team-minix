@@ -53,19 +53,7 @@ img{
     }
 }
 
-.event-participate-btn button {
-    background-color: #ff6600;
-    border: none;
-    padding: 10px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 3px;
-}
 
-.event-participate-btn button:hover {
-    background-color: #e65c00; /* 버튼에 마우스를 올리면 색상이 변경 */
-}
 /* 탑버튼 */
 .cs-btn-event{
     position: fixed;
@@ -182,7 +170,7 @@ height: 100%;
     align-items: center;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    
+    vertical-align: middle;
 }
 
 .close-wrap input[type="checkbox"] {
