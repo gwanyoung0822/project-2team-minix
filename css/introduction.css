@@ -1061,7 +1061,7 @@ width: 50%;
     position: absolute;
     background-color: rgb(0, 0, 0);
     width: 100%;
-    height: 40px;
+    height: 41px;
     top: -20px;
     left: 0;
     transform: rotate(-5deg) scale(1.3);
@@ -1107,6 +1107,8 @@ width: 50%;
   justify-content: center; /* 버튼을 중앙에 배치 */
   align-items: center;
   margin: 3%;
+  margin-top: 8%;
+  margin-bottom: 8%;
 }
 
 /* Swiper 컨테이너에 대한 스타일 */
@@ -1118,17 +1120,16 @@ width: 50%;
 .swiper-slide .contants {
   position: absolute;
   width: 100%;
-  bottom: 0; /* 갤러리와 동일하게 하단 정렬 */
+  bottom: -50%; /* 갤러리와 동일하게 하단 정렬 */
   left: 50%;
-  transform: translate(-50%, 122%); /* 수평 중앙 정렬 */
+  transform: translate(-50%, 112%); /* 수평 중앙 정렬 */
   background-color: rgba(0, 0, 0, 1); /* 투명한 검정 배경 */
   color: #fff;
   text-align: center;
-  height: 150px; /* 높이를 갤러리와 동일하게 설정 */
   padding: 10px; /* 패딩 동일하게 설정 */
   line-height: 1.6; /* 줄 높이 동일하게 설정 */
   opacity: 0.8; /* 불투명도 조정 */
-  z-index: 99;
+  z-index: 1;
 }
 .swiper-slide .contants::after{
 overflow: hidden;
@@ -1136,13 +1137,10 @@ object-fit: cover;
 }
 
 .slide_img_box{
-  width: 100%;
-  height: 500px
+  width: 100%
 }
 .slide_img_box img{
-width: 700px; /* 이미지 너비를 슬라이드에 맞게 조정 */
-height: 700px;
-object-fit: cover; /* 이미지 비율 유지하며 잘림 */
+width: 100%;
 display: block; /* 이미지 하단 여백 제거 */
 }
 
@@ -1162,7 +1160,7 @@ display: block; /* 이미지 하단 여백 제거 */
   height: 2px; /* 선의 두께를 줄임 */
   background-color: #ccc;
   position: absolute;
-  bottom: 13%; /* 불릿과 일치하게 수직 위치 조정 */
+  bottom: 11%; /* 불릿과 일치하게 수직 위치 조정 */
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -1195,9 +1193,11 @@ display: block; /* 이미지 하단 여백 제거 */
   .pp-det-txtwrap{
     display: none; /* 텍스트랩 숨김 */
   }
-
+  .slide_img_box img{
+    width: 100%;
+  }
 .swiper-slide .contants {
-bottom: 27%;
+bottom: 19%;
 }
 .swiper.sw-gallery {
   display:block;
@@ -1230,16 +1230,37 @@ bottom: 27%;
   .contants{
     padding: 10px;
   }
-  .slide_img_box{
-    height: 250px;
+  .slide_img_box img{
+    width: 100%;
   }
+  .swiper-slide .contants {
+    bottom: 27%;
+    }
   .contants p{
     font-size: 15px;
   }
+  .swiper-pagination {
+    position: relative;
+    bottom: 0;
+    margin-top: 20px; /* 페이지네이션을 아래로 내림 */
+    z-index: 1;
+  }
 }
 @media (max-width: 360px){
-  .slide_img_box{
-    height: 200px;
+  .slide_img_box img{
+    width: 100%;
+  }
+  .swiper-slide .contants {
+    bottom: 36%;
+    }
+  .swiper-pagination {
+    position: relative;
+    bottom: 0;
+    margin-top: 20px; /* 페이지네이션을 아래로 내림 */
+    z-index: 1;
+  }
+  .swiper-pagination::before{
+    bottom: 13%;
   }
 }
 

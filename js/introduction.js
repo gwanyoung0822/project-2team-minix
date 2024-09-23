@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // =================================== 갤러리 ====================================================
   let swiper;
-  // Swiper 초기화 함수
+  // Swiper 초기화 함수 업데이트
   const initSwiper = () => {
     if (window.innerWidth <= 768 && !swiper) {
       swiper = new Swiper(".swiper.sw-gallery", {
         slidesPerView: 1,
-        spaceBetween: 80,
+        spaceBetween: 100,
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -37,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         autoplay: {
           delay: 3000,
+        },
+        on: {
+          slideChange: () => {
+            // 슬라이드가 변경될 때 텍스트 업데이트
+            const activeIndex = swiper.realIndex; // 실제 슬라이드 인덱스
+            updateActiveSubText(activeIndex);
+          },
         },
       });
     }
@@ -58,11 +65,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴
+  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴 (업데이트)
   const handleResize = () => {
-    if (window.innerWidth <= 768) {
+    const screenWidth = window.innerWidth;
+
+    // 768px 이하일 경우 스와이퍼를 초기화, 이상일 경우 파괴
+    if (screenWidth <= 768 && !swiper) {
       initSwiper();
-    } else {
+    } else if (screenWidth > 768 && swiper) {
       destroySwiper();
     }
   };
