@@ -100,7 +100,7 @@
   color: green;
   font-size: 14px;
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 90px;
 }
 .submitwrap {
   display: flex;
@@ -212,6 +212,14 @@
   padding: 10px;
 }
 }
+@media screen and (min-width: 769px) {
+  .image-container {
+    display: block;
+  }
+  .image-container-tab {
+    display: none;
+  }
+}
 @media screen and (max-width: 768px) {
   .submitbtn{
     margin-left: 10px;
@@ -219,13 +227,23 @@
   .image-container {
     display: none;
   }
-  
+  .image-container-tab {
+    display: block;
+  } 
   .image-container-tab {
     display: block;
     position: relative;
   }
   .image-container-tab img{
     width: 100%;
+  }
+  .success-message {
+    display: none;
+    text-align: center;
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
   }
   
   .event-wrap {
@@ -275,6 +293,53 @@
   .event-wrap{
     top: 87%;
   }
+  .event-form button {
+    margin-top: 5px;
+    max-width: 250px;
+    width: 100%;
+    padding: 8px;
+    background-color: #dec6a1;
+    border: none;
+    border-radius: 70px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  
+}
+@media screen and (max-width:620px) {
+  .event-form button {
+    margin-top: 0px;
+    max-width: 210px;
+    width: 100%;
+    padding: 5px;
+    background-color: #dec6a1;
+    border: none;
+    border-radius: 70px;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.event-wrap{
+  top: 85%;
+}
+.submitbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+.name-flex label, .phone-flex label {
+  width: 60px;
+  margin-right: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
 }
 @media screen and (max-width:560px) {
   .event-form button {
@@ -291,7 +356,7 @@
     cursor: pointer;
 }
 .event-wrap{
-  top: 87%;
+  top: 85%;
 }
 .submitbtn {
   display: flex;
@@ -310,11 +375,11 @@
 }
 @media screen and (max-width:510px){
   .event-wrap{
-    top: 86%;
+    top: 84%;
     padding: 8px;
   }
   .name-flex label, .phone-flex label {
-    width: 60px;
+    width: 55px;
     margin-right: 10px;
     font-size: 20px;
     font-weight: bold;
@@ -331,7 +396,7 @@
   width: 100%;
 }
 }
-@media screen and (max-width:438px){
+@media screen and (max-width:460px){
   .name-flex label, .phone-flex label {
     width: 40px;
     margin-right: 10px;
@@ -364,7 +429,7 @@
 }
 
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width:410px){
   .event-form {
     padding: 3px;
 }
@@ -400,7 +465,7 @@
 }
 
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 365px) {
   .event-form {
     padding: 2px;
 }
@@ -430,8 +495,61 @@
   padding: 2px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1px;
+  font-size: 12px;
   min-width: 100px;
   width: 80%;
+}
+.success-message {
+  
+  text-align: center;
+  color: green;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+}
+
+  
+@media screen and (max-width: 320px) {
+  .event-form {
+    padding: 2px;
+}
+.event-form button {
+  margin-top: 0px;
+  max-width: 120px;
+  width: 100%;
+  padding: 3px;
+  background-color: #dec6a1;
+  border: none;
+  border-radius: 70px;
+  color: black;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.name-flex label, .phone-flex label {
+  width: 30px;
+  margin-right: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+.event-form input {
+  flex: 1;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  min-width: 100px;
+  width: 80%;
+}
+.success-message {
+  
+  text-align: center;
+  color: green;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
 }
 }
