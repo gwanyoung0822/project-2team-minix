@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
-  // ===================================갤러리====================================================
-  // 스와이퍼 초기화 및 해제
+  // =================================== 갤러리 ====================================================
   let swiper;
+  // Swiper 초기화 함수
   const initSwiper = () => {
     if (window.innerWidth <= 768 && !swiper) {
       swiper = new Swiper(".swiper.sw-gallery", {
-        slidesPerView: 1, // 한 번에 보이는 슬라이드 개수
-        spaceBetween: 10, // 슬라이드 간 간격
+        slidesPerView: 1,
+        spaceBetween: 80,
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -36,72 +36,85 @@ document.addEventListener("DOMContentLoaded", function () {
           prevEl: ".swiper-button-prev",
         },
         autoplay: {
-          delay: 3000, // 자동 슬라이드 전환 시간 (밀리초)
-          disableOnInteraction: false, // 사용자 상호작용 후에도 자동 전환 유지
+          delay: 3000,
         },
       });
     }
   };
+
+  // 활성화된 서브텍스트 업데이트 함수
+  const updateActiveSubText = (currentIndex) => {
+    document.querySelectorAll(".pp-det-txtwrap2 div").forEach((txt, index) => {
+      txt.classList.toggle("active", index === currentIndex);
+      txt.classList.toggle("inactive", index !== currentIndex);
+    });
+  };
+
+  // Swiper 파괴 함수
   const destroySwiper = () => {
     if (swiper) {
       swiper.destroy(true, true);
       swiper = null;
     }
   };
+
+  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴
   const handleResize = () => {
-    if (window.innerWidth <= 768 && !swiper) {
+    if (window.innerWidth <= 768) {
       initSwiper();
-    } else if (window.innerWidth > 768) {
+    } else {
       destroySwiper();
     }
   };
 
-  window.addEventListener("resize", handleResize);
-  handleResize(); // 초기 호출
-  // 갤러리 호버 애드클래스
-  function toggleOpen() {
-    // 모든 갤러리 아이템에서 'open' 클래스 제거
-    galleryItems.forEach((item) => item.classList.remove("open"));
-    // 모든 텍스트 아이템에서 'open-text'와 'shrink-text' 클래스 제거
-    textItems.forEach((item) => {
-      item.classList.remove("open-text");
-      item.classList.remove("shrink-text");
+  // 서브텍스트 클릭 시 해당 슬라이드로 이동 및 텍스트 업데이트
+  const setupSubTextClick = () => {
+    document.querySelectorAll(".pp-det-txtwrap2 div").forEach((element, index) => {
+      element.addEventListener("click", () => {
+        swiper.slideTo(index);
+        updateActiveSubText(index);
+      });
     });
-    // 클릭된 갤러리 아이템과 해당 인덱스의 텍스트 아이템에 'open'과 'open-text' 클래스 추가
-    this.classList.add("open");
-    const index = Array.from(galleryItems).indexOf(this);
-    if (textItems[index]) {
-      textItems[index].classList.add("open-text");
-    }
-    // 나머지 텍스트 아이템에 'shrink-text' 클래스 추가
-    textItems.forEach((item, idx) => {
-      if (idx !== index) {
-        item.classList.add("shrink-text");
-      }
-    });
-    // 모든 갤러리 아이템에서 'paused' 클래스 추가
-    galleryItems.forEach((item) => item.classList.add("paused"));
-    // 현재 갤러리 아이템의 'paused' 클래스를 제거
-    this.classList.remove("paused");
-  }
-  function resetItems() {
-    // 모든 갤러리 아이템에서 'open' 클래스 제거 및 'paused' 클래스 제거
-    galleryItems.forEach((item) => {
-      item.classList.remove("open");
-      item.classList.remove("paused");
-    });
-    // 모든 텍스트 아이템에서 'open-text'와 'shrink-text' 클래스 제거
-    textItems.forEach((item) => {
-      item.classList.remove("open-text");
-      item.classList.remove("shrink-text");
-    });
-  }
-  galleryItems.forEach((item) => {
-    item.addEventListener("mouseover", toggleOpen);
-    item.addEventListener("mouseout", resetItems);
-  });
+  };
 
-  // ===================================갤러리====================================================
+  // 갤러리 아이템 초기화
+  const resetGalleryItems = () => {
+    galleryItems.forEach((item) => item.classList.remove("open", "paused"));
+    textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
+  };
+
+  // 갤러리 아이템에 마우스 오버 이벤트 추가
+  const setupGalleryHover = () => {
+    galleryItems.forEach((item) => {
+      item.addEventListener("mouseover", function () {
+        resetGalleryItems();
+        const index = Array.from(galleryItems).indexOf(this);
+        this.classList.add("open");
+        if (textItems[index]) {
+          textItems[index].classList.add("open-text");
+        }
+        textItems.forEach((textItem, idx) => {
+          if (idx !== index) textItem.classList.add("shrink-text");
+        });
+        galleryItems.forEach((i) => i.classList.add("paused"));
+        this.classList.remove("paused");
+      });
+
+      item.addEventListener("mouseout", resetGalleryItems);
+    });
+  };
+
+  // 초기화 함수
+  const initEventListeners = () => {
+    window.addEventListener("resize", handleResize);
+    handleResize(); // 초기 호출
+    setupSubTextClick();
+    setupGalleryHover();
+  };
+
+  // 이벤트 리스너 초기화
+  initEventListeners();
+  // =================================== 갤러리 ====================================================
 
   /**
    * 숫자 애니메이션 함수
