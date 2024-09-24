@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
-
   // =================================== 갤러리 ====================================================
   let swiper;
   // Swiper 초기화 함수 업데이트
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 768 && !swiper) {
       swiper = new Swiper(".swiper.sw-gallery", {
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 100,
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -41,22 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         on: {
           slideChange: () => {
-            const activeIndex = swiper.realIndex; // 슬라이드가 변경될 때 실제 인덱스
-            updateActiveSubText(activeIndex); // 슬라이드에 맞는 텍스트 활성화
+            // 슬라이드가 변경될 때 텍스트 업데이트
+            const activeIndex = swiper.realIndex; // 실제 슬라이드 인덱스
+            updateActiveSubText(activeIndex);
           },
         },
       });
     }
   };
 
-  // 활성화된 서브텍스트 업데이트 함수
-  const updateActiveSubText = (currentIndex) => {
-    const subTextElements = document.querySelectorAll(".pp-det-txtwrap2 div");
-    subTextElements.forEach((txt, index) => {
-      txt.classList.toggle("active", index === currentIndex);
-      txt.classList.toggle("inactive", index !== currentIndex);
-    });
-  };
 
   // Swiper 파괴 함수
   const destroySwiper = () => {
@@ -66,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴
+  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴 (업데이트)
   const handleResize = () => {
     const screenWidth = window.innerWidth;
 
@@ -80,18 +72,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 서브텍스트 클릭 시 해당 슬라이드로 이동 및 텍스트 업데이트
   const setupSubTextClick = () => {
-    const subTextElements = document.querySelectorAll(".pp-det-txtwrap2 div");
-    subTextElements.forEach((element, index) => {
+    document.querySelectorAll(".pp-det-txtwrap2 div").forEach((element, index) => {
       element.addEventListener("click", () => {
-        swiper.slideTo(index); // 클릭한 서브텍스트의 인덱스로 슬라이드 이동
-        updateActiveSubText(index); // 활성화된 텍스트 업데이트
+        swiper.slideTo(index);
+        updateActiveSubText(index);
       });
     });
   };
+
   // 갤러리 아이템 초기화
   const resetGalleryItems = () => {
     galleryItems.forEach((item) => item.classList.remove("open", "paused"));
     textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
+  };
+
+  // 갤러리 아이템에 마우스 오버 이벤트 추가
+  const setupGalleryHover = () => {
+    galleryItems.forEach((item) => {
+      item.addEventListener("mouseover", function () {
+        resetGalleryItems();
+        const index = Array.from(galleryItems).indexOf(this);
+        this.classList.add("open");
+        if (textItems[index]) {
+          textItems[index].classList.add("open-text");
+        }
+        textItems.forEach((textItem, idx) => {
+          if (idx !== index) textItem.classList.add("shrink-text");
+        });
+        galleryItems.forEach((i) => i.classList.add("paused"));
+        this.classList.remove("paused");
+      });
+
+      item.addEventListener("mouseout", resetGalleryItems);
+    });
   };
 
   // 초기화 함수
@@ -99,11 +112,11 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", handleResize);
     handleResize(); // 초기 호출
     setupSubTextClick();
+    setupGalleryHover();
   };
 
   // 이벤트 리스너 초기화
   initEventListeners();
-
   // =================================== 갤러리 ====================================================
 
   /**
@@ -196,23 +209,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // 애니메이션을 10초 간격으로 반복 실행
     setInterval(startAnimations, 10000);
   };
-  $(document).ready(function () {
-    $(window).on("scroll", function () {
-      // 현재 스크롤 위치 가져오기
-      var scrollPosition = $(window).scrollTop();
-
-      // .main_copy의 시작 위치 계산
-      var mainCopyStart = $(".main_copy").offset().top;
-
-      // 이벤트 참여 텍스트 요소 가져오기
-      var tooltipText = $(".tooltip-text");
-
-      // 스크롤 위치가 main_copy 구역에 도달하기 전까지는 흰색, 이후로는 검정색
-      if (scrollPosition < mainCopyStart) {
-        tooltipText.css("color", "white"); // 흰색으로 변경
-      } else {
-        tooltipText.css("color", "black"); // 검정색으로 변경
-      }
-    });
-  });
 });
