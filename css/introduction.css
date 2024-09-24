@@ -192,7 +192,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 3% 0;
+  padding-bottom: 3%;
 }
 
 /* 내부 래퍼 */
@@ -212,13 +212,7 @@ body {
   width: 30%; /* 너비를 비율로 조정 (화면 크기에 맞게 조정) */
 }
 
-/* 이미지 박스 */
-.image-box1 img, .image-box2 img, .image-box3 img {
-  width: 100%; /* 부모 요소에 맞춰 이미지 크기 조정 */
-  max-width: 400px; /* 최대 너비 설정 */
-  max-height: 400px; /* 최대 높이 설정 */
-  object-fit: cover; /* 이미지를 박스 크기에 맞춰 채우기 */
-}
+
 /* 텍스트 박스 */
 .txt-box1, .txt-box2, .txt-box3 {
   width: 100%; /* 부모 요소에 맞춰 텍스트 박스 크기 조정 */
@@ -226,24 +220,18 @@ body {
   max-height: 80px; /* 최대 높이 설정 */
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   margin-top: 2%; /* 이미지와 텍스트 사이의 간격을 비율로 조정 */
+  font-weight: bold;
+  line-height: 1.7;
+  font-size: 20px;
 }
 /* 각 텍스트 박스 이미지의 너비 설정 */
-.txt-box1 img {
-  width: 80%; /* 부모 요소에 맞춰 이미지 너비 조정 */
-  max-width: 327px; /* 최대 너비 설정 */
+.grey_txt {
+color: #707070;
 }
 
-.txt-box2 img {
-  width: 80%; /* 부모 요소에 맞춰 이미지 너비 조정 */
-  max-width: 388px; /* 최대 너비 설정 */
-}
-
-.txt-box3 img {
-  width: 80%; /* 부모 요소에 맞춰 이미지 너비 조정 */
-  max-width: 365px; /* 최대 너비 설정 */
-}
 /* 내부 래퍼 */
 .strength_inner {
   display: flex;
@@ -267,10 +255,16 @@ body {
   display: flex;
   justify-content: center
 }
-.image-box1 img, .image-box2 img, .image-box3 img {
+
+.image-box1 img {
   width: 400px;
   height: 400px;
   object-fit: cover; /* 이미지를 박스 크기에 맞춰 채우기 */
+}
+
+.image-box2 img, .image-box3 img{
+width: 400px;
+height: 380px;
 }
 
 /* 텍스트 박스 */
@@ -310,7 +304,7 @@ body {
   }
 
   .image-box1 img, .image-box2 img, .image-box3 img {
-    padding: 5%;
+    padding: 3%;
     max-width: 400px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
     max-height: 400px;
@@ -319,22 +313,24 @@ body {
 .txt-box1, .txt-box2, .txt-box3 {
   margin: 1%; /* 이미지와 텍스트 사이의 간격 */
 }
-.txt-box1 img{
-  max-width: 230px;
-  height: 50px;
-}
- .txt-box2 img, .txt-box3 img{
-  max-width: 250px;
-  max-height: 50px;
-  min-height: 45px;
-}
+
 @media (max-width: 480px){
-  .image-box1 img, .image-box2 img, .image-box3 img{
+  .image-box1 img{
     padding: 5%;
     max-width: 350px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
     max-height: 350px;
   }
+  .image-box2 img, .image-box3 img{
+    padding: 5%;
+    max-width: 350px; /* 이미지 최대 너비 조정 */
+    min-width: 200px;
+    max-height: 330px;
+  }
+  .txt-box1,.txt-box2,.txt-box3{
+    font-size: 16px;
+  }
+  
 }
 
 /* 360px 이하에서 레이아웃 조정 */
@@ -347,6 +343,10 @@ body {
   .image-box1 img, .image-box2 img, .image-box3 img {
     max-width: 250px; /* 이미지 최대 너비 조정 */
     max-height: 250px;
+  }
+ .image-box2 img, .image-box3 img {
+    max-width: 250px; /* 이미지 최대 너비 조정 */
+    max-height: 230px;
   }
   .txt-box1 img{
     max-height: 38.25px;
@@ -433,7 +433,7 @@ body {
   box-sizing: border-box;
   width: 450px;
   height: 70px;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
   border-radius: 2px;
   background-color: transparent;
   display: flex;
@@ -479,7 +479,7 @@ body {
 /* 반응형 조정 */
 @media (max-width: 768px) {
   .bbtn {
-    height: 40px;
+    height: 45px;
     width: 30%;
   }
   .bbtn .btn_txt {
@@ -495,7 +495,7 @@ body {
     margin-top: 10%;
   }
   .bbtn {
-    height: 30px;
+    height: 40px;
     max-width: 100px;
   }
   .bbtn .btn_txt {
@@ -984,10 +984,11 @@ span.middlep {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 5% 0;
+  padding: 5% 0;
+
 }
 .pp-det-title img{
-width: 50%;
+width: 40%;
 
 }
 /* 갤러리 아이템 확대 */
@@ -1138,6 +1139,9 @@ width: 50%;
   width: 100%;
   display: none;
 }
+.swiper-slide{
+  overflow: hidden;
+}
 /* Swiper 슬라이드 컨텐츠 스타일 */
 .swiper-slide .contants {
   position: absolute;
@@ -1152,10 +1156,19 @@ width: 50%;
   line-height: 1.6; /* 줄 높이 동일하게 설정 */
   opacity: 0.8; /* 불투명도 조정 */
   z-index: 1;
+  /* overflow: hidden; */
 }
 .swiper-slide .contants::after{
-overflow: hidden;
-object-fit: cover;
+  content: "";
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 650px; /* 부모 요소의 너비를 유지 */
+  height: 80px;
+  top: -40px;
+  left: 0;
+  transform: rotate(-5deg); /* 각도 유지 */
+  z-index: -1;
+  overflow: hidden; /* 이미지 밖으로 넘치지 않도록 */
 }
 
 .slide_img_box{
@@ -1207,7 +1220,7 @@ display: block; /* 이미지 하단 여백 제거 */
 /* 반응형 스타일 */
 @media (max-width: 768px) {
   .pp-det-title img{
-    width: 80vw;
+    width: 70%;
   }
   .gallery {
     display: none; /* 기본 갤러리를 숨김 */
@@ -1219,7 +1232,7 @@ display: block; /* 이미지 하단 여백 제거 */
     width: 100%;
   }
 .swiper-slide .contants {
-bottom: 19%;
+bottom: 19.5%;
 }
 .swiper.sw-gallery {
   display:block;
@@ -1285,6 +1298,5 @@ bottom: 19%;
     bottom: 13%;
   }
 }
-
 
 /* ===================================갤러리 끝====================== */
