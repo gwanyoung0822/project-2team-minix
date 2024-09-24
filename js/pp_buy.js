@@ -96,7 +96,7 @@ $(document).ready(function () {
         <div class="cart-wrap">
         <div class="cart-product">
           <div class="cart-tit">[미닉스] 미니건조기 PRO+</div>
-          <div class="cart-color">그레이스</div>
+          <div class="cart-color">그레이지</div>
         </div>
         <div class="cart-price">
         369,000원 <i class="fa-solid fa-xmark"></i>
