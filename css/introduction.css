@@ -229,7 +229,8 @@ body {
 }
 /* 각 텍스트 박스 이미지의 너비 설정 */
 .grey_txt {
-color: #707070;
+color: #999;
+font-size: 19px;
 }
 
 /* 내부 래퍼 */
@@ -258,7 +259,7 @@ color: #707070;
 
 .image-box1 img {
   width: 400px;
-  height: 400px;
+  height: 380px;
   object-fit: cover; /* 이미지를 박스 크기에 맞춰 채우기 */
 }
 
@@ -307,12 +308,16 @@ height: 380px;
     padding: 3%;
     max-width: 400px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
-    max-height: 400px;
+    max-height: 380px;
   }
 }
 .txt-box1, .txt-box2, .txt-box3 {
   margin: 1%; /* 이미지와 텍스트 사이의 간격 */
 }
+.grey_txt {
+  color: #999;
+  font-size: 18px;
+  }
 
 @media (max-width: 480px){
   .image-box1 img{
@@ -330,7 +335,9 @@ height: 380px;
   .txt-box1,.txt-box2,.txt-box3{
     font-size: 16px;
   }
-  
+  .grey_txt {
+    font-size: 15px;
+    }
 }
 
 /* 360px 이하에서 레이아웃 조정 */
@@ -358,8 +365,13 @@ height: 380px;
     
   }
   .txt-box1 , .txt-box2, .txt-box3 {
+    font-size: 15px;
     margin: 0;
   }
+  .grey_txt {
+    color: #999;
+    font-size: 14px;
+    }
 }
 
 /* ==================================강점 끝=========================================================== */
