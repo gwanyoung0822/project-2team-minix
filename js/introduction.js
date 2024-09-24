@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
+
   // =================================== 갤러리 ====================================================
   let swiper;
   // Swiper 초기화 함수 업데이트
@@ -47,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   };
-  
+
   // 활성화된 서브텍스트 업데이트 함수
   const updateActiveSubText = (currentIndex) => {
     const subTextElements = document.querySelectorAll(".pp-det-txtwrap2 div");
@@ -56,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       txt.classList.toggle("inactive", index !== currentIndex);
     });
   };
-  
+
   // Swiper 파괴 함수
   const destroySwiper = () => {
     if (swiper) {
@@ -64,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
       swiper = null;
     }
   };
-  
+
   // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴
   const handleResize = () => {
     const screenWidth = window.innerWidth;
-  
+
     // 768px 이하일 경우 스와이퍼를 초기화, 이상일 경우 파괴
     if (screenWidth <= 768 && !swiper) {
       initSwiper();
@@ -76,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       destroySwiper();
     }
   };
-  
+
   // 서브텍스트 클릭 시 해당 슬라이드로 이동 및 텍스트 업데이트
   const setupSubTextClick = () => {
     const subTextElements = document.querySelectorAll(".pp-det-txtwrap2 div");
@@ -85,26 +86,24 @@ document.addEventListener("DOMContentLoaded", function () {
         swiper.slideTo(index); // 클릭한 서브텍스트의 인덱스로 슬라이드 이동
         updateActiveSubText(index); // 활성화된 텍스트 업데이트
       });
+    });
   };
-  
   // 갤러리 아이템 초기화
   const resetGalleryItems = () => {
     galleryItems.forEach((item) => item.classList.remove("open", "paused"));
-    textItems.forEach((item) =>
-      item.classList.remove("open-text", "shrink-text")
-    );
+    textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
   };
-  
+
   // 초기화 함수
   const initEventListeners = () => {
     window.addEventListener("resize", handleResize);
     handleResize(); // 초기 호출
     setupSubTextClick();
   };
-  
+
   // 이벤트 리스너 초기화
   initEventListeners();
-  
+
   // =================================== 갤러리 ====================================================
 
   /**
@@ -197,22 +196,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // 애니메이션을 10초 간격으로 반복 실행
     setInterval(startAnimations, 10000);
   };
-   $(document).ready(function () {
-    $(window).on('scroll', function () {
+  $(document).ready(function () {
+    $(window).on("scroll", function () {
       // 현재 스크롤 위치 가져오기
       var scrollPosition = $(window).scrollTop();
 
       // .main_copy의 시작 위치 계산
-      var mainCopyStart = $('.main_copy').offset().top;
+      var mainCopyStart = $(".main_copy").offset().top;
 
       // 이벤트 참여 텍스트 요소 가져오기
-      var tooltipText = $('.tooltip-text');
+      var tooltipText = $(".tooltip-text");
 
       // 스크롤 위치가 main_copy 구역에 도달하기 전까지는 흰색, 이후로는 검정색
       if (scrollPosition < mainCopyStart) {
-        tooltipText.css('color', 'white'); // 흰색으로 변경
+        tooltipText.css("color", "white"); // 흰색으로 변경
       } else {
-        tooltipText.css('color', 'black'); // 검정색으로 변경
+        tooltipText.css("color", "black"); // 검정색으로 변경
       }
     });
   });
