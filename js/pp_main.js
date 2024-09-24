@@ -43,5 +43,22 @@ $(document).ready(function () {
   //     $(".active").css("color", "#000");
   //   }
   // });
-
+  $(window).scroll(function () {
+    if ($(".tooltip-text").offset().top >= $(".footer").offset().top && $(".tooltip-text").offset().top >= $(".footer-tab").offset().top) 
+      
+      {
+      $(".tooltip-text").css("color", "white");
+    
+    } 
+    else{
+      $(".tooltip-text").css("color", "black");
+    }
+    // if($(".tooltip-text").offset().top >= $(".footer-tab").offset().top) {
+    //   $(".tooltip-text").css("color", "white");
+    // } 
+    // else{
+    //   $(".tooltip-text").css("color", "black");
+    // }
+    
+});
 });

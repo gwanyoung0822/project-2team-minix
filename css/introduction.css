@@ -551,7 +551,7 @@ height: 380px;
   font-size: 50px;
   font-weight: bold;
   line-height: 70px;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 span.small {
   font-size: 30px;
@@ -937,8 +937,16 @@ span.middlep {
   font-size: clamp(24px, 6vw, 50px);
   line-height: 40px
 }
+.det2-top {
+    
+  margin-top: 0px;
+}
 }
 @media screen and (max-width: 320px) {
+  .det2-top {
+    
+    margin-top: 0px;
+  }
   .det2 .inner {
     padding-left: 5px;
     padding-right: 5px;

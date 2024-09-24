@@ -149,6 +149,18 @@ a {
   opacity: 1;
   transition: opacity 0.3s ease;
 }
+.tooltip-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;
+  font-family: "Noto Sans KR", sans-serif;
+  transition: color 0.5s ease; /* 텍스트 색상이 0.5초에 걸쳐 부드럽게 변경됨 */
+}
 
 .tooltip img {
   width: 100%;
