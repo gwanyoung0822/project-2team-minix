@@ -193,6 +193,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding-bottom: 3%;
+  overflow: hidden;
 }
 
 /* 내부 래퍼 */
@@ -206,18 +207,17 @@ body {
 
 /* 각 이미지와 텍스트를 감싸는 박스 */
 .item-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 30%; /* 너비를 비율로 조정 (화면 크기에 맞게 조정) */
+  width: 100%; /* 너비를 비율로 조정 (화면 크기에 맞게 조정) */
 }
 
 
 /* 텍스트 박스 */
 .txt-box1, .txt-box2, .txt-box3 {
   width: 100%; /* 부모 요소에 맞춰 텍스트 박스 크기 조정 */
-  height: auto; /* 높이 자동 조정 */
-  max-height: 80px; /* 최대 높이 설정 */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -226,19 +226,12 @@ body {
   font-weight: bold;
   line-height: 1.7;
   font-size: 20px;
+  overflow: hidden;
 }
 /* 각 텍스트 박스 이미지의 너비 설정 */
 .grey_txt {
 color: #999;
-font-size: 19px;
-}
-
-/* 내부 래퍼 */
-.strength_inner {
-  display: flex;
-  justify-content: space-between;
-  width: 1300px; /* 전체 레이아웃의 너비 */
-  overflow: hidden;
+font-size: 17px;
 }
 
 /* 각 이미지와 텍스트를 감싸는 박스 */
@@ -254,7 +247,8 @@ font-size: 19px;
 .image-box1,.image-box2,.image-box3{
   width: 100%;
   display: flex;
-  justify-content: center
+  justify-content: center;
+  padding: 5%;
 }
 
 .image-box1 img {
@@ -270,8 +264,7 @@ height: 380px;
 
 /* 텍스트 박스 */
 .txt-box1, .txt-box2, .txt-box3 {
-  width: 90%;
-  height: 80px; /* 텍스트 박스의 높이 */
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -294,6 +287,19 @@ height: 380px;
   height: 50px;
 }
 
+@media (min-width: 769px) and (max-width: 1400px) {
+  .image-box1 img,.image-box2 img, .image-box3 img {
+    width: 250px;
+    height: 230px;
+    object-fit: cover; /* 이미지를 박스 크기에 맞춰 채우기 */
+  }
+  .txt-box1, .txt-box2, .txt-box3 {
+    font-size: 17px;
+  }
+  .grey_txt {
+    font-size: 16px;
+    }
+}
 /* 768px 이하에서 레이아웃 조정 */
 @media (max-width: 768px) {
   .strength_inner {
@@ -316,7 +322,7 @@ height: 380px;
 }
 .grey_txt {
   color: #999;
-  font-size: 18px;
+  /* font-size: 18px; */
   }
 
 @media (max-width: 480px){
@@ -1289,7 +1295,7 @@ bottom: 19.5%;
 }
 
 }
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .contants{
     padding: 10px;
   }
@@ -1309,7 +1315,14 @@ bottom: 19.5%;
     z-index: 1;
   }
 }
-@media (max-width: 360px){
+
+@media (min-width: 361px) and (max-width: 440px){
+  .swiper-slide .contants {
+    bottom: 30%;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 360px){
   .slide_img_box img{
     width: 100%;
   }
