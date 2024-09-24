@@ -150,7 +150,7 @@ img{
     bottom: 60px; /* 버튼 위에 말풍선 이미지 위치 */
     left: 50%;
     transform: translateX(-50%);
-    width: 100px; /* 말풍선 이미지의 너비 */
+    width: 70px; /* 말풍선 이미지의 너비 */
     height: auto;
     opacity: 1;
     transition: opacity 0.3s ease;
@@ -171,6 +171,9 @@ img{
     font-size: 12px;
     font-weight: bold;
     white-space: nowrap;
+  }
+  .tooltip-text.white{
+    color: white;
   }
   
   /* 마우스를 올렸을 때 말풍선 보이기 */

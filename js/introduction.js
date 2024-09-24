@@ -85,13 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
         swiper.slideTo(index); // 클릭한 서브텍스트의 인덱스로 슬라이드 이동
         updateActiveSubText(index); // 활성화된 텍스트 업데이트
       });
-    });
   };
   
   // 갤러리 아이템 초기화
   const resetGalleryItems = () => {
     galleryItems.forEach((item) => item.classList.remove("open", "paused"));
-    textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
+    textItems.forEach((item) =>
+      item.classList.remove("open-text", "shrink-text")
+    );
   };
   
   // 초기화 함수
@@ -196,4 +197,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // 애니메이션을 10초 간격으로 반복 실행
     setInterval(startAnimations, 10000);
   };
+   $(document).ready(function () {
+    $(window).on('scroll', function () {
+      // 현재 스크롤 위치 가져오기
+      var scrollPosition = $(window).scrollTop();
+
+      // .main_copy의 시작 위치 계산
+      var mainCopyStart = $('.main_copy').offset().top;
+
+      // 이벤트 참여 텍스트 요소 가져오기
+      var tooltipText = $('.tooltip-text');
+
+      // 스크롤 위치가 main_copy 구역에 도달하기 전까지는 흰색, 이후로는 검정색
+      if (scrollPosition < mainCopyStart) {
+        tooltipText.css('color', 'white'); // 흰색으로 변경
+      } else {
+        tooltipText.css('color', 'black'); // 검정색으로 변경
+      }
+    });
+  });
 });

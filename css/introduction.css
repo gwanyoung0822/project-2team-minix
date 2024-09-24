@@ -441,6 +441,14 @@ height: 380px;
   align-items: center;
   cursor: pointer;
 }
+.bbtn:hover{
+  background-color: #111;
+  transition: 0.3s all ease;
+}
+#bbtn-color{
+  background-color: #fff;
+}
+
 
 /* 버튼 텍스트 스타일 */
 .bbtn .btn_txt {
@@ -452,6 +460,20 @@ height: 380px;
   text-align: center;
   color: #333333;
   text-decoration: none;
+}
+.bbtn:hover .btn_txt {
+  color: #fff; /* 텍스트 색상을 흰색으로 변경 */
+  transition: color 0.3s ease; /* 부드러운 전환 효과 */
+}
+#bbtn-color:hover{
+  background-color: #111;
+  transition: 0.3s all ease;
+}
+.next-sec-btn img:hover{
+  opacity: 0.7;
+}
+.next-sec-btn2 img:hover{
+  opacity: 0.7;
 }
 
 /* 반응형 조정 */

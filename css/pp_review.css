@@ -232,14 +232,11 @@ span {
   }
   .review_txt h2 {
     overflow: hidden;
-    /* 3. display: -webkit-box */
     display: -webkit-box;
-    /* 4. text-overflow: elipsis */
+    -webkit-line-clamp: 1; /* 1줄로 제한 */
+    -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-    /* 5. 아래 코드를 입력한다. */
-    -webkit-line-clamp: unset; /* -webkit-line-clamp를 제거 */
-    -webkit-box-orient: unset; /* -webkit-box-orient를 제거 */
-  }
+}
   .review_span {
     margin-top: 5px;
     display: flex;
@@ -257,9 +254,7 @@ span {
   .review_img2 {
     padding: 0px 5px 15px 15px;
   }
-  .review_span {
-    padding-top: ;
-  }
+  
 
   .review-slide {
     margin-left: 27px;
