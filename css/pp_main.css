@@ -166,6 +166,10 @@ a {
   font-weight: bold;
   white-space: nowrap;
 }
+/* 흰색으로 변경될 때의 스타일 */
+.tooltip-text.white {
+  color: white;
+}
 
 /* 마우스를 올렸을 때 말풍선 보이기 */
 .cs-btn-event:hover .tooltip {
