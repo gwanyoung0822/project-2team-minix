@@ -158,7 +158,7 @@ img{
   
   .tooltip img {
     width: 100%;
-    height: auto;
+   
   }
   
   /* 텍스트를 이미지 안에 배치 */
@@ -172,6 +172,7 @@ img{
     font-weight: bold;
     white-space: nowrap;
     font-family: "Noto Sans KR", sans-serif;
+    transition: color 0.5s ease; /* 텍스트 색상이 0.5초에 걸쳐 부드럽게 변경됨 */
   }
   .tooltip-text.white{
     color: white;

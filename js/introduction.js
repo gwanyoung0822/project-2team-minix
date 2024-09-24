@@ -209,4 +209,55 @@ document.addEventListener("DOMContentLoaded", function () {
     // 애니메이션을 10초 간격으로 반복 실행
     setInterval(startAnimations, 10000);
   };
+  $(document).ready(function () {
+    // 요소가 화면에 보이는 비율을 계산하는 함수
+    const calculateVisibility = (element) => {
+      var windowHeight = $(window).height();
+      var scrollTop = $(window).scrollTop();
+      var elementOffset = $(element).offset().top;
+      var elementHeight = $(element).outerHeight();
+
+      // 요소가 화면에 보이는 비율 계산
+      var visiblePart = Math.max(0, Math.min(elementHeight, scrollTop + windowHeight - elementOffset));
+      return visiblePart / elementHeight;
+    };
+
+    // 텍스트 색상을 업데이트하는 함수
+    const updateTextColor = () => {
+      var scrollPosition = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      // 각 구역의 시작 위치 및 높이 계산
+      var mainCopyStart = $('.main_copy').offset().top;
+      var bbtnContainerStart = $('.footer').offset().top;
+
+      // main_copy와 bbtn-container의 가시성을 계산
+      var mainCopyVisibility = calculateVisibility('.main_copy');
+      var bbtnVisibility = calculateVisibility('.footer');
+
+      // 이벤트 참여 텍스트 요소
+      var tooltipText = $('.tooltip-text');
+
+      // .bbtn-container에 도달했을 때 흰색으로 변경
+      if (scrollPosition + windowHeight >= bbtnContainerStart) {
+        tooltipText.css('color', 'white');
+      } 
+      // .main_copy 영역에서는 검정색으로 변경
+      else if (mainCopyVisibility > 0) {
+        tooltipText.css('color', 'black');
+      } 
+      // 그 외는 기본적으로 흰색 유지
+      else {
+        tooltipText.css('color', 'white');
+      }
+    };
+
+    // 스크롤 및 창 크기 변경 시 텍스트 색상 업데이트
+    $(window).on('scroll resize', function () {
+      updateTextColor();
+    });
+
+    // 페이지 로드 시 한 번 실행
+    updateTextColor();
+  });
 });
