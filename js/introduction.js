@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.innerWidth <= 768 && !swiper) {
       swiper = new Swiper(".swiper.sw-gallery", {
         slidesPerView: 1,
-        spaceBetween: 100,
+        spaceBetween: 10,
         loop: true,
         pagination: {
           el: ".swiper-pagination",
@@ -40,23 +40,23 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         on: {
           slideChange: () => {
-            // 슬라이드가 변경될 때 텍스트 업데이트
-            const activeIndex = swiper.realIndex; // 실제 슬라이드 인덱스
-            updateActiveSubText(activeIndex);
+            const activeIndex = swiper.realIndex; // 슬라이드가 변경될 때 실제 인덱스
+            updateActiveSubText(activeIndex); // 슬라이드에 맞는 텍스트 활성화
           },
         },
       });
     }
   };
-
+  
   // 활성화된 서브텍스트 업데이트 함수
   const updateActiveSubText = (currentIndex) => {
-    document.querySelectorAll(".pp-det-txtwrap2 div").forEach((txt, index) => {
+    const subTextElements = document.querySelectorAll(".pp-det-txtwrap2 div");
+    subTextElements.forEach((txt, index) => {
       txt.classList.toggle("active", index === currentIndex);
       txt.classList.toggle("inactive", index !== currentIndex);
     });
   };
-
+  
   // Swiper 파괴 함수
   const destroySwiper = () => {
     if (swiper) {
@@ -64,11 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
       swiper = null;
     }
   };
-
-  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴 (업데이트)
+  
+  // 화면 크기 변화에 따른 Swiper 초기화 또는 파괴
   const handleResize = () => {
     const screenWidth = window.innerWidth;
-
+  
     // 768px 이하일 경우 스와이퍼를 초기화, 이상일 경우 파괴
     if (screenWidth <= 768 && !swiper) {
       initSwiper();
@@ -76,54 +76,34 @@ document.addEventListener("DOMContentLoaded", function () {
       destroySwiper();
     }
   };
-
+  
   // 서브텍스트 클릭 시 해당 슬라이드로 이동 및 텍스트 업데이트
   const setupSubTextClick = () => {
-    document.querySelectorAll(".pp-det-txtwrap2 div").forEach((element, index) => {
+    const subTextElements = document.querySelectorAll(".pp-det-txtwrap2 div");
+    subTextElements.forEach((element, index) => {
       element.addEventListener("click", () => {
-        swiper.slideTo(index);
-        updateActiveSubText(index);
+        swiper.slideTo(index); // 클릭한 서브텍스트의 인덱스로 슬라이드 이동
+        updateActiveSubText(index); // 활성화된 텍스트 업데이트
       });
     });
   };
-
+  
   // 갤러리 아이템 초기화
   const resetGalleryItems = () => {
     galleryItems.forEach((item) => item.classList.remove("open", "paused"));
     textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
   };
-
-  // 갤러리 아이템에 마우스 오버 이벤트 추가
-  const setupGalleryHover = () => {
-    galleryItems.forEach((item) => {
-      item.addEventListener("mouseover", function () {
-        resetGalleryItems();
-        const index = Array.from(galleryItems).indexOf(this);
-        this.classList.add("open");
-        if (textItems[index]) {
-          textItems[index].classList.add("open-text");
-        }
-        textItems.forEach((textItem, idx) => {
-          if (idx !== index) textItem.classList.add("shrink-text");
-        });
-        galleryItems.forEach((i) => i.classList.add("paused"));
-        this.classList.remove("paused");
-      });
-
-      item.addEventListener("mouseout", resetGalleryItems);
-    });
-  };
-
+  
   // 초기화 함수
   const initEventListeners = () => {
     window.addEventListener("resize", handleResize);
     handleResize(); // 초기 호출
     setupSubTextClick();
-    setupGalleryHover();
   };
-
+  
   // 이벤트 리스너 초기화
   initEventListeners();
+  
   // =================================== 갤러리 ====================================================
 
   /**
