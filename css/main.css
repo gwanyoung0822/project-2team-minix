@@ -171,6 +171,7 @@ img{
     font-size: 12px;
     font-weight: bold;
     white-space: nowrap;
+    font-family: "Noto Sans KR", sans-serif;
   }
   .tooltip-text.white{
     color: white;

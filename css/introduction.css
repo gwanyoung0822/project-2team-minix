@@ -471,9 +471,11 @@ height: 380px;
 }
 .next-sec-btn img:hover{
   opacity: 0.7;
+  transition: 0.3s all ease;
 }
 .next-sec-btn2 img:hover{
   opacity: 0.7;
+  transition: 0.3s all ease;
 }
 
 /* 반응형 조정 */
@@ -511,7 +513,7 @@ height: 380px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 80px;
+  padding-top: 50px;
   
 }
 .rank {
@@ -523,7 +525,7 @@ height: 380px;
   max-width: 1300px;
   display: block;
   margin: 0 auto;
-  padding: 50px 20px;
+  /* padding: 50px 20px; */
 }
 
 .det2-top {
@@ -531,6 +533,7 @@ height: 380px;
   font-size: 50px;
   font-weight: bold;
   line-height: 70px;
+  margin-top: 20px;
 }
 span.small {
   font-size: 30px;
@@ -582,7 +585,7 @@ span.small {
 .test2,
 .test3,
 .test4 {
-  margin-bottom: clamp(8px, 2vw, 15px); /* 작은 화면에서도 간격 유지 */
+  /* margin-bottom: clamp(8px, 2vw, 15px); 작은 화면에서도 간격 유지 */
 }
 
 
@@ -591,7 +594,7 @@ span.small {
   flex: 1 1 calc(50% - 20px); /* 50% 너비와 간격을 설정하여 두 개씩 배치 */
   box-sizing: border-box;
   padding: 20px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   /* background-color: #EDE6DB; */
   display: flex;
   justify-content: space-between;
@@ -694,7 +697,6 @@ span.middlep {
   }
   .rank {
     flex: 1 1 100%; /* 한 줄에 1개씩 배치 */
-    margin-bottom: 20px;
   }
 
   .det2-main {
@@ -727,8 +729,7 @@ span.middlep {
   /* 각 요소가 세로로 100% 너비를 차지하도록 */
   .det2-main1-1,
   .det2-main1-2,
-  .det2-main2-1,
-  .det2-main2-2 {
+  .det2-main2-1 {
     flex: 1 1 100%;
     margin-bottom: 20px;
   }
@@ -855,10 +856,10 @@ span.middlep {
     margin-left: 0px;
   }
   span.smallp {
-    font-size: clamp(12px, 3.5vw, 32px);
+    font-size: clamp(16px, 3.5vw, 32px);
   }
   span.middlep {
-    font-size: clamp(10px, 3vw, 20px);
+    font-size: clamp(16px, 3vw, 20px);
   }
 
   .det2-main {
@@ -870,6 +871,10 @@ span.middlep {
   span.date {
     font-size: 13px;
   }
+  .det2-top h1 {
+    font-size: clamp(30px, 6vw, 50px);
+    line-height: 60px
+  }
 }
 @media screen and (max-width: 380px) {
   .rank {
@@ -880,11 +885,10 @@ span.middlep {
     padding-top: 20px; /* 작은 화면에서 여백 조정 */
   }
   span.small {
-    font-size: clamp(16px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+    font-size: clamp(18px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
   }
   span.number {
-    font-size: clamp(30px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
-    min-width: 30px;
+    font-size: clamp(35px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
   }
   span.one {
     font-size: clamp(30px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
@@ -892,10 +896,10 @@ span.middlep {
     margin-left: 0px;
   }
   span.smallp {
-    font-size: clamp(12px, 3.5vw, 32px);
+    font-size: clamp(20px, 3.5vw, 32px);
   }
   span.middlep {
-    font-size: clamp(10px, 3vw, 20px);
+    font-size: clamp(20px, 3vw, 20px);
   }
 
   .det2-main {
@@ -907,6 +911,14 @@ span.middlep {
   span.date {
     font-size: 10px;
   }
+  .det2 .inner {
+    padding-top: 20px;
+    
+}
+.det2-top h1 {
+  font-size: clamp(24px, 6vw, 50px);
+  line-height: 40px
+}
 }
 @media screen and (max-width: 320px) {
   .det2 .inner {
@@ -919,25 +931,29 @@ span.middlep {
 
   .det2-main {
     padding-top: 20px; /* 작은 화면에서 여백 조정 */
+    padding-bottom: 0px;
   }
 
   /* 폰트 크기와 요소 간격 조정 */
+ 
   span.small {
-    font-size: clamp(16px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+    font-size: clamp(18px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
   }
   span.number {
+    font-size: clamp(35px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+  }
+  span.one {
     font-size: clamp(30px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
-    min-width: 50px;
+    letter-spacing: -1px;
+    margin-left: 0px;
   }
-  span.smallp{
-    font-size: clamp(12px, 3.5vw, 32px);
-  }
-  span.one{
-    font-size: clamp(30px, 3.5vw, 32px)
+  span.smallp {
+    font-size: clamp(20px, 3.5vw, 32px);
   }
   span.middlep {
-    font-size: clamp(10px, 3vw, 20px);
+    font-size: clamp(20px, 3vw, 20px);
   }
+ 
 }
 
 /* ============================갤러리============================================================== */
