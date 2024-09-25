@@ -82,7 +82,12 @@ $(document).ready(function () {
 
     if (hasParticipated) {
       alert("이미 참여한 이벤트입니다.");
-      return;
+
+      // 입력 폼 초기화: 성함과 번호 입력란을 비움
+      parentForm.find("#name").val('');
+      parentForm.find("#phone").val('');
+      
+      return; // 참여가 이미 확인되었으므로 종료
     }
 
     // 성공 메시지 표시: 클릭한 form의 성공 메시지만 보여줌
@@ -90,6 +95,10 @@ $(document).ready(function () {
 
     // 참여 여부를 로컬 스토리지에 저장
     localStorage.setItem(participationKey, true);
+
+    // 입력 폼 초기화: 성함과 번호 입력란을 비움
+    parentForm.find("#name").val('');
+    parentForm.find("#phone").val('');
 
     // 서버로 전송하는 로직 추가 가능
   });

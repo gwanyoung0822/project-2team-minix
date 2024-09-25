@@ -252,7 +252,7 @@ span {
     margin-top: 5px;
   }
   .review_img2 {
-    padding: 0px 5px 15px 15px;
+    padding: 0px 5px 10px 15px;
   }
   
 
@@ -307,7 +307,29 @@ span {
     padding-top: 5px;
   }
 }
+@media screen and (max-width: 434px) {
+  .review_txt h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+.review_txt p {
+  font-size: 13px;
+}
+.review_txt span{
+  font-size: 12px;
+}
+}
 @media screen and (max-width: 350px) {
+  .review_txt h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+.review_txt p {
+  font-size: 12px;
+}
+.review_txt span{
+  font-size: 11px;
+}
   .review {
     padding-bottom: 20px;
   }
