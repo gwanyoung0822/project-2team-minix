@@ -278,7 +278,7 @@ span {
     top: var(--swiper-scrollbar-top, auto);
     z-index: 50;
     height: var(--swiper-scrollbar-size, 4px);
-    width: calc(100% - 8%);
+    width: calc(100% - 7%);
 }
 }
 @media screen and (max-width: 580px) {
