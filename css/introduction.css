@@ -331,14 +331,14 @@ font-size: 17px;
   }
 }
 .txt-box1, .txt-box2, .txt-box3 {
-  font-size: 17px;
+  font-size: 24px;
   padding:  0;
   margin-top: 0;
   padding-bottom: 7%;
 }
 .grey_txt {
   color: #999;
-  /* font-size: 18px; */
+  font-size: 22px;
   }
 
 @media (max-width: 480px){
@@ -473,7 +473,7 @@ font-size: 17px;
   display: flex;
   justify-content: center; /* 버튼을 가운데로 정렬 */
   margin-bottom: 7%;
-  margin-top: 7%;
+  margin-top: 5%;;
 }
 
 /* 버튼 스타일 */
@@ -1347,6 +1347,9 @@ bottom: 19.5%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
+}
+.bbtn-container2{
+      margin-top: 5%
 }
 
 }

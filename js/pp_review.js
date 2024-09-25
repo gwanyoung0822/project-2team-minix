@@ -29,7 +29,7 @@ window.onload = function () {
         slidesPerView: 2.5, // 768px 이상일 때 한 번에 2.5개의 슬라이드 표시
         spaceBetween: 30, // 슬라이드 간격 30px
         scrollbar: {
-          dragSize: 250,
+          dragSize: 200,
         },
       },
       580: {
@@ -43,14 +43,14 @@ window.onload = function () {
         slidesPerView: 1.7, // 410px 이상일 때 한 번에 1.7개의 슬라이드 표시
         spaceBetween: 20, // 슬라이드 간격 15px
         scrollbar: {
-          dragSize: 180,
+          dragSize: 120,
         },
       },
       320: {
         slidesPerView: 1.2, // 320px 이상일 때 한 번에 1.2개의 슬라이드 표시
         spaceBetween: 15, // 슬라이드 간격 10px
         scrollbar: {
-          dragSize: 150,
+          dragSize: 100,
         },
       },
     },
