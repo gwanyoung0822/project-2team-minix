@@ -236,7 +236,7 @@ span {
     -webkit-line-clamp: 1; /* 1줄로 제한 */
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
-}
+  }
   .review_span {
     margin-top: 5px;
     display: flex;
@@ -254,7 +254,6 @@ span {
   .review_img2 {
     padding: 0px 5px 10px 15px;
   }
-  
 
   .review-slide {
     margin-left: 27px;
@@ -271,7 +270,8 @@ span {
     max-width: 57px;
     max-height: 13.5px;
   }
-  .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
     position: absolute;
     left: var(--swiper-scrollbar-sides-offset, 4%);
     bottom: var(--swiper-scrollbar-bottom, 4px);
@@ -279,13 +279,13 @@ span {
     z-index: 50;
     height: var(--swiper-scrollbar-size, 4px);
     width: calc(100% - 7%);
-}
+  }
 }
 @media screen and (max-width: 580px) {
   .review {
     padding-bottom: 40px;
   }
-  .review_top_title{
+  .review_top_title {
     padding-left: 0px;
   }
   .review_top {
@@ -320,34 +320,35 @@ span {
   .review_txt h2 {
     font-size: 15px;
     font-weight: 600;
-}
-.review_txt p {
-  font-size: 13px;
-}
-.review_txt span{
-  font-size: 12px;
-}
-.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
-  position: absolute;
-  left: var(--swiper-scrollbar-sides-offset, 6%);
-  bottom: var(--swiper-scrollbar-bottom, 4px);
-  top: var(--swiper-scrollbar-top, auto);
-  z-index: 50;
-  height: var(--swiper-scrollbar-size, 4px);
-  width: calc(100% - 15%);
-}
+  }
+  .review_txt p {
+    font-size: 13px;
+  }
+  .review_txt span {
+    font-size: 12px;
+  }
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: absolute;
+    left: var(--swiper-scrollbar-sides-offset, 6%);
+    bottom: var(--swiper-scrollbar-bottom, 4px);
+    top: var(--swiper-scrollbar-top, auto);
+    z-index: 50;
+    height: var(--swiper-scrollbar-size, 4px);
+    width: calc(100% - 15%);
+  }
 }
 @media screen and (max-width: 350px) {
   .review_txt h2 {
     font-size: 14px;
     font-weight: 600;
-}
-.review_txt p {
-  font-size: 12px;
-}
-.review_txt span{
-  font-size: 11px;
-}
+  }
+  .review_txt p {
+    font-size: 12px;
+  }
+  .review_txt span {
+    font-size: 11px;
+  }
   .review {
     padding-bottom: 20px;
   }
@@ -389,15 +390,16 @@ span {
   .review {
     padding-bottom: 20px;
   }
-  .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  .swiper-horizontal > .swiper-scrollbar,
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
     position: absolute;
     left: var(--swiper-scrollbar-sides-offset, 8%);
     bottom: var(--swiper-scrollbar-bottom, 4px);
     top: var(--swiper-scrollbar-top, auto);
     z-index: 50;
     height: var(--swiper-scrollbar-size, 4px);
-    width: calc(85% - 2* var(--swiper-scrollbar-sides-offset, 1%));
-}
+    width: calc(85% - 2 * var(--swiper-scrollbar-sides-offset, 1%));
+  }
 }
 
 @media screen and (max-width: 320px) {

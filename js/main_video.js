@@ -35,7 +35,7 @@ $(document).ready(function () {
       video.play();
 
       // 비디오가 일정 시간마다 업데이트되도록 이벤트 리스너 추가
-      video.addEventListener('timeupdate', function () {
+      video.addEventListener("timeupdate", function () {
         // 비디오의 총 재생 시간과 현재 재생 시간
         var videoDuration = video.duration;
         var videoCurrentTime = video.currentTime;
@@ -52,24 +52,24 @@ $(document).ready(function () {
     }
   }
   // 다음 섹션 이동
-  $(".next-sec-btn").click(function(){
-    let sec1_h = $(".visual").height()
+  $(".next-sec-btn").click(function () {
+    let sec1_h = $(".visual").height();
     window.scrollTo({
       top: sec1_h,
       behavior: "smooth",
-    })
-  })
+    });
+  });
   // 탑버튼
-  $(".top-btn").click(function(){
+  $(".top-btn").click(function () {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-    })
-  })
+    });
+  });
   // cs버튼
-  $(".cs-btn").click(function(){
+  $(".cs-btn").click(function () {
     // $(".cs-btn-li").css("opacity","1").css("transform", "translateX(-60px)")
-    $(".cs-btn-kakao").toggleClass("show")
-    $(".cs-btn-naver").toggleClass("show")
-  })
+    $(".cs-btn-kakao").toggleClass("show");
+    $(".cs-btn-naver").toggleClass("show");
+  });
 });
