@@ -96,8 +96,7 @@ body {
 }
 /* ======================================================스크롤 버튼 */
 .next-sec-btn2{
-  width: 55px;
-  height: 55px;
+  width: 4.2vw;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -164,8 +163,14 @@ body {
   .bubble_colums{
     padding: 7%;
   }
+  .sec1_title, .highlight{
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 360px){
+  .sec1_title, .highlight{
+    font-size: 16px;
+  }
 }
 /* =====================================섹션1 ================================================*/
 
@@ -268,7 +273,7 @@ height: 380px;
 }
 
 /* 텍스트 박스 */
-.txt-box1, .txt-box2, .txt-box3 {
+.txt-box1 , .txt-box2 , .txt-box3 {
   width: 100%; /* 부모 요소에 맞춰 텍스트 박스 크기 조정 */
   display: flex;
   justify-content: center;
@@ -276,34 +281,37 @@ height: 380px;
   align-items: center;
   font-weight: bold;
   line-height: 1.7;
-  font-size: 20px;
   overflow: hidden;
   padding: 5% 0;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
-
-/* 각 텍스트 박스 이미지의 너비 설정 */
+.m_txt{
+  font-size: 20px;
+}
 .grey_txt {
+  font-size: 18px;
 color: #999;
-font-size: 17px;
 }
 
 
 
-@media (min-width: 769px) and (max-width: 1400px) {
+@media (min-width: 769px) and (max-width: 1500px) {
   .image-box1 img,.image-box2 img, .image-box3 img {
     width: 250px;
     height: 230px;
     object-fit: cover; /* 이미지를 박스 크기에 맞춰 채우기 */
   }
   .txt-box1, .txt-box2, .txt-box3 {
-    font-size: 17px;
     padding: 0 2%;
     margin-top: 5%;
   }
-  .grey_txt {
-    font-size: 16px;
-    }
+.m_txt{
+  font-size: 17px;
+}
+.grey_txt {
+  font-size: 16px;
+color: #999;
+}
 }
 /* 768px 이하에서 레이아웃 조정 */
 @media (max-width: 768px) {
@@ -329,17 +337,21 @@ font-size: 17px;
     min-width: 200px;
     max-height: 360px;
   }
-}
-.txt-box1, .txt-box2, .txt-box3 {
-  font-size: 24px;
-  padding:  0;
-  margin-top: 0;
-  padding-bottom: 7%;
-}
-.grey_txt {
-  color: #999;
-  font-size: 22px;
+  .txt-box1, .txt-box2, .txt-box3 {
+    /* font-size: 17px; */
+    padding:  0;
+    margin-top: 0;
+    padding-bottom: 7%;
   }
+  .m_txt{
+    font-size: 18px;
+  }
+  .grey_txt {
+    font-size: 16px;
+  color: #999;
+  }
+}
+
 
 @media (max-width: 480px){
   .image-box1,.image-box2,.image-box3{
@@ -408,12 +420,22 @@ font-size: 17px;
 /* ==================================강점 끝=========================================================== */
 /* =================================비교=================================================================== */
 /* 제품비교 */
+.compare_wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+  padding: 0 5%;
+}
 .compare {
   display: flex;
   justify-content: center;
+  align-items: center;
+  max-width: 1300px;
+}
+.compare img{
   width: 100%;
-  padding: 0 13%;
-  padding-top: 7%;
 }
 
 
@@ -434,7 +456,7 @@ font-size: 17px;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding: 0 7%;
+  padding: 0 3%;
   padding: 0 10%;
 }
 
@@ -479,8 +501,8 @@ font-size: 17px;
 /* 버튼 스타일 */
 .bbtn {
   box-sizing: border-box;
-  width: 450px;
-  height: 70px;
+  width: 400px;
+  height: 75px;
   border: 1px solid #000000;
   border-radius: 2px;
   background-color: transparent;
@@ -526,15 +548,39 @@ font-size: 17px;
   opacity: 0.7;
   transition: 0.3s all ease;
 }
-
-/* 반응형 조정 */
-@media (max-width: 768px) {
+/* @media (min-width: 769px) and (max-width: 1600px){
   .bbtn {
     height: 45px;
-    width: 50%;
+    width: 400px;
   }
   .bbtn .btn_txt {
     font-size: 16px;
+  }
+} */
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .bbtn {
+    height: 55px;
+    width: 40%;
+  }
+  .bbtn .btn_txt {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bbtn-container {
+    display: flex;
+    justify-content: center; /* 버튼을 가운데로 정렬 */
+    margin-bottom: 10%;
+    margin-top: 10%;
+  }
+  .bbtn {
+    width: 45%;
+        height: 45px;
+  }
+  .bbtn .btn_txt {
+    font-size: 14px;
   }
 }
 
@@ -1337,16 +1383,9 @@ bottom: 19.5%;
   color: gray; /* 비활성화된 텍스트 회색 */
 }
 .swiper-pagination::before {
-  /* position: relative; */
-  content: "";
-  width: 80px; /* 선의 길이를 줄임 */
-  height: 2px; /* 선의 두께를 줄임 */
-  background-color: #ccc;
-  position: absolute;
-  bottom: 11%; /* 불릿과 일치하게 수직 위치 조정 */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
+
+  bottom: 10%; /* 불릿과 일치하게 수직 위치 조정 */
+
 }
 .bbtn-container2{
       margin-top: 5%
@@ -1355,7 +1394,10 @@ bottom: 19.5%;
 }
 @media (min-width: 631px) and (max-width: 700px){
   .swiper-slide .contants {
-    bottom: 20%;
+    /* bottom: 20%; */
+    }
+    .swiper-pagination::before{
+      bottom: 10.5%;
     }
     .contants p{
       font-size: 18px;
@@ -1364,7 +1406,7 @@ bottom: 19.5%;
 
 @media (min-width: 581px) and (max-width: 630px){
   .swiper-slide .contants {
-    bottom: 22%;
+    /* bottom: 22%; */
     }
     .contants p{
       font-size: 18px;
@@ -1378,6 +1420,7 @@ bottom: 19.5%;
     .contants p{
       font-size: 17px;
     }
+
 }
 @media (min-width: 441px) and (max-width: 489px) {
 
@@ -1388,7 +1431,7 @@ bottom: 19.5%;
     bottom: 25%;
     }
     .swiper-pagination::before{
-      bottom: 14%;
+      bottom: 13.5%;
     }
   .swiper-slide .contants p{
     font-size: 15px;
@@ -1408,7 +1451,7 @@ bottom: 19.5%;
     }
 }
 
-@media (min-width: 200px) and (max-width: 360px){
+@media (min-width: 290px) and (max-width: 360px){
   .slide_img_box img{
     width: 100%;
   }
@@ -1421,7 +1464,7 @@ bottom: 19.5%;
     z-index: 1;
   }
   .swiper-pagination::before{
-    bottom: 13%;
+    bottom: 14%;
   }
   .swiper-slide .contants p{
     font-size: 15px;
