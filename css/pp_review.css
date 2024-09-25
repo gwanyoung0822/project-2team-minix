@@ -224,7 +224,7 @@ span {
   }
   .review_txt {
     /* border-bottom: solid 1px #d0d0d0; */
-    padding: 5px 12px 0px 15px;
+    padding: 9px 12px 0px 15px;
   }
   .review_txt h2 {
     font-size: 13px;
@@ -271,6 +271,15 @@ span {
     max-width: 57px;
     max-height: 13.5px;
   }
+  .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: absolute;
+    left: var(--swiper-scrollbar-sides-offset, 4%);
+    bottom: var(--swiper-scrollbar-bottom, 4px);
+    top: var(--swiper-scrollbar-top, auto);
+    z-index: 50;
+    height: var(--swiper-scrollbar-size, 4px);
+    width: calc(100% - 8%);
+}
 }
 @media screen and (max-width: 580px) {
   .review {
@@ -317,6 +326,15 @@ span {
 }
 .review_txt span{
   font-size: 12px;
+}
+.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  position: absolute;
+  left: var(--swiper-scrollbar-sides-offset, 6%);
+  bottom: var(--swiper-scrollbar-bottom, 4px);
+  top: var(--swiper-scrollbar-top, auto);
+  z-index: 50;
+  height: var(--swiper-scrollbar-size, 4px);
+  width: calc(100% - 15%);
 }
 }
 @media screen and (max-width: 350px) {
@@ -371,6 +389,15 @@ span {
   .review {
     padding-bottom: 20px;
   }
+  .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+    position: absolute;
+    left: var(--swiper-scrollbar-sides-offset, 8%);
+    bottom: var(--swiper-scrollbar-bottom, 4px);
+    top: var(--swiper-scrollbar-top, auto);
+    z-index: 50;
+    height: var(--swiper-scrollbar-size, 4px);
+    width: calc(85% - 2* var(--swiper-scrollbar-sides-offset, 1%));
+}
 }
 
 @media screen and (max-width: 320px) {
