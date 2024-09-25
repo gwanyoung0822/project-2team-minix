@@ -173,6 +173,7 @@ body {
 .main_copy{
   display: flex;
   justify-content: center;
+  align-items: center;
     width: 100%;
     background-color: #fff;
     padding: 5%;
@@ -180,10 +181,31 @@ body {
 .copy_box{
   max-width: 1300px;
 }
-.main_copy img{
-    width: 100%;
+.mcp_web{
+  width: 100%;
+  padding: 0 3%;
 }
-@media screen and (max-width: 480px){
+.mcp_tab{
+  display: none;
+}
+
+@media screen and (max-width: 768px){
+  .mcp_web{
+    display: none;
+    
+}
+  .mcp_tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      width: 100%;
+      background-color: #fff;
+      padding: 5%;
+  }
+  .main_copy img{
+    width: 100%;
+    padding: 0 15%;
+  }
 }
 
 /* ============================강점============================================================== */
@@ -192,7 +214,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-bottom: 3%;
+  /* padding-bottom: 5%; */
   overflow: hidden;
 }
 
@@ -215,24 +237,6 @@ body {
 }
 
 
-/* 텍스트 박스 */
-.txt-box1, .txt-box2, .txt-box3 {
-  width: 100%; /* 부모 요소에 맞춰 텍스트 박스 크기 조정 */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2%; /* 이미지와 텍스트 사이의 간격을 비율로 조정 */
-  font-weight: bold;
-  line-height: 1.7;
-  font-size: 20px;
-  overflow: hidden;
-}
-/* 각 텍스트 박스 이미지의 너비 설정 */
-.grey_txt {
-color: #999;
-font-size: 17px;
-}
 
 /* 각 이미지와 텍스트를 감싸는 박스 */
 .item-box {
@@ -241,6 +245,7 @@ font-size: 17px;
   align-items: center;
   width: 100%; /* 이미지와 텍스트 박스의 고정 너비 */
   overflow: hidden;
+  
 }
 
 /* 이미지 박스 */
@@ -248,7 +253,7 @@ font-size: 17px;
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 5%;
+  margin-bottom: 2%;
 }
 
 .image-box1 img {
@@ -264,28 +269,26 @@ height: 380px;
 
 /* 텍스트 박스 */
 .txt-box1, .txt-box2, .txt-box3 {
-  width: 100%;
+  width: 100%; /* 부모 요소에 맞춰 텍스트 박스 크기 조정 */
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  margin-top: 20px; /* 이미지와 텍스트 사이의 간격 */
+  font-weight: bold;
+  line-height: 1.7;
+  font-size: 20px;
+  overflow: hidden;
+  padding: 5% 0;
+  margin-top: 5%;
 }
 
 /* 각 텍스트 박스 이미지의 너비 설정 */
-.txt-box1 img {
-  width: 327px;
-  height: 50px;
+.grey_txt {
+color: #999;
+font-size: 17px;
 }
 
-.txt-box2 img {
-  width: 388px;
-  height: 50px;
-}
 
-.txt-box3 img {
-  width: 365px;
-  height: 50px;
-}
 
 @media (min-width: 769px) and (max-width: 1400px) {
   .image-box1 img,.image-box2 img, .image-box3 img {
@@ -295,6 +298,8 @@ height: 380px;
   }
   .txt-box1, .txt-box2, .txt-box3 {
     font-size: 17px;
+    padding: 0 2%;
+    margin-top: 5%;
   }
   .grey_txt {
     font-size: 16px;
@@ -306,19 +311,30 @@ height: 380px;
     flex-direction: column; /* 세로 배열 */
     align-items: center; /* 중앙 정렬 */
   }
-  .item-box  {
+  .image-box1,.image-box2,.image-box3  {
     width: 100%; /* 너비 조정 */
+    margin-bottom: 0;
+    /* padding: 0; */
   }
 
-  .image-box1 img, .image-box2 img, .image-box3 img {
+  .image-box1 img {
     padding: 3%;
     max-width: 400px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
     max-height: 380px;
   }
+  .image-box2 img, .image-box3 img{
+    padding: 3%;
+    max-width: 400px; /* 이미지 최대 너비 조정 */
+    min-width: 200px;
+    max-height: 360px;
+  }
 }
 .txt-box1, .txt-box2, .txt-box3 {
-  margin: 1%; /* 이미지와 텍스트 사이의 간격 */
+  font-size: 17px;
+  padding:  0;
+  margin-top: 0;
+  padding-bottom: 7%;
 }
 .grey_txt {
   color: #999;
@@ -326,20 +342,28 @@ height: 380px;
   }
 
 @media (max-width: 480px){
+  .image-box1,.image-box2,.image-box3{
+    margin-bottom: 0;
+    /* padding: 0 2%; */
+  }
   .image-box1 img{
-    padding: 5%;
+    padding: 0 3%;
+    /* padding-bottom: 3%; */
     max-width: 350px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
     max-height: 350px;
   }
   .image-box2 img, .image-box3 img{
-    padding: 5%;
+    padding: 3% 2%;
     max-width: 350px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
     max-height: 330px;
+    padding-bottom: 0;
   }
   .txt-box1,.txt-box2,.txt-box3{
     font-size: 16px;
+    padding-top: 1%;
+    padding-bottom: 5%;
   }
   .grey_txt {
     font-size: 15px;
@@ -356,6 +380,7 @@ height: 380px;
   .image-box1 img, .image-box2 img, .image-box3 img {
     max-width: 250px; /* 이미지 최대 너비 조정 */
     max-height: 250px;
+    padding: 2%;
   }
  .image-box2 img, .image-box3 img {
     max-width: 250px; /* 이미지 최대 너비 조정 */
@@ -387,7 +412,8 @@ height: 380px;
   display: flex;
   justify-content: center;
   width: 100%;
-  padding: 0 7%;
+  padding: 0 13%;
+  padding-top: 7%;
 }
 
 
@@ -409,7 +435,7 @@ height: 380px;
   justify-content: center;
   width: 100%;
   padding: 0 7%;
-  padding: 2% 5%;
+  padding: 0 10%;
 }
 
 /* 768px 이하에서는 기본 이미지를 숨기고 대체 이미지를 표시 */
@@ -417,6 +443,7 @@ height: 380px;
   display: none;
 }
 .mobile-img1 {
+  padding-top: 5%;
   padding-left: 10%;
   padding-right: 10%;
   display: block; /* 작은 화면에서 보임 */
@@ -425,7 +452,7 @@ height: 380px;
   width: 100%;
 }
 .mobile-img2 {
-  padding-top: 10%;
+  padding-top: 12%;
   padding-left: 10%;
   padding-right: 10%;
   display: block; /* 작은 화면에서 보임 */
@@ -435,6 +462,9 @@ height: 380px;
 @media (max-width: 360px) {
 .compare {
   padding: 0 2%;
+}
+.mobile-img1{
+  padding-top: 7%;
 }
 }
 /* 구매버튼 */
@@ -1190,14 +1220,15 @@ width: 40%;
 .swiper-slide .contants {
   position: absolute;
   width: 100%;
+  height: 200px;
   bottom: -50%; /* 갤러리와 동일하게 하단 정렬 */
   left: 50%;
-  transform: translate(-50%, 112%); /* 수평 중앙 정렬 */
+  transform: translate(-50%, 100%); /* 수평 중앙 정렬 */
   background-color: rgba(0, 0, 0, 1); /* 투명한 검정 배경 */
   color: #fff;
   text-align: center;
-  padding: 10px; /* 패딩 동일하게 설정 */
-  line-height: 1.6; /* 줄 높이 동일하게 설정 */
+  padding: 5px; /* 패딩 동일하게 설정 */
+  line-height: 1.5; /* 줄 높이 동일하게 설정 */
   opacity: 0.8; /* 불투명도 조정 */
   z-index: 1;
   /* overflow: hidden; */
@@ -1216,7 +1247,8 @@ width: 40%;
 }
 
 .slide_img_box{
-  width: 100%
+  width: 100%;
+  display: block;
 }
 .slide_img_box img{
 width: 100%;
@@ -1234,6 +1266,7 @@ display: block; /* 이미지 하단 여백 제거 */
 }
 
 .swiper-pagination::before {
+  /* position: relative; */
   content: "";
   width: 80px; /* 선의 길이를 줄임 */
   height: 2px; /* 선의 두께를 줄임 */
@@ -1303,6 +1336,18 @@ bottom: 19.5%;
 .pp-det-txtwrap2 div.inactive {
   color: gray; /* 비활성화된 텍스트 회색 */
 }
+.swiper-pagination::before {
+  /* position: relative; */
+  content: "";
+  width: 80px; /* 선의 길이를 줄임 */
+  height: 2px; /* 선의 두께를 줄임 */
+  background-color: #ccc;
+  position: absolute;
+  bottom: 11%; /* 불릿과 일치하게 수직 위치 조정 */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
 
 }
 @media (min-width: 631px) and (max-width: 700px){
@@ -1325,36 +1370,38 @@ bottom: 19.5%;
 
 @media (min-width: 490px) and (max-width: 580px){
   .swiper-slide .contants {
-    bottom: 24%;
+    bottom: 25%;
     }
     .contants p{
       font-size: 17px;
     }
 }
-@media (max-width: 480px) {
-  .contants{
-    padding: 10px;
-  }
+@media (min-width: 441px) and (max-width: 489px) {
+
   .slide_img_box img{
     width: 100%;
   }
   .swiper-slide .contants {
-    bottom: 27%;
+    bottom: 25%;
     }
-  .contants p{
+    .swiper-pagination::before{
+      bottom: 14%;
+    }
+  .swiper-slide .contants p{
     font-size: 15px;
   }
-  .swiper-pagination {
-    position: relative;
-    bottom: 0;
-    margin-top: 20px; /* 페이지네이션을 아래로 내림 */
-    z-index: 1;
-  }
 }
+
 
 @media (min-width: 361px) and (max-width: 440px){
   .swiper-slide .contants {
     bottom: 30%;
+    }
+    .swiper-pagination::before{
+      bottom: 14%;
+    }
+    .contants p{
+      font-size: 15px;
     }
 }
 
@@ -1368,11 +1415,13 @@ bottom: 19.5%;
   .swiper-pagination {
     position: relative;
     bottom: 0;
-    margin-top: 20px; /* 페이지네이션을 아래로 내림 */
     z-index: 1;
   }
   .swiper-pagination::before{
     bottom: 13%;
+  }
+  .swiper-slide .contants p{
+    font-size: 15px;
   }
 }
 
