@@ -216,3 +216,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+$(document).ready(function () {
+  // bbtn-container를 클릭했을 때
+  $('.bbtn-container').click(function () {
+    // 해당 링크로 이동
+    window.location.href = "product_page.html";
+  });
+  $('.bbtn-container2').click(function () {
+    // 해당 링크로 이동
+    window.location.href = "product_page.html";
+  });
+});
+})

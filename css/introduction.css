@@ -489,6 +489,7 @@ font-size: 17px;
   align-items: center;
   cursor: pointer;
 }
+
 .bbtn:hover{
   background-color: #111;
   transition: 0.3s all ease;
@@ -530,7 +531,7 @@ font-size: 17px;
 @media (max-width: 768px) {
   .bbtn {
     height: 45px;
-    width: 30%;
+    width: 50%;
   }
   .bbtn .btn_txt {
     font-size: 16px;
@@ -545,8 +546,8 @@ font-size: 17px;
     margin-top: 10%;
   }
   .bbtn {
-    height: 40px;
-    max-width: 100px;
+    width: 50%;
+        height: 40px;
   }
   .bbtn .btn_txt {
     font-size: 13px;
@@ -787,6 +788,7 @@ span.middlep {
 @media screen and (max-width: 768px) {
   .rank {
     flex: 1 1 calc(50% - 10px); /* 320px 이하에서도 두 개의 요소가 배치되도록 */
+    padding: 26px;
   }
 
   .det2-main {
@@ -892,10 +894,10 @@ span.middlep {
     padding-top: 20px; /* 작은 화면에서 여백 조정 */
   }
   span.small {
-    font-size: clamp(20px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+    font-size: clamp(22px, 2vw, 22px); /* 텍스트 크기를 더 작게 조정 */
   }
   span.number {
-    font-size: clamp(40px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    font-size: clamp(46px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
     min-width: 30px;
   }
   span.one {
@@ -904,10 +906,10 @@ span.middlep {
     margin-left: 0px;
   }
   span.smallp {
-    font-size: clamp(16px, 3.5vw, 32px);
+    font-size: clamp(20px, 3.5vw, 32px);
   }
   span.middlep {
-    font-size: clamp(16px, 3vw, 20px);
+    font-size: clamp(20px, 3vw, 20px);
   }
 
   .det2-main {
