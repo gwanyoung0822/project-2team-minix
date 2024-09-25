@@ -219,7 +219,7 @@ li.under{
   .ft_tab_sns {
     padding-top: 50px;
     padding-bottom: 50px;
-    gap: 10px;
+    gap: 20px;
   }
   .ft_320_sns {
     display: none;
@@ -315,6 +315,9 @@ li.under{
     color: #a5a5a5;
     text-decoration: underline;
     font-size: 10px;
+  }
+  .ft_320_sns img{
+    width: 80%;
   }
   
 }

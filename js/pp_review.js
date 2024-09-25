@@ -39,7 +39,7 @@ window.onload = function () {
           dragSize: 200,
         },
       },
-      410: {
+      435: {
         slidesPerView: 1.7, // 410px 이상일 때 한 번에 1.7개의 슬라이드 표시
         spaceBetween: 20, // 슬라이드 간격 15px
         scrollbar: {
