@@ -96,7 +96,8 @@ body {
 }
 /* ======================================================스크롤 버튼 */
 .next-sec-btn2{
-  width: 4.2vw;
+  width: clamp(20px, 4.2vw, 55px); /* 최소 55px, 최대 80px 사이에서 4.2vw에 맞춤 */
+  height: clamp( 20px, 4.2vw, 55px); /* width와 동일하게 설정 */
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -361,15 +362,15 @@ color: #999;
   .image-box1 img{
     padding: 0 3%;
     /* padding-bottom: 3%; */
-    max-width: 350px; /* 이미지 최대 너비 조정 */
+    max-width: 300px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
-    max-height: 350px;
+    max-height: 300px;
   }
   .image-box2 img, .image-box3 img{
     padding: 3% 2%;
-    max-width: 350px; /* 이미지 최대 너비 조정 */
+    max-width: 300px; /* 이미지 최대 너비 조정 */
     min-width: 200px;
-    max-height: 330px;
+    max-height: 280px;
     padding-bottom: 0;
   }
   .txt-box1,.txt-box2,.txt-box3{
@@ -566,6 +567,7 @@ color: #999;
   .bbtn .btn_txt {
     font-size: 16px;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -1065,7 +1067,7 @@ span.middlep {
 .pp-descriptions {
     width: 100%;
     color: #000000;
-    background-color: #EDE6DB;
+    background-color: #080808;
 }
 
 .pp-det-wrap {
@@ -1094,7 +1096,8 @@ span.middlep {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-    
+    color: #fff;
+    font-weight: bold;
 }
 .pp-det-txtwrap2{
   display: none;
@@ -1105,6 +1108,7 @@ span.middlep {
   display: flex;
   justify-content: center;
   padding: 5% 0;
+  color: #fff;
 
 }
 .pp-det-title img{
@@ -1125,13 +1129,15 @@ width: 40%;
     margin-bottom: 30px;
     flex: 0.6;
     text-align: center;
+    color: #fff;
 }
 
 /* 나머지 텍스트 아이템 축소 */
 .shrink-text {
     font-size: 0.8em;
-    transition: font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11);
+    transition: font-size 0.5s cubic-bezier(0,-0.19, 0.7,-0.11);
     opacity: 0.7;  /* 선택 사항: 축소된 텍스트의 불투명도 조정 */
+    color: #fff;
 }
 
 .pp-det-imgwrap {
@@ -1169,7 +1175,7 @@ width: 40%;
 }
 
 .gallery li .contants {
-  transition: transform 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  transition: transform 0.5s ease, font-size 0.5s ease;
   position: absolute;
   bottom: -310px;
   left: 50%;
@@ -1182,7 +1188,7 @@ width: 40%;
   padding: 20px;
   padding-top: 20px;
   line-height: 1.6;
-  transition: bottom 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  transition: bottom 0.5s ease, font-size 0.5s ease;
   opacity: 0.8;
 }
 
@@ -1243,15 +1249,60 @@ width: 40%;
   padding: 20px;
   text-align: center;
 }
-/* 갤러리 하단 버튼 컨테이너 */
+
+/* ===========================================버튼============================= */
 .bbtn-container2 {
-  width: 100%;
   display: flex;
-  justify-content: center; /* 버튼을 중앙에 배치 */
+  justify-content: center; /* 버튼을 가운데로 정렬 */
+  margin-bottom: 7%;
+  margin-top: 5%;;
+}
+
+/* 버튼 스타일 */
+.bbtn2 {
+  box-sizing: border-box;
+  width: 400px;
+  height: 75px;
+  border: 1px solid #ececec;
+  border-radius: 2px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin: 3%;
-  margin-top: 8%;
-  margin-bottom: 8%;
+  cursor: pointer;
+}
+
+.bbtn2:hover{
+  background-color: #f7f7f7;
+  transition: 0.3s all ease;
+}
+#bbtn-color2{
+  background-color: #080808;
+}
+/* 버튼 텍스트 스타일 */
+.bbtn2 .btn_txt2 {
+  font-family: 'inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 33px;
+  text-align: center;
+  color: #e4e4e4;
+  text-decoration: none;
+}
+.bbtn2:hover .btn_txt2 {
+  color: #0c0c0c; /* 텍스트 색상을 흰색으로 변경 */
+  transition: color 0.3s ease; /* 부드러운 전환 효과 */
+}
+#bbtn-color2:hover{
+  background-color: #e2dfdf;
+  transition: 0.3s all ease;
+}
+/* ===========================================버튼============================= */
+
+.next-sec-btn2 img:hover{
+  opacity: 0.7;
+  transition: 0.3s all ease;
 }
 
 /* Swiper 컨테이너에 대한 스타일 */
@@ -1314,9 +1365,9 @@ display: block; /* 이미지 하단 여백 제거 */
 .swiper-pagination::before {
   /* position: relative; */
   content: "";
-  width: 80px; /* 선의 길이를 줄임 */
+  width: 90px; /* 선의 길이를 줄임 */
   height: 2px; /* 선의 두께를 줄임 */
-  background-color: #ccc;
+  background-color: #999;
   position: absolute;
   bottom: 11%; /* 불릿과 일치하게 수직 위치 조정 */
   left: 50%;
@@ -1325,18 +1376,18 @@ display: block; /* 이미지 하단 여백 제거 */
 }
 
 .swiper-pagination-bullet {
-  width: 9px; /* 불릿 너비를 축소 */
-  height: 9px; /* 불릿 높이를 축소 */
-  background-color: #ccc;
+  width: 11px; /* 불릿 너비를 축소 */
+  height: 11px; /* 불릿 높이를 축소 */
+  background-color: #999;
   border-radius: 50%; /* 둥근 모양 유지 */
-  opacity: 0.8; /* 불투명도 약간 감소 */
+  opacity: 1; /* 불투명도 약간 감소 */
   margin: 0 3px; /* 불릿 간의 간격도 축소 */
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #111;
+  background-color: #ffffff;
   z-index: 20;
-  transform: scale(1.2); /* 활성화된 불릿 살짝 확대 */
+  transform: scale(1); /* 활성화된 불릿 살짝 확대 */
 }
 
 
@@ -1387,15 +1438,16 @@ bottom: 19.5%;
   bottom: 10%; /* 불릿과 일치하게 수직 위치 조정 */
 
 }
-.bbtn-container2{
-      margin-top: 5%
+.bbtn2 {
+  height: 55px;
+  width: 40vw;
+}
+.bbtn2 .btn_txt2 {
+  font-size: 16px;
+}
 }
 
-}
 @media (min-width: 631px) and (max-width: 700px){
-  .swiper-slide .contants {
-    /* bottom: 20%; */
-    }
     .swiper-pagination::before{
       bottom: 10.5%;
     }
@@ -1405,12 +1457,10 @@ bottom: 19.5%;
 }
 
 @media (min-width: 581px) and (max-width: 630px){
-  .swiper-slide .contants {
-    /* bottom: 22%; */
-    }
     .contants p{
       font-size: 18px;
     }
+
 }
 
 @media (min-width: 490px) and (max-width: 580px){
@@ -1435,6 +1485,13 @@ bottom: 19.5%;
     }
   .swiper-slide .contants p{
     font-size: 15px;
+  }
+  .bbtn2 {
+    height: 45px;
+    width: 216px;
+  }
+  .bbtn2 .btn_txt2 {
+    font-size: 14px;
   }
 }
 
@@ -1469,6 +1526,12 @@ bottom: 19.5%;
   .swiper-slide .contants p{
     font-size: 15px;
   }
+  .bbtn2 {
+    height: 40px;
+    width: 180px;
+  }
+  .bbtn2 .btn_txt2 {
+    font-size: 13px;
 }
 
 /* ===================================갤러리 끝====================== */
