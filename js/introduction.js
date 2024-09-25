@@ -18,114 +18,103 @@ document.addEventListener("DOMContentLoaded", function () {
       behavior: "smooth",
     });
   });
- // =================================== 갤러리 ====================================================
+  // =================================== 갤러리 ====================================================
 
-let swiper; // Swiper 인스턴스를 저장할 변수
-
-// Swiper 초기화 함수 업데이트
-const initSwiper = () => {
-  // 화면 크기가 768px 이하이고, Swiper 인스턴스가 없을 때 초기화
-  if (window.innerWidth <= 768 && !swiper) {
-    swiper = new Swiper(".swiper.sw-gallery", {
-      slidesPerView: 1, // 한 번에 보여줄 슬라이드 수
-      spaceBetween: 100, // 슬라이드 간의 간격
-      loop: true, // 슬라이드가 끝나면 처음으로 돌아감
-      pagination: {
-        el: ".swiper-pagination", // 페이지네이션 요소
-        clickable: true, // 페이지네이션 클릭 가능
+  // Swiper 슬라이더 설정
+  const swswiper = new Swiper(".swiper.sw-gallery", {
+    slidesPerView: 1, // 한 번에 보여줄 슬라이드 수
+    spaceBetween: 100, // 슬라이드 간의 간격
+    loop: true, // 슬라이드가 끝나면 처음으로 돌아감
+    pagination: {
+      el: ".swiper-pagination", // 페이지네이션 요소
+      clickable: true, // 페이지네이션 클릭 가능
+    },
+    navigation: {
+      nextEl: ".swiper-button-next", // 다음 버튼 요소
+      prevEl: ".swiper-button-prev", // 이전 버튼 요소
+    },
+    autoplay: {
+      delay: 2000, // 자동 슬라이드 전환 지연 시간 (밀리초)
+    },
+    // 768px 이하일 때만 Swiper가 작동
+    breakpoints: {
+      768: {
+        slidesPerView: 1, // 한 번에 1개 슬라이드
+        spaceBetween: 20, // 간격을 더 줄임
+        loop: true, // 루프 유지
       },
-      navigation: {
-        nextEl: ".swiper-button-next", // 다음 버튼 요소
-        prevEl: ".swiper-button-prev", // 이전 버튼 요소
-      },
-      autoplay: {
-        delay: 3000, // 자동 슬라이드 전환 지연 시간 (밀리초)
-      },
-      on: {
-        slideChange: () => {
-          // 슬라이드가 변경될 때 텍스트 업데이트
-          const activeIndex = swiper.realIndex; // 현재 활성화된 슬라이드의 실제 인덱스
-          updateActiveSubText(activeIndex); // 텍스트 업데이트 함수 호출
-        },
-      },
-    });
-  }
-};
-
-// Swiper 파괴 함수
-const destroySwiper = () => {
-  // Swiper 인스턴스가 있을 경우 파괴
-  if (swiper) {
-    swiper.destroy(true, true); // Swiper 인스턴스 파괴
-    swiper = null; // 인스턴스 변수 초기화
-  }
-};
-
-// 화면 크기 변화에 따른 Swiper 초기화 또는 파괴 (업데이트)
-const handleResize = () => {
-  const screenWidth = window.innerWidth; // 현재 화면 너비
-
-  // 768px 이하일 경우 스와이퍼를 초기화, 이상일 경우 파괴
-  if (screenWidth <= 768 && !swiper) {
-    initSwiper(); // Swiper 초기화
-  } else if (screenWidth > 768 && swiper) {
-    destroySwiper(); // Swiper 파괴
-  }
-};
-
-// 서브텍스트 클릭 시 해당 슬라이드로 이동 및 텍스트 업데이트
-const setupSubTextClick = () => {
-  document.querySelectorAll(".pp-det-txtwrap2 div").forEach((element, index) => {
-    element.addEventListener("click", () => {
-      swiper.slideTo(index); // 클릭한 서브텍스트에 해당하는 슬라이드로 이동
-      updateActiveSubText(index); // 텍스트 업데이트 함수 호출
-    });
+    },
   });
-};
 
-// 갤러리 아이템 초기화
-const resetGalleryItems = () => {
-  // 갤러리 아이템과 텍스트 아이템의 클래스 초기화
-  galleryItems.forEach((item) => item.classList.remove("open", "paused"));
-  textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
-};
+  // 갤러리 아이템 및 텍스트 아이템의 DOM 요소를 가져오기
+  const galleryItems1 = document.querySelectorAll(".gallery li");
+  const textItems1 = document.querySelectorAll(".pp-det-txtwrap");
 
-// 갤러리 아이템에 마우스 오버 이벤트 추가
-const setupGalleryHover = () => {
-  galleryItems.forEach((item) => {
-    item.addEventListener("mouseover", function () {
-      resetGalleryItems(); // 모든 아이템 초기화
-      const index = Array.from(galleryItems).indexOf(this); // 현재 마우스 오버된 아이템의 인덱스
-      this.classList.add("open"); // 해당 아이템에 "open" 클래스 추가
-      if (textItems[index]) {
-        textItems[index].classList.add("open-text"); // 해당 텍스트 아이템에 "open-text" 클래스 추가
-      }
-      textItems.forEach((textItem, idx) => {
-        if (idx !== index) textItem.classList.add("shrink-text"); // 다른 텍스트 아이템에 "shrink-text" 클래스 추가
+  // 서브텍스트 클릭 시 해당 슬라이드로 이동 및 텍스트 업데이트
+  const setupSubTextClick = () => {
+    document.querySelectorAll(".pp-det-txtwrap2 div").forEach((element, index) => {
+      element.addEventListener("click", () => {
+        swswiper.slideTo(index); // 클릭한 서브텍스트에 해당하는 슬라이드로 이동
+        updateActiveSubText(index); // 텍스트 업데이트 함수 호출
       });
-      galleryItems.forEach((i) => i.classList.add("paused")); // 모든 아이템에 "paused" 클래스 추가
-      this.classList.remove("paused"); // 현재 아이템의 "paused" 클래스 제거
     });
+  };
 
-    // 마우스 아웃 시 모든 아이템 초기화
-    item.addEventListener("mouseout", resetGalleryItems);
-  });
-};
+  // 갤러리 아이템 초기화
+  const resetGalleryItems = () => {
+    galleryItems.forEach((item) => item.classList.remove("open", "paused"));
+    textItems.forEach((item) => item.classList.remove("open-text", "shrink-text"));
+  };
 
-// 초기화 함수
-const initEventListeners = () => {
-  window.addEventListener("resize", handleResize); // 화면 크기 변화 이벤트 리스너 추가
-  handleResize(); // 초기 호출로 Swiper 초기화
-  setupSubTextClick(); // 서브텍스트 클릭 이벤트 설정
-  setupGalleryHover(); // 갤러리 아이템 호버 이벤트 설정
-};
+  // 갤러리 아이템에 마우스 오버 이벤트 추가
+  const setupGalleryHover = () => {
+    galleryItems.forEach((item) => {
+      item.addEventListener("mouseover", function () {
+        resetGalleryItems(); // 모든 아이템 초기화
+        const index = Array.from(galleryItems).indexOf(this); // 현재 마우스 오버된 아이템의 인덱스
+        this.classList.add("open"); // 해당 아이템에 "open" 클래스 추가
+        if (textItems[index]) {
+          textItems[index].classList.add("open-text"); // 해당 텍스트 아이템에 "open-text" 클래스 추가
+        }
+        textItems.forEach((textItem, idx) => {
+          if (idx !== index) textItem.classList.add("shrink-text"); // 다른 텍스트 아이템에 "shrink-text" 클래스 추가
+        });
+        galleryItems.forEach((i) => i.classList.add("paused")); // 모든 아이템에 "paused" 클래스 추가
+        this.classList.remove("paused"); // 현재 아이템의 "paused" 클래스 제거
+      });
+      item.addEventListener("mouseout", resetGalleryItems); // 마우스 아웃 시 초기화
+    });
+  };
 
-// 이벤트 리스너 초기화
-initEventListeners();
+  // 화면 크기에 따라 Swiper와 갤러리 애니메이션 제어
+  const handleResize = () => {
+    const viewportWidth = window.innerWidth;
 
+    if (viewportWidth >= 768) {
+      // 768px 이상일 때 Swiper 비활성화 및 갤러리 애니메이션 활성화
+      swswiper.autoplay.stop(); // Swiper 자동 전환 중지
+      document.querySelector(".swiper.sw-gallery").classList.remove("swiper-initialized"); // Swiper CSS 클래스 제거
+      setupGalleryHover(); // 갤러리 호버 애니메이션 활성화
+    } else {
+      // 768px 이하일 때 Swiper 활성화
+      if (!swswiper.autoplay.running) {
+        swswiper.autoplay.start(); // Swiper 자동 전환 재시작
+      }
+      resetGalleryItems(); // 갤러리 초기화
+    }
+  };
 
+  // 초기화 함수
+  const initEventListeners = () => {
+    window.addEventListener("resize", handleResize); // 화면 크기 변화 시 처리
+    handleResize(); // 초기 화면 크기에 맞게 Swiper 및 갤러리 설정
+    setupSubTextClick(); // 서브텍스트 클릭 이벤트 설정
+  };
 
-// =================================== 갤러리 ====================================================
+  // 이벤트 리스너 초기화
+  initEventListeners();
+
+  // =================================== 갤러리 ====================================================
 
   /**
    * 숫자 애니메이션 함수
@@ -218,15 +207,12 @@ initEventListeners();
     setInterval(startAnimations, 10000);
   };
   $(window).scroll(function () {
-      if ($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".footer").offset().top) {
-        $(".tooltip-text").css("color", "black");
-      } 
-      else if($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".footer-tab").offset().top) {
-        $(".tooltip-text").css("color", "black");
-      } 
-      else{
-        $(".tooltip-text").css("color", "white");
-      }
-      
+    if ($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".footer").offset().top) {
+      $(".tooltip-text").css("color", "black");
+    } else if ($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".footer-tab").offset().top) {
+      $(".tooltip-text").css("color", "black");
+    } else {
+      $(".tooltip-text").css("color", "white");
+    }
+  });
 });
-})
