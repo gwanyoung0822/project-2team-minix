@@ -94,7 +94,11 @@ body {
 }
 /* ======================================================스크롤 버튼 */
 .next-sec-btn2 {
-  width: clamp(20px, 4.2vw, 55px); /* 최소 55px, 최대 80px 사이에서 4.2vw에 맞춤 */
+  width: clamp(
+    20px,
+    4.2vw,
+    55px
+  ); /* 최소 55px, 최대 80px 사이에서 4.2vw에 맞춤 */
   height: clamp(20px, 4.2vw, 55px); /* width와 동일하게 설정 */
   display: flex;
   justify-content: center;
@@ -716,12 +720,20 @@ span.small {
   margin-right: 20px; /* 좌측과 우측 요소 사이에 여백 설정 */
 }
 .det2-top {
-  font-size: clamp(20px, 5vw, 50px); /* 최소 20px, 최대 50px, 5vw 비율로 폰트 크기 조정 */
+  font-size: clamp(
+    20px,
+    5vw,
+    50px
+  ); /* 최소 20px, 최대 50px, 5vw 비율로 폰트 크기 조정 */
   font-weight: bold;
 }
 
 .number {
-  font-size: clamp(30px, 4vw, 70px); /* 최소 30px, 최대 70px, 4vw 비율로 폰트 크기 조정 */
+  font-size: clamp(
+    30px,
+    4vw,
+    70px
+  ); /* 최소 30px, 최대 70px, 4vw 비율로 폰트 크기 조정 */
   font-weight: bold;
 }
 .date {
@@ -746,12 +758,20 @@ span.small {
 
 span.small {
   font-size: clamp(16px, 3vw, 30px); /* 작은 텍스트도 화면 크기에 맞춰 조정 */
-  margin-right: clamp(10px, 2vw, 30px); /* 오른쪽에 공간을 추가하여 .test와 간격 조정 */
+  margin-right: clamp(
+    10px,
+    2vw,
+    30px
+  ); /* 오른쪽에 공간을 추가하여 .test와 간격 조정 */
 }
 
 span.number {
   margin-left: 30px;
-  font-size: clamp(30px, 6vw, 70px); /* 폰트 크기는 화면 크기에 맞춰 유동적으로 조정 */
+  font-size: clamp(
+    30px,
+    6vw,
+    70px
+  ); /* 폰트 크기는 화면 크기에 맞춰 유동적으로 조정 */
   font-weight: bold;
   display: inline-block;
   width: auto; /* 고정된 너비를 제거하여 유연한 너비 설정 */
@@ -817,7 +837,7 @@ span.middlep {
     font-variant-numeric: tabular-nums;
     letter-spacing: -3.5px;
     margin-bottom: clamp(5px, 1.5vw, 10px);
-}
+  }
 
   /* 각 영역을 grid 영역으로 지정 */
   .det2-main1-1 {
@@ -846,7 +866,7 @@ span.middlep {
   span.small {
     font-size: clamp(38px, 3vw, 30px);
     margin-right: clamp(10px, 2vw, 30px);
-}
+  }
 }
 
 /* 작은 화면에서 배치 변경 */
@@ -951,16 +971,17 @@ span.middlep {
 @media screen and (max-width: 480px) {
   .rank {
     flex: 1 1 calc(50% - 10px); /* 320px 이하에서도 두 개의 요소가 배치되도록 */
+    padding: 15px;
   }
 
   .det2-main {
     padding-top: 20px; /* 작은 화면에서 여백 조정 */
   }
   span.small {
-    font-size: clamp(22px, 2vw, 22px); /* 텍스트 크기를 더 작게 조정 */
+    font-size: clamp(20px, 2vw, 22px); /* 텍스트 크기를 더 작게 조정 */
   }
   span.number {
-    font-size: clamp(46px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    font-size: clamp(40px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
     min-width: 30px;
   }
   span.one {
@@ -1001,7 +1022,7 @@ span.middlep {
     font-size: clamp(18px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
   }
   span.number {
-    font-size: clamp(35px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    font-size: clamp(32px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
   }
   span.one {
     font-size: clamp(30px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
@@ -1017,6 +1038,7 @@ span.middlep {
 
   .det2-main {
     padding-top: 20px;
+    padding: 8px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -1055,13 +1077,13 @@ span.middlep {
   /* 폰트 크기와 요소 간격 조정 */
 
   span.small {
-    font-size: clamp(18px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
+    font-size: clamp(16px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
   }
   span.number {
-    font-size: clamp(35px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    font-size: clamp(30px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
   }
   span.one {
-    font-size: clamp(30px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
+    font-size: clamp(28px, 3vw, 50px); /* 숫자 폰트 크기 조정 */
     letter-spacing: -1px;
     margin-left: 0px;
   }
@@ -1301,7 +1323,6 @@ span.middlep {
 .bbtn2:hover .btn_txt2 {
   color: #0c0c0c; /* 텍스트 색상을 흰색으로 변경 */
   transition: color 0.3s ease; /* 부드러운 전환 효과 */
-  
 }
 #bbtn-color2:hover {
   background-color: white;
@@ -1309,7 +1330,7 @@ span.middlep {
 }
 
 @media (max-width: 768px) {
-  .bbtn-container2{
+  .bbtn-container2 {
     width: 100%;
   }
   .bbtn2 {
@@ -1453,9 +1474,7 @@ span.middlep {
     width: 70%;
   }
   .pp-det-title {
-
     padding: 15% 0;
-
   }
   .gallery {
     display: none; /* 기본 갤러리를 숨김 */
@@ -1497,7 +1516,6 @@ span.middlep {
   .swiper-pagination::before {
     bottom: 12%; /* 불릿과 일치하게 수직 위치 조정 */
   }
-
 }
 
 @media (min-width: 631px) and (max-width: 700px) {
@@ -1524,7 +1542,6 @@ span.middlep {
   }
 }
 @media (min-width: 441px) and (max-width: 489px) {
-
   .slide_img_box img {
     width: 100%;
   }
@@ -1537,7 +1554,6 @@ span.middlep {
   .swiper-slide .contants p {
     font-size: 15px;
   }
-
 }
 
 @media (min-width: 361px) and (max-width: 440px) {
@@ -1570,9 +1586,8 @@ span.middlep {
   .swiper-slide .contants p {
     font-size: 15px;
   }
-
 }
-@media (min-width: 200px) and (max-width: 289px){
+@media (min-width: 200px) and (max-width: 289px) {
   .swiper-slide .contants {
     bottom: 50%;
   }
