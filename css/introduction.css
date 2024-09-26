@@ -645,7 +645,7 @@ body {
   font-size: 50px;
   font-weight: bold;
   line-height: 70px;
-  margin-top: 50px;
+  padding-top: 50px;
 }
 span.small {
   font-size: 30px;
@@ -788,13 +788,14 @@ span.middlep {
 }
 @media screen and (max-width: 1024px) {
   .number {
-    font-size: 60px;
+    font-size: 50px;
   }
   .rank {
     flex: 1 1 100%; /* 한 줄에 1개씩 배치 */
   }
 
   .det2-main {
+    padding: 25px;
     display: grid;
     grid-template-columns: 1fr; /* 한 줄에 한 개씩 배치 */
     grid-template-areas:
@@ -803,6 +804,20 @@ span.middlep {
       "main1-2"
       "main2-2"; /* 원하는 순서대로 영역 배치 */
   }
+  span.number {
+    margin-left: 30px;
+    font-size: clamp(70px, 6vw, 90px);
+    font-weight: bold;
+    display: inline-block;
+    width: auto;
+    min-width: 100px;
+    max-width: 250px;
+    text-align: right;
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -3.5px;
+    margin-bottom: clamp(5px, 1.5vw, 10px);
+}
 
   /* 각 영역을 grid 영역으로 지정 */
   .det2-main1-1 {
@@ -828,6 +843,10 @@ span.middlep {
     flex: 1 1 100%;
     margin-bottom: 20px;
   }
+  span.small {
+    font-size: clamp(38px, 3vw, 30px);
+    margin-right: clamp(10px, 2vw, 30px);
+}
 }
 
 /* 작은 화면에서 배치 변경 */
@@ -838,7 +857,7 @@ span.middlep {
   }
 
   .det2-main {
-    padding-top: 20px; /* 작은 화면에서 여백 조정 */
+    padding: 20px; /* 작은 화면에서 여백 조정 */
   }
   span.small {
     font-size: clamp(30px, 2vw, 20px); /* 텍스트 크기를 더 작게 조정 */
@@ -1282,6 +1301,7 @@ span.middlep {
 .bbtn2:hover .btn_txt2 {
   color: #0c0c0c; /* 텍스트 색상을 흰색으로 변경 */
   transition: color 0.3s ease; /* 부드러운 전환 효과 */
+  
 }
 #bbtn-color2:hover {
   background-color: #e2dfdf;

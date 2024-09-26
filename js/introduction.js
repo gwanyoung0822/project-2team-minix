@@ -207,9 +207,13 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(startAnimations, 10000);
   };
   $(window).scroll(function () {
-    if ($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".footer").offset().top) {
+    if ($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".pp-det-bg").offset().top){
       $(".tooltip-text").css("color", "black");
-    } else if ($(".tooltip-text").offset().top >= $(".main_copy").offset().top && $(".tooltip-text").offset().top <= $(".footer-tab").offset().top) {
+    }
+    else if ($(".tooltip-text").offset().top >= $(".det2-top").offset().top && $(".tooltip-text").offset().top <= $(".footer").offset().top){
+      $(".tooltip-text").css("color", "black");
+    } 
+    else if ($(".tooltip-text").offset().top >= $(".det2-top").offset().top && $(".tooltip-text").offset().top <= $(".footer-tab").offset().top) {
       $(".tooltip-text").css("color", "black");
     } else {
       $(".tooltip-text").css("color", "white");
