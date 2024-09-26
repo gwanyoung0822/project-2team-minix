@@ -1284,7 +1284,7 @@ span.middlep {
   transition: color 0.3s ease; /* 부드러운 전환 효과 */
 }
 #bbtn-color2:hover {
-  background-color: #e2dfdf;
+  background-color: white;
   transition: 0.3s all ease;
 }
 /* ===========================================버튼============================= */
