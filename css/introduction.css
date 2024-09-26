@@ -1307,6 +1307,53 @@ span.middlep {
   background-color: white;
   transition: 0.3s all ease;
 }
+
+@media (max-width: 768px) {
+  .bbtn-container2{
+    width: 100%;
+  }
+  .bbtn2 {
+    position: relative;
+    height: 55px;
+    width: 40%;
+    z-index: 1;
+  }
+  .bbtn2 .btn_txt2 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bbtn-container2 {
+    display: flex;
+    justify-content: center; /* 버튼을 가운데로 정렬 */
+    margin-bottom: 10%;
+    margin-top: 10%;
+  }
+  .bbtn2 {
+    width: 45%;
+    height: 45px;
+  }
+  .bbtn2 .btn_txt2 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .bbtn-container2 {
+    display: flex;
+    justify-content: center; /* 버튼을 가운데로 정렬 */
+    margin-bottom: 10%;
+    margin-top: 10%;
+  }
+  .bbtn2 {
+    width: 50%;
+    height: 40px;
+  }
+  .bbtn2 .btn_txt2 {
+    font-size: 13px;
+  }
+}
 /* ===========================================버튼============================= */
 
 .next-sec-btn2 img:hover {
@@ -1405,6 +1452,11 @@ span.middlep {
   .pp-det-title img {
     width: 70%;
   }
+  .pp-det-title {
+
+    padding: 15% 0;
+
+  }
   .gallery {
     display: none; /* 기본 갤러리를 숨김 */
   }
@@ -1443,20 +1495,14 @@ span.middlep {
     color: gray; /* 비활성화된 텍스트 회색 */
   }
   .swiper-pagination::before {
-    bottom: 10%; /* 불릿과 일치하게 수직 위치 조정 */
+    bottom: 12%; /* 불릿과 일치하게 수직 위치 조정 */
   }
-  .bbtn2 {
-    height: 55px;
-    width: 40vw;
-  }
-  .bbtn2 .btn_txt2 {
-    font-size: 16px;
-  }
+
 }
 
 @media (min-width: 631px) and (max-width: 700px) {
   .swiper-pagination::before {
-    bottom: 10.5%;
+    bottom: 12%;
   }
   .contants p {
     font-size: 18px;
@@ -1478,6 +1524,7 @@ span.middlep {
   }
 }
 @media (min-width: 441px) and (max-width: 489px) {
+
   .slide_img_box img {
     width: 100%;
   }
@@ -1490,13 +1537,7 @@ span.middlep {
   .swiper-slide .contants p {
     font-size: 15px;
   }
-  .bbtn2 {
-    height: 45px;
-    width: 216px;
-  }
-  .bbtn2 .btn_txt2 {
-    font-size: 14px;
-  }
+
 }
 
 @media (min-width: 361px) and (max-width: 440px) {
@@ -1504,7 +1545,7 @@ span.middlep {
     bottom: 30%;
   }
   .swiper-pagination::before {
-    bottom: 14%;
+    bottom: 16%;
   }
   .contants p {
     font-size: 15px;
@@ -1516,7 +1557,7 @@ span.middlep {
     width: 100%;
   }
   .swiper-slide .contants {
-    bottom: 36%;
+    bottom: 40%;
   }
   .swiper-pagination {
     position: relative;
@@ -1529,12 +1570,17 @@ span.middlep {
   .swiper-slide .contants p {
     font-size: 15px;
   }
-  .bbtn2 {
-    height: 40px;
-    width: 180px;
+
+}
+@media (min-width: 200px) and (max-width: 289px){
+  .swiper-slide .contants {
+    bottom: 50%;
   }
-  .bbtn2 .btn_txt2 {
-    font-size: 13px;
+  .contants p {
+    font-size: 14px;
+  }
+  .swiper-pagination::before {
+    bottom: 20%;
   }
 }
 /* ===================================갤러리 끝====================== */
