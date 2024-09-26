@@ -153,6 +153,9 @@
   font-size: 20px;
   font-weight: 500;
 }
+.cart-price i{
+  cursor: pointer;
+}
 /*  */
 .product-buy-btn {
   /* margin-left: 50px; */
