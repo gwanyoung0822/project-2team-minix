@@ -153,9 +153,9 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -70%);
   color: white;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   white-space: nowrap;
   font-family: "Noto Sans KR", sans-serif;
